@@ -9,6 +9,7 @@ export const metadata: Metadata = {
         url: "https://venderecasa.reggioemilia.it/vendere-casa-trasferimento",
         title: "Trasferimento Lavorativo? Vendi Casa a Reggio Emilia in 45 Giorni | Diba",
         description: "Vendita rapida garantita per chi si trasferisce per lavoro. Gestiamo tutto noi.",
+        images: [{ url: "https://venderecasa.reggioemilia.it/assets/og-image.png", width: 1200, height: 630, alt: "Diba Servizi Immobiliari" }],
     },
 };
 

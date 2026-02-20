@@ -9,6 +9,7 @@ export const metadata: Metadata = {
         url: "https://venderecasa.reggioemilia.it/valutazione-gratuita-separazione",
         title: "Separazione? Vendi Casa a Reggio Emilia Senza Stress | Diba",
         description: "Gestiamo la vendita della casa coniugale durante la separazione, anche in caso di disaccordo.",
+        images: [{ url: "https://venderecasa.reggioemilia.it/assets/og-image.png", width: 1200, height: 630, alt: "Diba Servizi Immobiliari" }],
     },
 };
 

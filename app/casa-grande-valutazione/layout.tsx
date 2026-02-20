@@ -9,6 +9,7 @@ export const metadata: Metadata = {
         url: "https://venderecasa.reggioemilia.it/casa-grande-valutazione",
         title: "Casa Troppo Grande? Valutazione Gratuita per Pensionati | Diba",
         description: "Downsizing e vendita per pensionati a Reggio Emilia. Consulenza gratuita.",
+        images: [{ url: "https://venderecasa.reggioemilia.it/assets/og-image.png", width: 1200, height: 630, alt: "Diba Servizi Immobiliari" }],
     },
 };
 

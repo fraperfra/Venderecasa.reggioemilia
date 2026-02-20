@@ -9,6 +9,7 @@ export const metadata: Metadata = {
         url: "https://venderecasa.reggioemilia.it/vendere-casa-mutuo",
         title: "Non Riesci a Pagare il Mutuo? Vendi Casa a Reggio Emilia | Diba",
         description: "Vendita rapida per uscire dalla difficoltà del mutuo. Valutazione gratuita in 24h.",
+        images: [{ url: "https://venderecasa.reggioemilia.it/assets/og-image.png", width: 1200, height: 630, alt: "Diba Servizi Immobiliari" }],
     },
 };
 

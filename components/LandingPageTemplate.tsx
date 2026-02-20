@@ -132,8 +132,36 @@ export default function LandingPageTemplate({ config }: { config: PageConfig }) 
         </svg>
     );
 
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": ["LocalBusiness", "RealEstateAgent"],
+        name: "Diba Servizi Immobiliari",
+        description: config.subtitle,
+        url: "https://venderecasa.reggioemilia.it",
+        telephone: "+39 327 491 1031",
+        email: "info@dibaimmobiliare.it",
+        address: {
+            "@type": "PostalAddress",
+            streetAddress: "Via Vittorio Veneto, 3/D",
+            addressLocality: "Reggio Emilia",
+            postalCode: "42121",
+            addressCountry: "IT",
+        },
+        geo: { "@type": "GeoCoordinates", latitude: 44.6989, longitude: 10.6297 },
+        openingHours: ["Mo-Fr 09:00-19:00"],
+        aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "127" },
+        areaServed: { "@type": "City", name: "Reggio Emilia" },
+        priceRange: "€€",
+    };
+
     return (
         <div className="landing-root">
+            {/* JSON-LD Structured Data */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+
             {/* HEADER */}
             <header>
                 <div className="container header-content">
