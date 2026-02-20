@@ -41,13 +41,23 @@ export default function LandingPage() {
         setIsLoading(true);
         setErrorMsg(null);
         const formData = new FormData(e.currentTarget);
-        const data = Object.fromEntries(formData.entries());
+
+        // Capture UTM parameters from URL
+        const params = new URLSearchParams(window.location.search);
+
+        const payload = {
+            nome: formData.get("name") as string,
+            telefono: formData.get("phone") as string,
+            email: (formData.get("email") as string) || "",
+            utm_source: params.get("utm_source") || undefined,
+            utm_campaign: params.get("utm_campaign") || undefined,
+        };
 
         try {
             const res = await fetch("/api/leads", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data),
+                body: JSON.stringify(payload),
             });
             if (!res.ok) {
                 const json = await res.json();
@@ -114,6 +124,16 @@ export default function LandingPage() {
                                             className="form-control"
                                             placeholder="333 1234567"
                                             required
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="email">Email (opzionale)</label>
+                                        <input
+                                            type="email"
+                                            id="email"
+                                            name="email"
+                                            className="form-control"
+                                            placeholder="mario@esempio.it"
                                         />
                                     </div>
                                     <div className="form-group">
@@ -528,6 +548,16 @@ export default function LandingPage() {
                                             className="form-control"
                                             placeholder="333 1234567"
                                             required
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="bottom-email">Email (opzionale)</label>
+                                        <input
+                                            type="email"
+                                            id="bottom-email"
+                                            name="email"
+                                            className="form-control"
+                                            placeholder="mario@esempio.it"
                                         />
                                     </div>
                                     <div className="form-group">

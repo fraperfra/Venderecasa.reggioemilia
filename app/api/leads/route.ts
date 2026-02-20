@@ -1,5 +1,5 @@
-import { createClient } from "@supabase/supabase-js";
-import { NextRequest, NextResponse } from "next/server";
+import { createClient } from '@supabase/supabase-js';
+import { NextRequest, NextResponse } from 'next/server';
 
 const supabase = createClient(
     process.env.SUPABASE_URL!,
@@ -7,39 +7,32 @@ const supabase = createClient(
 );
 
 export async function POST(req: NextRequest) {
-    try {
-        const body = await req.json();
-        const { name, phone, address, intention } = body;
+    const body = await req.json();
+    const { nome, telefono, email, utm_campaign, utm_source } = body;
 
-        if (!name || !phone) {
-            return NextResponse.json(
-                { error: "Nome e telefono sono obbligatori." },
-                { status: 400 }
-            );
-        }
-
-        const { error } = await supabase.from("leads").insert([
-            {
-                nome: name,
-                telefono: phone,
-                indirizzo: address || null,
-                intenzione: intention || "non_so",
-                fonte: "landing-eredita",
-                creato_il: new Date().toISOString(),
-            },
-        ]);
-
-        if (error) {
-            console.error("Supabase error:", error);
-            return NextResponse.json(
-                { error: "Errore nel salvataggio. Riprova." },
-                { status: 500 }
-            );
-        }
-
-        return NextResponse.json({ success: true }, { status: 200 });
-    } catch (err) {
-        console.error("API error:", err);
-        return NextResponse.json({ error: "Errore del server." }, { status: 500 });
+    if (!nome || !telefono) {
+        return NextResponse.json({ error: 'Nome e telefono obbligatori' }, { status: 400 });
     }
+
+    const fonte =
+        utm_source === 'google' ? 'Google Search' :
+            utm_source === 'facebook' ? 'Meta Facebook' :
+                utm_source === 'instagram' ? 'Meta Instagram' :
+                    utm_source === 'linkedin' ? 'LinkedIn' : 'Organico';
+
+    const { error } = await supabase.from('leads').insert({
+        id: `lead_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+        nome,
+        telefono,
+        email: email || '',
+        target: utm_campaign || 'generico',  // es. "separazione"
+        fonte,
+        stato: 'nuovo',
+        data: new Date().toISOString().split('T')[0],
+        note: '',
+        valore: 0,
+    });
+
+    if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+    return NextResponse.json({ ok: true });
 }
