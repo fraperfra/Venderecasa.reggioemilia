@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import AddressAutocomplete from "@/components/AddressAutocomplete";
 
 export default function LandingPage() {
     const [isSuccess, setIsSuccess] = useState(false);
@@ -49,6 +50,7 @@ export default function LandingPage() {
             nome: formData.get("name") as string,
             telefono: formData.get("phone") as string,
             email: (formData.get("email") as string) || "",
+            address: formData.get("address") as string,
             page_target: "eredita",                              // fixed page identifier
             utm_source: params.get("utm_source") || undefined,
             utm_campaign: params.get("utm_campaign") || undefined,
@@ -139,13 +141,7 @@ export default function LandingPage() {
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="address">Indirizzo immobile (opzionale)</label>
-                                        <input
-                                            type="text"
-                                            id="address"
-                                            name="address"
-                                            className="form-control"
-                                            placeholder="Via Emilia..."
-                                        />
+                                        <AddressAutocomplete idPrefix="hero" />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="intention">Cosa vorresti fare?</label>
@@ -563,13 +559,7 @@ export default function LandingPage() {
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="bottom-address">Indirizzo immobile (opzionale)</label>
-                                        <input
-                                            type="text"
-                                            id="bottom-address"
-                                            name="address"
-                                            className="form-control"
-                                            placeholder="Via Emilia..."
-                                        />
+                                        <AddressAutocomplete idPrefix="bottom" />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="bottom-intention">Cosa vorresti fare?</label>

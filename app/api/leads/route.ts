@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
 
     try {
         const body = await req.json();
-        const { nome, telefono, email, page_target, utm_campaign, utm_source } = body;
+        const { nome, telefono, email, page_target, utm_campaign, utm_source, address } = body;
 
         if (!nome || !telefono) {
             return NextResponse.json({ error: 'Nome e telefono obbligatori' }, { status: 400 });
@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
             fonte,
             stato: 'nuovo',
             data: new Date().toISOString().split('T')[0],
-            note: '',
+            note: address ? `Indirizzo: ${address}` : '',
             valore: 0,
         });
 

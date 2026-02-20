@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import AddressAutocomplete from "./AddressAutocomplete";
 
 export interface PageConfig {
     heroLabel: string;
@@ -61,6 +62,7 @@ export default function LandingPageTemplate({ config }: { config: PageConfig }) 
             nome: formData.get("name") as string,
             telefono: formData.get("phone") as string,
             email: (formData.get("email") as string) || "",
+            address: formData.get("address") as string,
             page_target: config.utmCampaign,           // fixed page identifier — always from the page config
             utm_source: params.get("utm_source") || undefined,
             utm_campaign: params.get("utm_campaign") || undefined, // ad campaign name from URL (can differ from page_target)
@@ -103,6 +105,10 @@ export default function LandingPageTemplate({ config }: { config: PageConfig }) 
                 <div className="form-group">
                     <label htmlFor={`${idPrefix}-email`}>Email (opzionale)</label>
                     <input type="email" id={`${idPrefix}-email`} name="email" className="form-control" placeholder="mario@esempio.it" />
+                </div>
+                <div className="form-group">
+                    <label htmlFor={`${idPrefix}-address`}>Indirizzo immobile (opzionale)</label>
+                    <AddressAutocomplete idPrefix={idPrefix} />
                 </div>
                 <div className="form-group">
                     <label htmlFor={`${idPrefix}-intention`}>{config.selectLabel}</label>
