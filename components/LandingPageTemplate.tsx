@@ -126,9 +126,30 @@ export default function LandingPageTemplate({ config }: { config: PageConfig }) 
                 <p className="privacy-text">I tuoi dati sono al sicuro. Non li condividiamo con terzi.</p>
             </form>
         ) : (
-            <div className="success-message">
-                <h3>Grazie!</h3>
-                <p>Abbiamo ricevuto la tua richiesta. Ti contatteremo entro 24 ore.</p>
+            <div className="success-card">
+                <div className="success-icon-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+                <h3>Richiesta Ricevuta!</h3>
+                <p className="success-desc">
+                    Ottimo, abbiamo iniziato a lavorare sulla tua pratica per <strong>{config.heroLabel}</strong>.
+                </p>
+                <div className="success-steps">
+                    <h4>Cosa aspettarti:</h4>
+                    <ul>
+                        <li>
+                            <span className="step-check">✓</span>
+                            <span>Analisi dei prezzi di vendita recenti in zona.</span>
+                        </li>
+                        <li>
+                            <span className="step-check">✓</span>
+                            <span>Consulenza telefonica gratuita entro 24 ore.</span>
+                        </li>
+                    </ul>
+                </div>
+                <Link href="/" className="btn-outline">Sito Principale</Link>
             </div>
         )
     );

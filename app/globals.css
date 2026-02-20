@@ -569,6 +569,94 @@ select.form-control {
   color: var(--text-light);
 }
 
+/* SUCCESS CARD */
+.success-card {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.success-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  background: #ecfdf5;
+  color: #10b981;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.success-card h3 {
+  color: var(--primary);
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  font-weight: 800;
+}
+
+.success-card .success-desc {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.success-steps {
+  text-align: left;
+  background: #f9fafb;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  border: 1px solid #f3f4f6;
+}
+
+.success-steps h4 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 15px;
+  color: #6b7280;
+  font-weight: 700;
+}
+
+.success-steps ul li {
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+.success-steps ul li:last-child {
+  margin-bottom: 0;
+}
+
+.success-steps .step-check {
+  color: #10b981;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.btn-outline {
+  display: inline-block;
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  color: var(--text-main);
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.btn-outline:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+}
+
 /* REVIEWS */
 .reviews-grid {
   display: grid;
