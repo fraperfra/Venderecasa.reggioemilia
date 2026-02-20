@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 import AddressAutocomplete from "@/components/AddressAutocomplete";
 import Footer from "@/components/Footer";
 
@@ -171,12 +172,34 @@ export default function LandingPage() {
                                     </p>
                                 </form>
                             ) : (
-                                <div id="successMessage" className="success-message">
-                                    <h3>Grazie!</h3>
-                                    <p>
-                                        Abbiamo ricevuto la tua richiesta. Ti contatteremo entro 24
-                                        ore per la tua valutazione gratuita.
+                                <div id="successMessage" className="success-card">
+                                    <div className="success-icon-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                    </div>
+                                    <h3>Richiesta Inviata!</h3>
+                                    <p className="success-desc">
+                                        Grazie per la fiducia. I nostri esperti stanno già analizzando i dati della tua zona a Reggio Emilia.
                                     </p>
+                                    <div className="success-steps">
+                                        <h4>Cosa succederà ora:</h4>
+                                        <ul>
+                                            <li>
+                                                <span className="step-check">✓</span>
+                                                <span><strong>Entro 2 ore:</strong> Assegnazione consulente dedicato.</span>
+                                            </li>
+                                            <li>
+                                                <span className="step-check">✓</span>
+                                                <span><strong>Entro 24 ore:</strong> Chiamata per i dettagli tecnici.</span>
+                                            </li>
+                                            <li>
+                                                <span className="step-check">✓</span>
+                                                <span><strong>Report finale:</strong> Consegna della valutazione documentata.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <Link href="/chi-siamo" className="btn-outline">Scopri chi siamo</Link>
                                 </div>
                             )}
                         </div>
@@ -588,12 +611,30 @@ export default function LandingPage() {
                                     </p>
                                 </form>
                             ) : (
-                                <div className="success-message">
-                                    <h3>Grazie!</h3>
-                                    <p>
-                                        Abbiamo ricevuto la tua richiesta. Ti contatteremo entro 24
-                                        ore per la tua valutazione gratuita.
+                                <div className="success-card">
+                                    <div className="success-icon-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                    </div>
+                                    <h3>Quasi Fatto!</h3>
+                                    <p className="success-desc">
+                                        Abbiamo preso in carico la tua richiesta. Sei a un passo dalla tua valutazione professionale.
                                     </p>
+                                    <div className="success-steps" style={{ background: 'white' }}>
+                                        <h4>I tuoi prossimi passi:</h4>
+                                        <ul>
+                                            <li>
+                                                <span className="step-check">✓</span>
+                                                <span>Riceverai una chiamata dal numero 327 491 1031.</span>
+                                            </li>
+                                            <li>
+                                                <span className="step-check">✓</span>
+                                                <span>Prepareremo un'analisi comparativa di mercato.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <p className="privacy-text">DIBA Immobiliare · Reggio Emilia</p>
                                 </div>
                             )}
                         </div>
