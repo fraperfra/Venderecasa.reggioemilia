@@ -61,8 +61,9 @@ export default function LandingPageTemplate({ config }: { config: PageConfig }) 
             nome: formData.get("name") as string,
             telefono: formData.get("phone") as string,
             email: (formData.get("email") as string) || "",
+            page_target: config.utmCampaign,           // fixed page identifier — always from the page config
             utm_source: params.get("utm_source") || undefined,
-            utm_campaign: params.get("utm_campaign") || config.utmCampaign,
+            utm_campaign: params.get("utm_campaign") || undefined, // ad campaign name from URL (can differ from page_target)
         };
 
         try {

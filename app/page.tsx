@@ -49,6 +49,7 @@ export default function LandingPage() {
             nome: formData.get("name") as string,
             telefono: formData.get("phone") as string,
             email: (formData.get("email") as string) || "",
+            page_target: "eredita",                              // fixed page identifier
             utm_source: params.get("utm_source") || undefined,
             utm_campaign: params.get("utm_campaign") || undefined,
         };
