@@ -1,0 +1,55 @@
+import LandingPageTemplate, { PageConfig } from "@/components/LandingPageTemplate";
+
+const config: PageConfig = {
+    utmCampaign: "trasferimento",
+    heroLabel: "Trasferimento Lavorativo",
+    h1: "Ti stai trasferendo per lavoro? Vendiamo la tua casa a Reggio Emilia mentre tu ti sistemi altrove",
+    subtitle: "Niente doppio affitto, niente casa vuota che si svaluta. Gestiamo tutto noi: dalla valutazione al rogito, anche a distanza.",
+    benefits: [
+        "Gestione completa anche se sei già lontano",
+        "Vendita media in 45 giorni",
+        "Aggiornamenti costanti via telefono o video call",
+        "Nessun costo anticipato",
+    ],
+    formTitle: "Richiedi valutazione gratuita",
+    selectLabel: "La tua situazione",
+    selectOptions: [
+        { value: "trasferimento_certo", label: "Ho già la data di trasferimento" },
+        { value: "trasferimento_probabile", label: "Il trasferimento è probabile" },
+        { value: "valutare", label: "Voglio valutare prima di decidere" },
+        { value: "gia_trasferito", label: "Mi sono già trasferito" },
+    ],
+    problemTitle: "I rischi di lasciare casa vuota",
+    problemSubtitle: "Una casa non venduta diventa rapidamente un costo inutile e un rischio patrimoniale.",
+    problems: [
+        { icon: "💰", title: "Doppia spesa ogni mese", desc: "Pagare l'affitto nella nuova città E le spese della casa vuota (mutuo, IMU, condominio) erode il tuo budget rapidamente." },
+        { icon: "🏚️", title: "Svalutazione progressiva", desc: "Una casa sfitta e non curata perde valore. Umidità, usura, problemi tecnici possono emergere senza che tu lo sappia." },
+        { icon: "📍", title: "Difficoltà gestione a distanza", desc: "Trovare acquirenti, fare visite, gestire la trattativa — tutto è molto più difficile quando non sei in città." },
+    ],
+    stepsTitle: "Come lavoriamo anche a distanza",
+    steps: [
+        { icon: "📱", title: "Video call iniziale", desc: "Prima consulenza in remoto per valutare l'immobile e capire le tue esigenze di tempistica." },
+        { icon: "🔑", title: "Deleghiamo noi le visite", desc: "Accogliamo gli acquirenti, mostriamo l'immobile e gestiamo le trattative per tuo conto." },
+        { icon: "📝", title: "Rogito a distanza", desc: "Con delega notarile o videoconferenza puoi firmare il rogito anche senza tornare a Reggio Emilia." },
+    ],
+    reviewsTitle: "Cosa dicono chi si è trasferito con noi",
+    reviews: [
+        { text: "Mi sono trasferito a Milano per lavoro. Diba ha gestito tutto: visite, trattativa, rogito. Non sono tornato a Reggio Emilia neanche una volta.", author: "Stefano B., ex Reggio Emilia", stars: 5 },
+        { text: "Pensavo fosse impossibile vendere stando già a Torino. Invece in 50 giorni era tutto finito. Aggiornamenti continui via WhatsApp.", author: "Valentina C., Torino", stars: 5 },
+        { text: "Puntualissimi, precisi, e hanno spuntato un prezzo superiore alle mie aspettative nonostante la fretta.", author: "Gianluca M., Milano", stars: 5 },
+    ],
+    faqTitle: "Domande frecuenti sulla vendita per trasferimento",
+    faqs: [
+        { q: "Posso vendere casa senza essere presente a Reggio Emilia?", a: "Sì. Con una delega notarile, puoi autorizzare noi o un vostro fiduciario a firmare tutti i documenti per tuo conto, incluso il rogito. Gestiamo questa procedura regolarmente." },
+        { q: "Quanto ci vuole per vendere?", a: "In media 45 giorni dalla presa in carico, con le giuste condizioni di prezzo. Se hai urgenza di partire presto, possiamo attivare la nostra rete di acquirenti qualificati per accelerare." },
+        { q: "Conviene aspettare a trasferirsi per chiudere la vendita?", a: "Non sempre. Se il trasferimento è urgente, ti conviene partire e lasciarci gestire tutto. Aspettare per presidiare la vendita costa spesso più di quanto si guadagna." },
+        { q: "Posso affittare la casa nell'attesa di venderla?", a: "È tecnicamente possibile ma sconsigliato se vuoi vendere velocemente: gli affittuari possono rallentare le visite e complicare il rogito. Valutiamo caso per caso." },
+    ],
+    ctaTitle: "Parti tranquillo. Pensiamo noi alla casa.",
+    ctaSubtitle: "Valutiamo gratuitamente e ti diciamo in 24 ore quanto vale il tuo immobile.",
+    footerDesc: "Gestiamo la vendita di immobili a Reggio Emilia anche per proprietari già trasferiti altrove.",
+};
+
+export default function Page() {
+    return <LandingPageTemplate config={config} />;
+}

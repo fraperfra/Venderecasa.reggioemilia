@@ -1,12 +1,14 @@
 import { createClient } from '@supabase/supabase-js';
 import { NextRequest, NextResponse } from 'next/server';
 
-const supabase = createClient(
-    process.env.SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_KEY!
-);
+export const dynamic = 'force-dynamic';
 
 export async function POST(req: NextRequest) {
+    const supabase = createClient(
+        process.env.SUPABASE_URL!,
+        process.env.SUPABASE_SERVICE_KEY!
+    );
+
     const body = await req.json();
     const { nome, telefono, email, utm_campaign, utm_source } = body;
 
@@ -25,7 +27,7 @@ export async function POST(req: NextRequest) {
         nome,
         telefono,
         email: email || '',
-        target: utm_campaign || 'generico',  // es. "separazione"
+        target: utm_campaign || 'generico',
         fonte,
         stato: 'nuovo',
         data: new Date().toISOString().split('T')[0],
