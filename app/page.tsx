@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import AddressAutocomplete from "@/components/AddressAutocomplete";
+import Footer from "@/components/Footer";
 
 export default function LandingPage() {
     const [isSuccess, setIsSuccess] = useState(false);
@@ -350,7 +351,7 @@ export default function LandingPage() {
             </section>
 
             {/* HOW IT WORKS */}
-            <section className="py-section">
+            <section className="py-section" id="come-funziona">
                 <div className="container">
                     <div className="section-header">
                         <h2>Come funziona</h2>
@@ -429,7 +430,7 @@ export default function LandingPage() {
             </section>
 
             {/* REVIEWS */}
-            <section className="py-section bg-light">
+            <section className="py-section bg-light" id="recensioni">
                 <div className="container">
                     <div className="section-header">
                         <h2>Cosa dicono di noi</h2>
@@ -468,7 +469,7 @@ export default function LandingPage() {
             </section>
 
             {/* FAQ */}
-            <section className="py-section">
+            <section className="py-section" id="faq">
                 <div className="container">
                     <div className="section-header">
                         <h2>Domande Frequenti</h2>
@@ -601,58 +602,7 @@ export default function LandingPage() {
             </section>
 
             {/* FOOTER */}
-            <footer>
-                <div className="container">
-                    <div className="footer-grid">
-                        <div className="footer-col">
-                            <div className="logo" style={{ marginBottom: "20px" }}>
-                                <img src="/assets/logo.png" alt="DIBA Immobiliare" className="logo-img" style={{ height: "40px" }} />
-                            </div>
-                            <p>
-                                Specialisti nella vendita di immobili residenziali a Reggio
-                                Emilia. Gestiamo situazioni complesse con professionalità e
-                                discrezione.
-                            </p>
-                        </div>
-                        <div className="footer-col">
-                            <h4>Contatti</h4>
-                            <p>
-                                Via Vittorio Veneto, 3/D
-                                <br />
-                                42121 Reggio Emilia (RE)
-                            </p>
-                            <p>
-                                <a href="tel:0522123456">0522 123456</a>
-                            </p>
-                            <p>
-                                <a href="mailto:info@Immobiliarediba.it">
-                                    info@Immobiliarediba.it
-                                </a>
-                            </p>
-                        </div>
-                        <div className="footer-col">
-                            <h4>Link Utili</h4>
-                            <ul>
-                                <li>
-                                    <a href="#">Privacy Policy</a>
-                                </li>
-                                <li>
-                                    <a href="#">Cookie Policy</a>
-                                </li>
-                                <li>
-                                    <a href="#">Valutazione Immobili</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="footer-bottom">
-                        <p>
-                            © 2026 DIBA Immobiliare. Tutti i diritti riservati. P.IVA
-                            01234567890.
-                        </p>
-                    </div>
-                </div>
-            </footer>
+            <Footer isHome={true} />
 
             {/* STICKY MOBILE */}
             <div className={`sticky-mobile ${isStickyVisible ? "visible" : ""}`}>

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import AddressAutocomplete from "./AddressAutocomplete";
+import Footer from "./Footer";
 
 export interface PageConfig {
     heroLabel: string;
@@ -227,7 +228,7 @@ export default function LandingPageTemplate({ config }: { config: PageConfig }) 
             </section>
 
             {/* HOW IT WORKS */}
-            <section className="py-section">
+            <section className="py-section" id="come-funziona">
                 <div className="container">
                     <div className="section-header">
                         <h2>{config.stepsTitle}</h2>
@@ -245,7 +246,7 @@ export default function LandingPageTemplate({ config }: { config: PageConfig }) 
             </section>
 
             {/* REVIEWS */}
-            <section className="py-section bg-light">
+            <section className="py-section bg-light" id="recensioni">
                 <div className="container">
                     <div className="section-header">
                         <h2>{config.reviewsTitle}</h2>
@@ -263,7 +264,7 @@ export default function LandingPageTemplate({ config }: { config: PageConfig }) 
             </section>
 
             {/* FAQ */}
-            <section className="py-section">
+            <section className="py-section" id="faq">
                 <div className="container">
                     <div className="section-header">
                         <h2>{config.faqTitle}</h2>
@@ -298,36 +299,7 @@ export default function LandingPageTemplate({ config }: { config: PageConfig }) 
             </section>
 
             {/* FOOTER */}
-            <footer>
-                <div className="container">
-                    <div className="footer-grid">
-                        <div className="footer-col">
-                            <div className="logo" style={{ marginBottom: "20px" }}>
-                                <img src="/assets/logo.png" alt="Diba Servizi Immobiliari" className="logo-img" style={{ height: "40px" }} width="130" height="40" />
-                            </div>
-                            <p>{config.footerDesc}</p>
-                        </div>
-                        <div className="footer-col">
-                            <h4>Contatti</h4>
-                            <ul>
-                                <li><a href="tel:3274911031">📞 327 491 1031</a></li>
-                                <li><a href="mailto:info@dibaimmobiliare.it">✉️ info@dibaimmobiliare.it</a></li>
-                                <li>📍 Via Vittorio Veneto, 3/D – Reggio Emilia</li>
-                            </ul>
-                        </div>
-                        <div className="footer-col">
-                            <h4>Orari</h4>
-                            <ul>
-                                <li>Lun – Ven: 9:00 – 19:00</li>
-                                <li>Sab: su appuntamento</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="footer-bottom">
-                        <p>© {new Date().getFullYear()} Diba Servizi Immobiliari · P.IVA 00000000000 · <a href="#">Privacy Policy</a></p>
-                    </div>
-                </div>
-            </footer>
+            <Footer description={config.footerDesc} />
 
             {/* STICKY MOBILE CTA */}
             {isStickyVisible && (
