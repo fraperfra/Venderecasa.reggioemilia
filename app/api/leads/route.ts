@@ -4,13 +4,13 @@ import { NextRequest, NextResponse } from 'next/server';
 export const dynamic = 'force-dynamic';
 
 export async function POST(req: NextRequest) {
-    // 1. Check environment variables
     const supabaseUrl = process.env.SUPABASE_URL;
     const supabaseServiceKey = process.env.SUPABASE_SERVICE_KEY;
 
     if (!supabaseUrl || !supabaseServiceKey) {
-        console.error("Missing Supabase environment variables");
-        return NextResponse.json({ error: 'Errore di configurazione server (Env vars missing)' }, { status: 500 });
+        return NextResponse.json({
+            error: 'Configurazione mancante: SUPABASE_URL o SUPABASE_SERVICE_KEY non impostate su Vercel.'
+        }, { status: 500 });
     }
 
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
@@ -20,19 +20,20 @@ export async function POST(req: NextRequest) {
         const { nome, telefono, email, page_target, utm_campaign, utm_source, address } = body;
 
         if (!nome || !telefono) {
-            return NextResponse.json({ error: 'Nome e telefono obbligatori' }, { status: 400 });
+            return NextResponse.json({ error: 'Nome e telefono sono obbligatori.' }, { status: 400 });
         }
 
-        // Map UTM source to readable channel name
         const fonte =
             utm_source === 'google' ? 'Google Search' :
                 utm_source === 'facebook' ? 'Meta Facebook' :
                     utm_source === 'instagram' ? 'Meta Instagram' :
                         utm_source === 'linkedin' ? 'LinkedIn' : 'Organico';
 
-        // 2. Insert into Supabase
-        // We removed the 'id' field from insert to let Supabase handle auto-generation (BIGINT or UUID)
+        // We manually generate the ID because the 'leads' table likely uses 'id' TEXT PRIMARY KEY without auto-increment.
+        const leadId = `lead_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`;
+
         const { error } = await supabase.from('leads').insert({
+            id: leadId,
             nome,
             telefono,
             email: email || '',
@@ -46,16 +47,20 @@ export async function POST(req: NextRequest) {
         });
 
         if (error) {
-            console.error("Supabase insert error:", error);
+            console.error("Supabase Error:", error);
             return NextResponse.json({
-                error: `Errore database: ${error.message}. Verifica che le colonne 'target' e 'campagna' esistano.`,
-                details: error
+                error: `Errore Supabase: ${error.message}`,
+                code: error.code,
+                hint: "Assicurati che la tabella 'leads' esista e che le colonne 'target' e 'campagna' siano state create."
             }, { status: 500 });
         }
 
-        return NextResponse.json({ ok: true });
+        return NextResponse.json({ ok: true, id: leadId });
     } catch (err: any) {
-        console.error("API Route error:", err);
-        return NextResponse.json({ error: 'Errore interno del server', details: err.message }, { status: 500 });
+        console.error("Internal API Error:", err);
+        return NextResponse.json({
+            error: 'Errore interno del server durante l\'invio del lead.',
+            details: err.message
+        }, { status: 500 });
     }
 }
