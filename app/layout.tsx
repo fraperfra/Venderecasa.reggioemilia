@@ -9,11 +9,11 @@ export const metadata: Metadata = {
     icon: "/assets/favicon.png",
   },
   alternates: {
-    canonical: "https://venderecasa.reggioemilia.it/vendere-casa-ereditata-da-successione",
+    canonical: "https://venderecasa.reggioemilia.it/valutazione-gratuita-eredita",
   },
   openGraph: {
     type: "website",
-    url: "https://venderecasa.reggioemilia.it/vendere-casa-ereditata-da-successione",
+    url: "https://venderecasa.reggioemilia.it/valutazione-gratuita-eredita",
     title: "Hai Ereditato una Casa a Reggio Emilia? Valutazione Gratuita | Diba Servizi Immobiliari",
     description: "Casa ereditata da successione? Ti aiutiamo a capire quanto vale e cosa conviene fare. Valutazione gratuita entro 24 ore.",
     images: [{ url: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" }],
