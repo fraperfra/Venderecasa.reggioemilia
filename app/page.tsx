@@ -33,11 +33,33 @@ export default function LandingPage() {
         };
     }, []);
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const [isLoading, setIsLoading] = useState(false);
+    const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        setIsLoading(true);
+        setErrorMsg(null);
         const formData = new FormData(e.currentTarget);
-        console.log("Form submitted:", Object.fromEntries(formData.entries()));
-        setIsSuccess(true);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+            const res = await fetch("/api/leads", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
+            });
+            if (!res.ok) {
+                const json = await res.json();
+                setErrorMsg(json.error || "Errore nell'invio. Riprova.");
+            } else {
+                setIsSuccess(true);
+            }
+        } catch {
+            setErrorMsg("Errore di rete. Controlla la connessione.");
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     const toggleFaq = (index: number) => {
@@ -117,9 +139,15 @@ export default function LandingPage() {
                                         type="submit"
                                         className="btn-cta"
                                         ref={formCtaRef}
+                                        disabled={isLoading}
                                     >
-                                        Invia Richiesta
+                                        {isLoading ? "Invio in corso..." : "Invia Richiesta"}
                                     </button>
+                                    {errorMsg && (
+                                        <p style={{ color: "#dc2626", fontSize: "0.875rem", marginTop: "8px", textAlign: "center" }}>
+                                            {errorMsg}
+                                        </p>
+                                    )}
                                     <p className="privacy-text">
                                         I tuoi dati sono al sicuro. Non li condividiamo con terzi.
                                     </p>
@@ -524,9 +552,15 @@ export default function LandingPage() {
                                     <button
                                         type="submit"
                                         className="btn-cta"
+                                        disabled={isLoading}
                                     >
-                                        Invia Richiesta
+                                        {isLoading ? "Invio in corso..." : "Invia Richiesta"}
                                     </button>
+                                    {errorMsg && (
+                                        <p style={{ color: "#dc2626", fontSize: "0.875rem", marginTop: "8px", textAlign: "center" }}>
+                                            {errorMsg}
+                                        </p>
+                                    )}
                                     <p className="privacy-text">
                                         I tuoi dati sono al sicuro. Non li condividiamo con terzi.
                                     </p>
