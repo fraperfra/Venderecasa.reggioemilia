@@ -13,6 +13,7 @@ interface Suggestion {
         town?: string;
         village?: string;
         county?: string;
+        postcode?: string;
     };
 }
 
@@ -84,14 +85,15 @@ export default function AddressAutocomplete({ idPrefix, defaultValue = '', place
                     return isRE && addr.road;
                 })
                 .map(item => {
-                    // Clean up display name: Road, Number (if any), City/Town
+                    // Clean up display name: Road, Number (if any) - CAP City/Town
                     const road = item.address.road;
                     const num = item.address.house_number ? `, ${item.address.house_number}` : '';
+                    const cap = item.address.postcode ? `${item.address.postcode} ` : '';
                     const city = item.address.city || item.address.town || item.address.village || 'RE';
 
                     return {
                         ...item,
-                        display_name: `${road}${num} - ${city}`
+                        display_name: `${road}${num} - ${cap}${city}`
                     };
                 });
 
