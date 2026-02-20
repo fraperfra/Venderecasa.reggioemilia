@@ -4,12 +4,13 @@ import { NextRequest, NextResponse } from 'next/server';
 export const dynamic = 'force-dynamic';
 
 export async function POST(req: NextRequest) {
-    const supabaseUrl = process.env.SUPABASE_URL;
+    const supabaseUrl = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
     const supabaseServiceKey = process.env.SUPABASE_SERVICE_KEY;
 
     if (!supabaseUrl || !supabaseServiceKey) {
         return NextResponse.json({
-            error: 'Configurazione mancante: SUPABASE_URL o SUPABASE_SERVICE_KEY non impostate su Vercel.'
+            error: `Configurazione incompleta su Vercel. Rilevato URL: ${!!supabaseUrl}, Key: ${!!supabaseServiceKey}.`,
+            hint: 'Assicurati di aver impostato sia SUPABASE_URL (o NEXT_PUBLIC_SUPABASE_URL) che SUPABASE_SERVICE_KEY.'
         }, { status: 500 });
     }
 
