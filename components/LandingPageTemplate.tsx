@@ -18,6 +18,13 @@ export interface PageConfig {
     problems: { icon: string; title: string; desc: string }[];
     stepsTitle: string;
     steps: { icon: string; title: string; desc: string }[];
+    // Social proof (photos coming soon — add src when ready)
+    socialProofTitle?: string;
+    socialProofSubtitle?: string;
+    socialProofItems?: { src?: string; alt?: string; caption: string; tag?: string }[];
+    // Mid-page detailed form
+    midFormTitle?: string;
+    midFormSubtitle?: string;
     reviewsTitle: string;
     reviews: { text: string; author: string; stars: number }[];
     faqTitle: string;
@@ -65,9 +72,10 @@ export default function LandingPageTemplate({ config }: { config: PageConfig }) 
             telefono: formData.get("phone") as string,
             email: (formData.get("email") as string) || "",
             address: formData.get("address") as string,
-            page_target: config.utmCampaign,           // fixed page identifier — always from the page config
+            note: (formData.get("note") as string) || "",
+            page_target: config.utmCampaign,
             utm_source: params.get("utm_source") || undefined,
-            utm_campaign: params.get("utm_campaign") || undefined, // ad campaign name from URL (can differ from page_target)
+            utm_campaign: params.get("utm_campaign") || undefined,
         };
 
         try {
@@ -93,6 +101,35 @@ export default function LandingPageTemplate({ config }: { config: PageConfig }) 
         setActiveFaq(activeFaq === index ? null : index);
     };
 
+    const successCard = (
+        <div className="success-card">
+            <div className="success-icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+            <h3>Richiesta Ricevuta!</h3>
+            <p className="success-desc">
+                Ottimo, abbiamo iniziato a lavorare sulla tua pratica per <strong>{config.heroLabel}</strong>.
+            </p>
+            <div className="success-steps">
+                <h4>Cosa aspettarti:</h4>
+                <ul>
+                    <li>
+                        <span className="step-check">✓</span>
+                        <span>Analisi dei prezzi di vendita recenti in zona.</span>
+                    </li>
+                    <li>
+                        <span className="step-check">✓</span>
+                        <span>Consulenza telefonica gratuita entro 24 ore.</span>
+                    </li>
+                </ul>
+            </div>
+            <Link href="/" className="btn-outline">Sito Principale</Link>
+        </div>
+    );
+
+    // Hero form — essential fields only
     const renderForm = (idPrefix: string, ref?: React.RefObject<HTMLButtonElement | null>) => (
         !isSuccess ? (
             <form id={`${idPrefix}Form`} onSubmit={handleSubmit}>
@@ -126,33 +163,70 @@ export default function LandingPageTemplate({ config }: { config: PageConfig }) 
                 {errorMsg && <p style={{ color: "#dc2626", fontSize: "0.875rem", marginTop: "8px", textAlign: "center" }}>{errorMsg}</p>}
                 <p className="privacy-text">I tuoi dati sono al sicuro. Non li condividiamo con terzi.</p>
             </form>
-        ) : (
-            <div className="success-card">
-                <div className="success-icon-wrapper">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
+        ) : successCard
+    );
+
+    // Mid-page detailed form — adds urgency + free-text note
+    const renderDetailedForm = (idPrefix: string) => (
+        !isSuccess ? (
+            <form id={`${idPrefix}Form`} onSubmit={handleSubmit}>
+                <div className="detailed-form-row">
+                    <div className="form-group">
+                        <label htmlFor={`${idPrefix}-name`}>Nome e Cognome</label>
+                        <input type="text" id={`${idPrefix}-name`} name="name" className="form-control" placeholder="Mario Rossi" required />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor={`${idPrefix}-phone`}>Telefono</label>
+                        <input type="tel" id={`${idPrefix}-phone`} name="phone" className="form-control" placeholder="333 1234567" required />
+                    </div>
                 </div>
-                <h3>Richiesta Ricevuta!</h3>
-                <p className="success-desc">
-                    Ottimo, abbiamo iniziato a lavorare sulla tua pratica per <strong>{config.heroLabel}</strong>.
-                </p>
-                <div className="success-steps">
-                    <h4>Cosa aspettarti:</h4>
-                    <ul>
-                        <li>
-                            <span className="step-check">✓</span>
-                            <span>Analisi dei prezzi di vendita recenti in zona.</span>
-                        </li>
-                        <li>
-                            <span className="step-check">✓</span>
-                            <span>Consulenza telefonica gratuita entro 24 ore.</span>
-                        </li>
-                    </ul>
+                <div className="detailed-form-row">
+                    <div className="form-group">
+                        <label htmlFor={`${idPrefix}-email`}>Email (opzionale)</label>
+                        <input type="email" id={`${idPrefix}-email`} name="email" className="form-control" placeholder="mario@esempio.it" />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor={`${idPrefix}-address`}>Indirizzo immobile</label>
+                        <AddressAutocomplete idPrefix={idPrefix} />
+                    </div>
                 </div>
-                <Link href="/" className="btn-outline">Sito Principale</Link>
-            </div>
-        )
+                <div className="detailed-form-row">
+                    <div className="form-group">
+                        <label htmlFor={`${idPrefix}-intention`}>{config.selectLabel}</label>
+                        <select id={`${idPrefix}-intention`} name="intention" className="form-control">
+                            {config.selectOptions.map((o) => (
+                                <option key={o.value} value={o.value}>{o.label}</option>
+                            ))}
+                        </select>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor={`${idPrefix}-urgency`}>Quando vorresti procedere?</label>
+                        <select id={`${idPrefix}-urgency`} name="urgency" className="form-control">
+                            <option value="subito">Il prima possibile</option>
+                            <option value="3mesi">Entro 3 mesi</option>
+                            <option value="6mesi">Entro 6 mesi</option>
+                            <option value="no_fretta">Non ho fretta</option>
+                        </select>
+                    </div>
+                </div>
+                <div className="form-group">
+                    <label htmlFor={`${idPrefix}-note`}>Descrivi la tua situazione (opzionale)</label>
+                    <textarea
+                        id={`${idPrefix}-note`}
+                        name="note"
+                        className="form-control"
+                        placeholder="Es: ho un appartamento di 90mq, voglio capire quanto vale e se è il momento giusto per vendere..."
+                        rows={3}
+                        style={{ height: "auto", paddingTop: "12px", paddingBottom: "12px", resize: "vertical" }}
+                    />
+                </div>
+                <button type="submit" className="btn-cta" disabled={isLoading}>
+                    {isLoading ? "Invio in corso..." : "Invia Richiesta Dettagliata"}
+                </button>
+                {errorMsg && <p style={{ color: "#dc2626", fontSize: "0.875rem", marginTop: "8px", textAlign: "center" }}>{errorMsg}</p>}
+                <p className="privacy-text">I tuoi dati sono al sicuro. Non li condividiamo con terzi.</p>
+            </form>
+        ) : successCard
     );
 
     const checkSvg = (
@@ -183,6 +257,12 @@ export default function LandingPageTemplate({ config }: { config: PageConfig }) 
         priceRange: "€€",
     };
 
+    // Social proof placeholder items (used when images not yet available)
+    const spItems: { src?: string; alt?: string; caption: string; tag?: string }[] =
+        config.socialProofItems && config.socialProofItems.length > 0
+            ? config.socialProofItems
+            : Array(4).fill(null).map(() => ({ caption: "Reggio Emilia", tag: "IN ARRIVO" }));
+
     return (
         <div className="landing-root">
             {/* JSON-LD Structured Data */}
@@ -200,13 +280,13 @@ export default function LandingPageTemplate({ config }: { config: PageConfig }) 
                 </div>
             </header>
 
-            {/* HERO */}
+            {/* 1 · HERO + FORM */}
             <section className="hero">
                 <div className="container hero-grid">
                     <div className="hero-text">
                         <div className="hero-label">{config.heroLabel}</div>
-                        <h1>{config.h1}</h1>
-                        <p className="subtitle">{config.subtitle}</p>
+                        <h1 dangerouslySetInnerHTML={{ __html: config.h1 }} />
+                        <p className="subtitle" dangerouslySetInnerHTML={{ __html: config.subtitle }} />
                     </div>
 
                     <div className="form-column">
@@ -230,26 +310,26 @@ export default function LandingPageTemplate({ config }: { config: PageConfig }) 
                 </div>
             </section>
 
-            {/* PROBLEM SECTION */}
+            {/* 2 · PROBLEMI */}
             <section className="py-section bg-light">
                 <div className="container">
                     <div className="section-header">
                         <h2>{config.problemTitle}</h2>
-                        <p style={{ color: "var(--text-light)", fontSize: "1rem" }}>{config.problemSubtitle}</p>
+                        <p style={{ color: "var(--text-light)", fontSize: "1rem" }} dangerouslySetInnerHTML={{ __html: config.problemSubtitle }} />
                     </div>
                     <div className="problem-grid">
                         {config.problems.map((p, i) => (
                             <div key={i} className="problem-card">
                                 <span className="card-icon">{p.icon}</span>
                                 <h3>{p.title}</h3>
-                                <p>{p.desc}</p>
+                                <p dangerouslySetInnerHTML={{ __html: p.desc }} />
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* HOW IT WORKS */}
+            {/* 3 · COME FUNZIONA */}
             <section className="py-section" id="come-funziona">
                 <div className="container">
                     <div className="section-header">
@@ -260,14 +340,68 @@ export default function LandingPageTemplate({ config }: { config: PageConfig }) 
                             <div key={i} className="step-item">
                                 <div className="step-icon-circle">{s.icon}</div>
                                 <h3>{s.title}</h3>
-                                <p>{s.desc}</p>
+                                <p dangerouslySetInnerHTML={{ __html: s.desc }} />
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* REVIEWS */}
+            {/* 4 · PROVA SOCIALE */}
+            <section className="py-section bg-light social-proof-section">
+                <div className="container">
+                    <div className="section-header">
+                        <h2>{config.socialProofTitle ?? "I nostri risultati a Reggio Emilia"}</h2>
+                        {config.socialProofSubtitle && (
+                            <p style={{ color: "var(--text-light)", fontSize: "1rem" }}>{config.socialProofSubtitle}</p>
+                        )}
+                    </div>
+                    <div className="social-proof-grid">
+                        {spItems.map((item, i) => (
+                            <div key={i} className="social-proof-card">
+                                {item.tag && <span className="social-proof-tag">{item.tag}</span>}
+                                <div className="social-proof-img-wrapper">
+                                    {item.src
+                                        ? <img src={item.src} alt={item.alt ?? item.caption} width="400" height="300" loading="lazy" />
+                                        : <div className="social-proof-placeholder">📷</div>
+                                    }
+                                </div>
+                                <p className="social-proof-caption">{item.caption}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* 5 · FORM DETTAGLIATO */}
+            <section className="py-section mid-form-section">
+                <div className="container">
+                    <div className="mid-form-grid">
+                        <div className="mid-form-left">
+                            <p className="mid-form-tag">Parlaci di te</p>
+                            <h2 className="mid-form-title">
+                                {config.midFormTitle ?? config.ctaTitle}
+                            </h2>
+                            <p className="mid-form-sub">
+                                {config.midFormSubtitle ?? config.ctaSubtitle}
+                            </p>
+                            <ul className="mid-form-guarantees">
+                                <li><span className="pillar-check">✓</span>Risposta garantita entro 24 ore</li>
+                                <li><span className="pillar-check">✓</span>Consulenza gratuita, nessun vincolo</li>
+                                <li><span className="pillar-check">✓</span>Esperti del mercato di Reggio Emilia</li>
+                            </ul>
+                        </div>
+                        <div className="mid-form-right">
+                            <div className="hero-form-card">
+                                <div className="form-title">{config.formTitle}</div>
+                                {renderDetailedForm("mid")}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 6 · TESTIMONIANZE E RECENSIONI */}
             <section className="py-section bg-light" id="recensioni">
                 <div className="container">
                     <div className="section-header">
@@ -277,7 +411,7 @@ export default function LandingPageTemplate({ config }: { config: PageConfig }) 
                         {config.reviews.map((r, i) => (
                             <div key={i} className="review-card">
                                 <div className="stars">{"★".repeat(r.stars)}</div>
-                                <p>&ldquo;{r.text}&rdquo;</p>
+                                <p dangerouslySetInnerHTML={{ __html: `&ldquo;${r.text}&rdquo;` }} />
                                 <p className="review-author">— {r.author}</p>
                             </div>
                         ))}
@@ -285,7 +419,7 @@ export default function LandingPageTemplate({ config }: { config: PageConfig }) 
                 </div>
             </section>
 
-            {/* FAQ */}
+            {/* 7 · FAQ */}
             <section className="py-section" id="faq">
                 <div className="container">
                     <div className="section-header">
@@ -297,24 +431,36 @@ export default function LandingPageTemplate({ config }: { config: PageConfig }) 
                                 <button className="faq-question" onClick={() => toggleFaq(i)} aria-expanded={activeFaq === i}>
                                     {faq.q}
                                 </button>
-                                {activeFaq === i && <div className="faq-answer"><p>{faq.a}</p></div>}
+                                {activeFaq === i && <div className="faq-answer"><p dangerouslySetInnerHTML={{ __html: faq.a }} /></div>}
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* BOTTOM CTA FORM */}
-            <section className="py-section cta-bottom-section">
+            {/* 8 · CTA FINALE */}
+            <section className="final-cta-section">
                 <div className="container">
-                    <div className="section-header">
-                        <h2>{config.ctaTitle}</h2>
-                        <p style={{ color: "var(--text-light)", fontSize: "1rem" }}>{config.ctaSubtitle}</p>
-                    </div>
-                    <div className="cta-bottom-wrapper">
-                        <div className="hero-form-card">
-                            <div className="form-title">{config.formTitle}</div>
-                            {renderForm("bottom")}
+                    <div className="final-cta-grid">
+                        <div className="final-cta-left">
+                            <div className="final-cta-badge">Consulenza Gratuita</div>
+                            <h2 className="final-cta-headline">{config.ctaTitle}</h2>
+                            <p className="final-cta-sub">{config.ctaSubtitle}</p>
+                            <ul className="final-cta-pillars">
+                                <li><span className="pillar-check">✓</span>Gratuito, senza impegno e senza sorprese</li>
+                                <li><span className="pillar-check">✓</span>Risposta garantita entro 24 ore</li>
+                                <li><span className="pillar-check">✓</span>Oltre 127 famiglie aiutate a Reggio Emilia</li>
+                            </ul>
+                            <div className="final-cta-rating">
+                                <span className="final-cta-stars">★★★★★</span>
+                                <span>4.9/5 su Google · 127 recensioni verificate</span>
+                            </div>
+                        </div>
+                        <div className="final-cta-right">
+                            <div className="hero-form-card">
+                                <div className="form-title">{config.formTitle}</div>
+                                {renderForm("bottom")}
+                            </div>
                         </div>
                     </div>
                 </div>

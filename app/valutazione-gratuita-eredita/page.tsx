@@ -10,6 +10,8 @@ export default function EreditaLandingPage() {
     const [isStickyVisible, setIsStickyVisible] = useState(false);
     const formCtaRef = useRef<HTMLButtonElement>(null);
     const [activeFaq, setActiveFaq] = useState<number | null>(null);
+    const [isLoading, setIsLoading] = useState(false);
+    const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -24,28 +26,15 @@ export default function EreditaLandingPage() {
             },
             { threshold: 0 }
         );
-
-        if (formCtaRef.current) {
-            observer.observe(formCtaRef.current);
-        }
-
-        return () => {
-            if (formCtaRef.current) {
-                observer.unobserve(formCtaRef.current);
-            }
-        };
+        if (formCtaRef.current) observer.observe(formCtaRef.current);
+        return () => { if (formCtaRef.current) observer.unobserve(formCtaRef.current); };
     }, []);
-
-    const [isLoading, setIsLoading] = useState(false);
-    const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsLoading(true);
         setErrorMsg(null);
         const formData = new FormData(e.currentTarget);
-
-        // Capture UTM parameters from URL
         const params = new URLSearchParams(window.location.search);
 
         const payload = {
@@ -53,7 +42,8 @@ export default function EreditaLandingPage() {
             telefono: formData.get("phone") as string,
             email: (formData.get("email") as string) || "",
             address: formData.get("address") as string,
-            page_target: "eredita",                              // fixed page identifier
+            note: (formData.get("note") as string) || "",
+            page_target: "eredita",
             utm_source: params.get("utm_source") || undefined,
             utm_campaign: params.get("utm_campaign") || undefined,
         };
@@ -81,6 +71,34 @@ export default function EreditaLandingPage() {
         setActiveFaq(activeFaq === index ? null : index);
     };
 
+    const checkSvg = (
+        <svg className="check-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+    );
+
+    const successCard = (
+        <div className="success-card">
+            <div className="success-icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+            <h3>Richiesta Ricevuta!</h3>
+            <p className="success-desc">
+                Abbiamo ricevuto la tua richiesta. I nostri esperti stanno già analizzando i dati del tuo immobile.
+            </p>
+            <div className="success-steps">
+                <h4>Cosa aspettarti:</h4>
+                <ul>
+                    <li><span className="step-check">✓</span><span><strong>Entro 2 ore:</strong> Assegnazione consulente dedicato.</span></li>
+                    <li><span className="step-check">✓</span><span><strong>Entro 24 ore:</strong> Chiamata per i dettagli tecnici.</span></li>
+                </ul>
+            </div>
+            <Link href="/chi-siamo" className="btn-outline">Scopri chi siamo</Link>
+        </div>
+    );
+
     return (
         <div className="landing-root">
             {/* HEADER */}
@@ -92,16 +110,13 @@ export default function EreditaLandingPage() {
                 </div>
             </header>
 
-            {/* HERO */}
+            {/* 1 · HERO + FORM */}
             <section className="hero">
                 <div className="container hero-grid">
                     <div className="hero-text">
                         <div className="hero-label">Consulenza Immobiliare</div>
-                        <h1>Hai ereditato una casa a Reggio Emilia e non sai cosa fare?</h1>
-                        <p className="subtitle">
-                            Valutiamo gratuitamente il tuo immobile ereditato e ti aiutiamo a
-                            scegliere la soluzione migliore, anche se siete più eredi.
-                        </p>
+                        <h1 dangerouslySetInnerHTML={{ __html: "Hai <span class=\"h1-kw\">ereditato</span> una casa a Reggio Emilia e non sai cosa fare?" }} />
+                        <p className="subtitle" dangerouslySetInnerHTML={{ __html: "Valutiamo <strong>gratuitamente</strong> il tuo immobile ereditato e ti aiutiamo a scegliere la <strong>soluzione migliore</strong>, anche se siete più eredi." }} />
                     </div>
 
                     <div className="form-column">
@@ -111,35 +126,15 @@ export default function EreditaLandingPage() {
                                 <form id="leadForm" onSubmit={handleSubmit}>
                                     <div className="form-group">
                                         <label htmlFor="name">Nome e Cognome</label>
-                                        <input
-                                            type="text"
-                                            id="name"
-                                            name="name"
-                                            className="form-control"
-                                            placeholder="Mario Rossi"
-                                            required
-                                        />
+                                        <input type="text" id="name" name="name" className="form-control" placeholder="Mario Rossi" required />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="phone">Telefono</label>
-                                        <input
-                                            type="tel"
-                                            id="phone"
-                                            name="phone"
-                                            className="form-control"
-                                            placeholder="333 1234567"
-                                            required
-                                        />
+                                        <input type="tel" id="phone" name="phone" className="form-control" placeholder="333 1234567" required />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="email">Email (opzionale)</label>
-                                        <input
-                                            type="email"
-                                            id="email"
-                                            name="email"
-                                            className="form-control"
-                                            placeholder="mario@esempio.it"
-                                        />
+                                        <input type="email" id="email" name="email" className="form-control" placeholder="mario@esempio.it" />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="address">Indirizzo immobile (opzionale)</label>
@@ -154,364 +149,252 @@ export default function EreditaLandingPage() {
                                             <option value="non_so">Non lo so ancora</option>
                                         </select>
                                     </div>
-                                    <button
-                                        type="submit"
-                                        className="btn-cta"
-                                        ref={formCtaRef}
-                                        disabled={isLoading}
-                                    >
+                                    <button type="submit" className="btn-cta" ref={formCtaRef} disabled={isLoading}>
                                         {isLoading ? "Invio in corso..." : "Invia Richiesta"}
                                     </button>
-                                    {errorMsg && (
-                                        <p style={{ color: "#dc2626", fontSize: "0.875rem", marginTop: "8px", textAlign: "center" }}>
-                                            {errorMsg}
-                                        </p>
-                                    )}
-                                    <p className="privacy-text">
-                                        I tuoi dati sono al sicuro. Non li condividiamo con terzi.
-                                    </p>
+                                    {errorMsg && <p style={{ color: "#dc2626", fontSize: "0.875rem", marginTop: "8px", textAlign: "center" }}>{errorMsg}</p>}
+                                    <p className="privacy-text">I tuoi dati sono al sicuro. Non li condividiamo con terzi.</p>
                                 </form>
-                            ) : (
-                                <div id="successMessage" className="success-card">
-                                    <div className="success-icon-wrapper">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                    </div>
-                                    <h3>Richiesta Inviata!</h3>
-                                    <p className="success-desc">
-                                        Grazie per la fiducia. I nostri esperti stanno già analizzando i dati della tua zona a Reggio Emilia.
-                                    </p>
-                                    <div className="success-steps">
-                                        <h4>Cosa succederà ora:</h4>
-                                        <ul>
-                                            <li>
-                                                <span className="step-check">✓</span>
-                                                <span><strong>Entro 2 ore:</strong> Assegnazione consulente dedicato.</span>
-                                            </li>
-                                            <li>
-                                                <span className="step-check">✓</span>
-                                                <span><strong>Entro 24 ore:</strong> Chiamata per i dettagli tecnici.</span>
-                                            </li>
-                                            <li>
-                                                <span className="step-check">✓</span>
-                                                <span><strong>Report finale:</strong> Consegna della valutazione documentata.</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <Link href="/chi-siamo" className="btn-outline">Scopri chi siamo</Link>
-                                </div>
-                            )}
+                            ) : successCard}
                         </div>
-
                         <div className="google-trust-badge">
                             <div className="stars">★★★★★</div>
-                            <span>4.9/5 su Google - 127 recensioni</span>
+                            <span>4.9/5 su Google · 127 recensioni</span>
                         </div>
                     </div>
 
                     <div className="hero-benefits">
                         <ul className="benefits-list">
-                            <li>
-                                <svg
-                                    className="check-icon"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="3"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                >
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                <span>
-                                    Valutazione gratuita entro 24 ore, anche in comproprietà tra
-                                    eredi
-                                </span>
-                            </li>
-                            <li>
-                                <svg
-                                    className="check-icon"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="3"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                >
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                <span>
-                                    Calcoliamo quanto ti costa tenere la casa ogni anno (IMU +
-                                    spese)
-                                </span>
-                            </li>
-                            <li>
-                                <svg
-                                    className="check-icon"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="3"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                >
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                <span>Gestiamo tutta la burocrazia successoria senza stress</span>
-                            </li>
+                            <li>{checkSvg}<span>Valutazione gratuita entro 24 ore, anche in comproprietà tra eredi</span></li>
+                            <li>{checkSvg}<span>Calcoliamo quanto ti costa tenere la casa ogni anno (IMU + spese)</span></li>
+                            <li>{checkSvg}<span>Gestiamo tutta la burocrazia successoria senza stress</span></li>
                         </ul>
                     </div>
                 </div>
             </section>
 
-            {/* PROBLEM SECTION */}
+            {/* 2 · PROBLEMI */}
             <section className="py-section bg-light">
                 <div className="container">
                     <div className="section-header">
                         <h2>Le sfide di una casa ereditata</h2>
-                        <p style={{ color: "var(--text-light)", fontSize: "1.1rem" }}>
-                            Gestire un immobile ricevuto in successione può diventare un
-                            problema costoso se non si agisce subito.
+                        <p style={{ color: "var(--text-light)", fontSize: "1rem" }}>
+                            Gestire un immobile ricevuto in successione può diventare un problema costoso se non si agisce subito.
                         </p>
                     </div>
-
                     <div className="problem-grid">
                         <div className="problem-card">
                             <span className="card-icon">💸</span>
                             <h3>Costi fissi che si accumulano</h3>
-                            <p>
-                                IMU, spese condominiali, manutenzione: una casa ereditata non
-                                gestita costa in media €1.500-3.000 l&apos;anno senza rendita.
-                            </p>
+                            <p dangerouslySetInnerHTML={{ __html: "IMU, spese condominiali, manutenzione: una casa ereditata non gestita costa in media <strong>€1.500–3.000 l'anno</strong> senza rendita." }} />
                         </div>
                         <div className="problem-card">
                             <span className="card-icon">⚖️</span>
                             <h3>Accordo difficile tra eredi</h3>
-                            <p>
-                                Quando siete più eredi, trovare un accordo è complicato. Una
-                                valutazione oggettiva e indipendente aiuta tutti a decidere.
-                            </p>
+                            <p dangerouslySetInnerHTML={{ __html: "Quando siete più eredi, trovare un accordo è complicato. Una <strong>valutazione oggettiva e indipendente</strong> aiuta tutti a decidere." }} />
                         </div>
                         <div className="problem-card">
                             <span className="card-icon">📋</span>
                             <h3>Burocrazia successoria</h3>
-                            <p>
-                                Dichiarazione di successione, aggiornamento catastale, volture:
-                                la burocrazia è complessa. Noi la gestiamo per te.
-                            </p>
+                            <p dangerouslySetInnerHTML={{ __html: "Dichiarazione di successione, aggiornamento catastale, volture: la burocrazia è complessa. <strong>Noi la gestiamo per te</strong>." }} />
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* SOLD PROPERTIES SECTION */}
-            <section className="py-section">
+            {/* 3 · COME FUNZIONA */}
+            <section className="py-section" id="come-funziona">
                 <div className="container">
                     <div className="section-header">
-                        <h2>Successi Recenti a Reggio Emilia</h2>
-                        <p style={{ color: "var(--text-light)", fontSize: "1.1rem" }}>
-                            Alcuni degli immobili ereditati che abbiamo aiutato a vendere in tempi record.
+                        <h2>Come funziona</h2>
+                    </div>
+                    <div className="steps-container">
+                        <div className="step-item">
+                            <div className="step-icon-circle">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </div>
+                            <h3>1. Ci contatti</h3>
+                            <p>Compila il modulo o chiamaci. Disponibili anche in videochiamata se sei lontano.</p>
+                        </div>
+                        <div className="step-item">
+                            <div className="step-icon-circle">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                            </div>
+                            <h3>2. Valutiamo l&apos;immobile</h3>
+                            <p>Gratuitamente ti diciamo quanto vale oggi e quanto ti costa tenerlo fermo.</p>
+                        </div>
+                        <div className="step-item">
+                            <div className="step-icon-circle">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <h3>3. Scegli tu</h3>
+                            <p>Vendere, affittare o aspettare. Nessuna pressione, nessun costo anticipato.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 4 · PROVA SOCIALE */}
+            <section className="py-section bg-light social-proof-section">
+                <div className="container">
+                    <div className="section-header">
+                        <h2>Immobili ereditati che abbiamo venduto</h2>
+                        <p style={{ color: "var(--text-light)", fontSize: "1rem" }}>
+                            Alcuni degli immobili ereditati che abbiamo aiutato a vendere in tempi record a Reggio Emilia. Foto reali in arrivo.
                         </p>
                     </div>
-
-                    <div className="sold-grid">
+                    <div className="social-proof-grid">
                         {[
-                            {
-                                title: "Appartamento Centro Storico",
-                                type: "Appartamento",
-                                soldIn: "12 giorni",
-                                image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            },
-                            {
-                                title: "Villa Indipendente",
-                                type: "Villa",
-                                soldIn: "45 giorni",
-                                image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            },
-                            {
-                                title: "Rustico da Ristrutturare",
-                                type: "Rustico",
-                                soldIn: "28 giorni",
-                                image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            },
-                            {
-                                title: "Attico Vista Parco",
-                                type: "Attico",
-                                soldIn: "7 giorni",
-                                image: "https://images.unsplash.com/photo-1515263487990-61b07816b324?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            }
-                        ].map((item, idx) => (
-                            <div key={idx} className="sold-card">
-                                <div className="sold-badge">VENDUTO IN {item.soldIn.toUpperCase()}</div>
-                                <div className="sold-image-wrapper">
-                                    <img
-                                        src={item.image}
-                                        alt={item.title}
-                                        width="800"
-                                        height="600"
-                                        loading="lazy"
-                                    />
+                            { caption: "Appartamento Centro Storico · venduto in 12 giorni", tag: "VENDUTO" },
+                            { caption: "Villa Indipendente · venduta in 45 giorni", tag: "VENDUTO" },
+                            { caption: "Rustico da Ristrutturare · venduto in 28 giorni", tag: "VENDUTO" },
+                            { caption: "Attico Vista Parco · venduto in 7 giorni", tag: "VENDUTO" },
+                        ].map((item, i) => (
+                            <div key={i} className="social-proof-card">
+                                <span className="social-proof-tag">{item.tag}</span>
+                                <div className="social-proof-img-wrapper">
+                                    <div className="social-proof-placeholder">📷</div>
                                 </div>
-                                <div className="sold-info">
-                                    <h4>{item.title}</h4>
-                                    <p>{item.type} • Reggio Emilia</p>
-                                    <span className="status-badge">Affare concluso</span>
-                                </div>
+                                <p className="social-proof-caption">{item.caption}</p>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* HOW IT WORKS */}
-            <section className="py-section" id="come-funziona">
+            {/* 5 · FORM DETTAGLIATO */}
+            <section className="py-section mid-form-section">
                 <div className="container">
-                    <div className="section-header">
-                        <h2>Come funziona</h2>
-                    </div>
-
-                    <div className="steps-container">
-                        <div className="step-item">
-                            <div className="step-icon-circle">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="32"
-                                    height="32"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                >
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                                </svg>
-                            </div>
-                            <h3>1. Ci contatti</h3>
-                            <p>
-                                Compila il modulo o chiamaci. Disponibili anche in videochiamata
-                                se sei lontano.
+                    <div className="mid-form-grid">
+                        <div className="mid-form-left">
+                            <p className="mid-form-tag">Parlaci di te</p>
+                            <h2 className="mid-form-title">Raccontaci la situazione dell&apos;immobile ereditato</h2>
+                            <p className="mid-form-sub">
+                                Più dettagli ci fornisci, più accurata e utile sarà la nostra consulenza gratuita. Siamo pronti ad aiutarti anche in situazioni complesse tra più eredi.
                             </p>
+                            <ul className="mid-form-guarantees">
+                                <li><span className="pillar-check">✓</span>Risposta garantita entro 24 ore</li>
+                                <li><span className="pillar-check">✓</span>Consulenza gratuita, nessun vincolo</li>
+                                <li><span className="pillar-check">✓</span>Esperti del mercato di Reggio Emilia</li>
+                            </ul>
                         </div>
-                        <div className="step-item">
-                            <div className="step-icon-circle">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="32"
-                                    height="32"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                >
-                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                                </svg>
+                        <div className="mid-form-right">
+                            <div className="hero-form-card">
+                                <div className="form-title">Richiedi la tua valutazione</div>
+                                {!isSuccess ? (
+                                    <form id="midForm" onSubmit={handleSubmit}>
+                                        <div className="detailed-form-row">
+                                            <div className="form-group">
+                                                <label htmlFor="mid-name">Nome e Cognome</label>
+                                                <input type="text" id="mid-name" name="name" className="form-control" placeholder="Mario Rossi" required />
+                                            </div>
+                                            <div className="form-group">
+                                                <label htmlFor="mid-phone">Telefono</label>
+                                                <input type="tel" id="mid-phone" name="phone" className="form-control" placeholder="333 1234567" required />
+                                            </div>
+                                        </div>
+                                        <div className="detailed-form-row">
+                                            <div className="form-group">
+                                                <label htmlFor="mid-email">Email (opzionale)</label>
+                                                <input type="email" id="mid-email" name="email" className="form-control" placeholder="mario@esempio.it" />
+                                            </div>
+                                            <div className="form-group">
+                                                <label htmlFor="mid-address">Indirizzo immobile</label>
+                                                <AddressAutocomplete idPrefix="mid" />
+                                            </div>
+                                        </div>
+                                        <div className="detailed-form-row">
+                                            <div className="form-group">
+                                                <label htmlFor="mid-intention">Cosa vorresti fare?</label>
+                                                <select id="mid-intention" name="intention" className="form-control">
+                                                    <option value="vendere">Vorrei vendere</option>
+                                                    <option value="valutare">Vorrei solo una valutazione</option>
+                                                    <option value="affittare">Vorrei affittare</option>
+                                                    <option value="non_so">Non lo so ancora</option>
+                                                </select>
+                                            </div>
+                                            <div className="form-group">
+                                                <label htmlFor="mid-urgency">Quando vorresti procedere?</label>
+                                                <select id="mid-urgency" name="urgency" className="form-control">
+                                                    <option value="subito">Il prima possibile</option>
+                                                    <option value="3mesi">Entro 3 mesi</option>
+                                                    <option value="6mesi">Entro 6 mesi</option>
+                                                    <option value="no_fretta">Non ho fretta</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div className="form-group">
+                                            <label htmlFor="mid-note">Descrivi la tua situazione (opzionale)</label>
+                                            <textarea
+                                                id="mid-note"
+                                                name="note"
+                                                className="form-control"
+                                                placeholder="Es: siamo tre fratelli, la casa è di 110mq in centro, non sappiamo se vendere o affittare..."
+                                                rows={3}
+                                                style={{ height: "auto", paddingTop: "12px", paddingBottom: "12px", resize: "vertical" }}
+                                            />
+                                        </div>
+                                        <button type="submit" className="btn-cta" disabled={isLoading}>
+                                            {isLoading ? "Invio in corso..." : "Invia Richiesta Dettagliata"}
+                                        </button>
+                                        {errorMsg && <p style={{ color: "#dc2626", fontSize: "0.875rem", marginTop: "8px", textAlign: "center" }}>{errorMsg}</p>}
+                                        <p className="privacy-text">I tuoi dati sono al sicuro. Non li condividiamo con terzi.</p>
+                                    </form>
+                                ) : successCard}
                             </div>
-                            <h3>2. Valutiamo l&apos;immobile</h3>
-                            <p>
-                                Gratuitamente ti diciamo quanto vale oggi e quanto ti costa
-                                tenerlo fermo.
-                            </p>
-                        </div>
-                        <div className="step-item">
-                            <div className="step-icon-circle">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="32"
-                                    height="32"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                >
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                            </div>
-                            <h3>3. Scegli tu</h3>
-                            <p>
-                                Vendere, affittare o aspettare. Nessuna pressione, nessun costo
-                                anticipato.
-                            </p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* REVIEWS */}
+            {/* 6 · TESTIMONIANZE E RECENSIONI */}
             <section className="py-section bg-light" id="recensioni">
                 <div className="container">
                     <div className="section-header">
                         <h2>Cosa dicono di noi</h2>
                     </div>
-
                     <div className="reviews-grid">
                         <div className="review-card">
                             <div className="stars">★★★★★</div>
-                            <p>
-                                &quot;Ho ereditato un appartamento a Reggio con mia sorella. Non
-                                riuscivamo ad accordarci. La loro valutazione oggettiva ha
-                                convinto anche lei. Venduto in 3 mesi.&quot;
-                            </p>
+                            <p>&ldquo;Ho ereditato un appartamento a Reggio con mia sorella. Non riuscivamo ad accordarci. La loro valutazione oggettiva ha convinto anche lei. Venduto in 3 mesi.&rdquo;</p>
                             <div className="review-author">— Gianni S., Bologna</div>
                         </div>
                         <div className="review-card">
                             <div className="stars">★★★★★</div>
-                            <p>
-                                &quot;Casa di mia madre ereditata da tre fratelli. Pensavamo
-                                fosse complicatissimo. Hanno gestito tutto loro, dalla
-                                successione al rogito. Professionisti.&quot;
-                            </p>
+                            <p>&ldquo;Casa di mia madre ereditata da tre fratelli. Pensavamo fosse complicatissimo. Hanno gestito tutto loro, dalla successione al rogito. Professionisti.&rdquo;</p>
                             <div className="review-author">— Carla M., Reggio Emilia</div>
                         </div>
                         <div className="review-card">
                             <div className="stars">★★★★★</div>
-                            <p>
-                                &quot;Non sapevo che la casa costasse così tanto da tenere. Me
-                                l&apos;hanno mostrato con i numeri. Ho deciso di vendere e non
-                                me ne sono pentito.&quot;
-                            </p>
+                            <p>&ldquo;Non sapevo che la casa costasse così tanto da tenere. Me l&apos;hanno mostrato con i numeri. Ho deciso di vendere e non me ne sono pentito.&rdquo;</p>
                             <div className="review-author">— Roberto A., Correggio</div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* FAQ */}
+            {/* 7 · FAQ */}
             <section className="py-section" id="faq">
                 <div className="container">
                     <div className="section-header">
                         <h2>Domande Frequenti</h2>
                     </div>
-
                     <div className="faq-container">
                         {[
-                            {
-                                q: "La valutazione è davvero gratuita?",
-                                a: "Sì, completamente. Veniamo a vedere l'immobile, o facciamo una valutazione online, senza alcun costo. Paghiamo noi solo se vendiamo la casa.",
-                            },
-                            {
-                                q: "Cosa succede se gli altri eredi non vogliono vendere?",
-                                a: "Possiamo fornire la valutazione a ciascun erede separatamente. Spesso, avere un dato oggettivo del mercato aiuta a raggiungere l'accordo. In casi estremi, esistono procedure legali per sciogliere la comproprietà.",
-                            },
-                            {
-                                q: "Quanto costa tenere una casa ereditata ogni anno?",
-                                a: "Dipende dall'immobile, ma in media tra IMU, spese condominiali e manutenzione ordinaria si spendono 1.500-3.000€ l'anno senza ricevere nulla in cambio. Te lo calcoliamo gratuitamente.",
-                            },
+                            { q: "La valutazione è davvero gratuita?", a: "Sì, completamente. Veniamo a vedere l'immobile, o facciamo una valutazione online, senza alcun costo. Paghiamo noi solo se vendiamo la casa." },
+                            { q: "Cosa succede se gli altri eredi non vogliono vendere?", a: "Possiamo fornire la valutazione a ciascun erede separatamente. Spesso, avere un dato oggettivo del mercato aiuta a raggiungere l'accordo. In casi estremi, esistono procedure legali per sciogliere la comproprietà." },
+                            { q: "Quanto costa tenere una casa ereditata ogni anno?", a: "Dipende dall'immobile, ma in media tra IMU, spese condominiali e manutenzione ordinaria si spendono 1.500-3.000€ l'anno senza ricevere nulla in cambio. Te lo calcoliamo gratuitamente." },
+                            { q: "Si può vendere la casa prima della successione?", a: "No, la dichiarazione di successione deve essere presentata (entro 12 mesi dal decesso) prima di poter rogitare. Tuttavia, possiamo iniziare subito le attività di marketing e trovare l'acquirente mentre la pratica burocratica è in corso." },
+                            { q: "Cos'è l'accettazione tacita dell'eredità?", a: "È un atto obbligatorio per chi vende un immobile ereditato. Viene trascritto dal notaio al momento del rogito e serve per confermare ufficialmente la qualità di erede-venditore." },
+                            { q: "Gestite voi i rapporti con il notaio per la successione?", a: "Certamente. Collaboriamo con i migliori studi notarili di Reggio Emilia per velocizzare le pratiche, recuperare i titoli di provenienza e assicurarci che tutta la documentazione sia pronta per la vendita." },
+                            { q: "Posso vendere solo la mia quota di eredità?", a: "È tecnicamente possibile (diritto di prelazione permettendo), ma molto difficile trovare un acquirente privato per una quota. La soluzione migliore è quasi sempre la vendita dell'intero immobile con divisione del ricavato." },
                         ].map((item, idx) => (
                             <div key={idx} className="faq-item">
                                 <button
@@ -520,12 +403,7 @@ export default function EreditaLandingPage() {
                                 >
                                     {item.q}
                                 </button>
-                                <div
-                                    className="faq-answer"
-                                    style={{
-                                        maxHeight: activeFaq === idx ? "1000px" : "0",
-                                    }}
-                                >
+                                <div className="faq-answer" style={{ maxHeight: activeFaq === idx ? "1000px" : "0" }}>
                                     <p>{item.a}</p>
                                 </div>
                             </div>
@@ -534,109 +412,62 @@ export default function EreditaLandingPage() {
                 </div>
             </section>
 
-            {/* BOTTOM CTA FORM */}
-            <section className="py-section bg-cta-section" id="bottom-form">
+            {/* 8 · CTA FINALE */}
+            <section className="final-cta-section">
                 <div className="container">
-                    <div className="section-header">
-                        <h2>Siamo pronti ad aiutarti</h2>
-                        <p style={{ opacity: 0.9, fontSize: "1.1rem" }}>
-                            Lascia i tuoi dati per una consulenza senza impegno sulla tua casa ereditata.
-                        </p>
-                    </div>
-
-                    <div className="bottom-form-wrapper">
-                        <div className="hero-form-card">
-                            <div className="form-title">Richiedi la tua valutazione</div>
-                            {!isSuccess ? (
-                                <form id="bottomLeadForm" onSubmit={handleSubmit}>
-                                    <div className="form-group">
-                                        <label htmlFor="bottom-name">Nome e Cognome</label>
-                                        <input
-                                            type="text"
-                                            id="bottom-name"
-                                            name="name"
-                                            className="form-control"
-                                            placeholder="Mario Rossi"
-                                            required
-                                        />
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="bottom-phone">Telefono</label>
-                                        <input
-                                            type="tel"
-                                            id="bottom-phone"
-                                            name="phone"
-                                            className="form-control"
-                                            placeholder="333 1234567"
-                                            required
-                                        />
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="bottom-email">Email (opzionale)</label>
-                                        <input
-                                            type="email"
-                                            id="bottom-email"
-                                            name="email"
-                                            className="form-control"
-                                            placeholder="mario@esempio.it"
-                                        />
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="bottom-address">Indirizzo immobile (opzionale)</label>
-                                        <AddressAutocomplete idPrefix="bottom" />
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="bottom-intention">Cosa vorresti fare?</label>
-                                        <select id="bottom-intention" name="intention" className="form-control">
-                                            <option value="vendere">Vorrei vendere</option>
-                                            <option value="valutare">Vorrei solo una valutazione</option>
-                                            <option value="affittare">Vorrei affittare</option>
-                                            <option value="non_so">Non lo so ancora</option>
-                                        </select>
-                                    </div>
-                                    <button
-                                        type="submit"
-                                        className="btn-cta"
-                                        disabled={isLoading}
-                                    >
-                                        {isLoading ? "Invio in corso..." : "Invia Richiesta"}
-                                    </button>
-                                    {errorMsg && (
-                                        <p style={{ color: "#dc2626", fontSize: "0.875rem", marginTop: "8px", textAlign: "center" }}>
-                                            {errorMsg}
-                                        </p>
-                                    )}
-                                    <p className="privacy-text">
-                                        I tuoi dati sono al sicuro. Non li condividiamo con terzi.
-                                    </p>
-                                </form>
-                            ) : (
-                                <div className="success-card">
-                                    <div className="success-icon-wrapper">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                    </div>
-                                    <h3>Quasi Fatto!</h3>
-                                    <p className="success-desc">
-                                        Abbiamo preso in carico la tua richiesta. Sei a un passo dalla tua valutazione professionale.
-                                    </p>
-                                    <div className="success-steps" style={{ background: 'white' }}>
-                                        <h4>I tuoi prossimi passi:</h4>
-                                        <ul>
-                                            <li>
-                                                <span className="step-check">✓</span>
-                                                <span>Riceverai una chiamata dal numero 327 491 1031.</span>
-                                            </li>
-                                            <li>
-                                                <span className="step-check">✓</span>
-                                                <span>Prepareremo un'analisi comparativa di mercato.</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <p className="privacy-text">DIBA Immobiliare · Reggio Emilia</p>
-                                </div>
-                            )}
+                    <div className="final-cta-grid">
+                        <div className="final-cta-left">
+                            <div className="final-cta-badge">Consulenza Gratuita</div>
+                            <h2 className="final-cta-headline">Hai ereditato una casa? Scopri subito le tue opzioni</h2>
+                            <p className="final-cta-sub">Compila il form e ti contatteremo entro 24 ore per una valutazione gratuita e senza impegno.</p>
+                            <ul className="final-cta-pillars">
+                                <li><span className="pillar-check">✓</span>Gratuito, senza impegno e senza sorprese</li>
+                                <li><span className="pillar-check">✓</span>Risposta garantita entro 24 ore</li>
+                                <li><span className="pillar-check">✓</span>Oltre 127 famiglie aiutate a Reggio Emilia</li>
+                            </ul>
+                            <div className="final-cta-rating">
+                                <span className="final-cta-stars">★★★★★</span>
+                                <span>4.9/5 su Google · 127 recensioni verificate</span>
+                            </div>
+                        </div>
+                        <div className="final-cta-right">
+                            <div className="hero-form-card">
+                                <div className="form-title">Richiedi la valutazione</div>
+                                {!isSuccess ? (
+                                    <form id="bottomLeadForm" onSubmit={handleSubmit}>
+                                        <div className="form-group">
+                                            <label htmlFor="bottom-name">Nome e Cognome</label>
+                                            <input type="text" id="bottom-name" name="name" className="form-control" placeholder="Mario Rossi" required />
+                                        </div>
+                                        <div className="form-group">
+                                            <label htmlFor="bottom-phone">Telefono</label>
+                                            <input type="tel" id="bottom-phone" name="phone" className="form-control" placeholder="333 1234567" required />
+                                        </div>
+                                        <div className="form-group">
+                                            <label htmlFor="bottom-email">Email (opzionale)</label>
+                                            <input type="email" id="bottom-email" name="email" className="form-control" placeholder="mario@esempio.it" />
+                                        </div>
+                                        <div className="form-group">
+                                            <label htmlFor="bottom-address">Indirizzo immobile (opzionale)</label>
+                                            <AddressAutocomplete idPrefix="bottom" />
+                                        </div>
+                                        <div className="form-group">
+                                            <label htmlFor="bottom-intention">Cosa vorresti fare?</label>
+                                            <select id="bottom-intention" name="intention" className="form-control">
+                                                <option value="vendere">Vorrei vendere</option>
+                                                <option value="valutare">Vorrei solo una valutazione</option>
+                                                <option value="affittare">Vorrei affittare</option>
+                                                <option value="non_so">Non lo so ancora</option>
+                                            </select>
+                                        </div>
+                                        <button type="submit" className="btn-cta" disabled={isLoading}>
+                                            {isLoading ? "Invio in corso..." : "Invia Richiesta"}
+                                        </button>
+                                        {errorMsg && <p style={{ color: "#dc2626", fontSize: "0.875rem", marginTop: "8px", textAlign: "center" }}>{errorMsg}</p>}
+                                        <p className="privacy-text">I tuoi dati sono al sicuro. Non li condividiamo con terzi.</p>
+                                    </form>
+                                ) : successCard}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -648,17 +479,7 @@ export default function EreditaLandingPage() {
             {/* STICKY MOBILE */}
             <div className={`sticky-mobile ${isStickyVisible ? "visible" : ""}`}>
                 <a href="tel:3274911031" className="btn-sticky">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                    >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                     </svg>
                     Chiamaci
