@@ -27,10 +27,10 @@ const steps = [
 ];
 
 const soldPhotos = [
-  { src: "/assets/properties/property1.jpg", caption: "Appartamento · Centro Storico", tag: "VENDUTO" },
-  { src: "/assets/properties/property2.jpg", caption: "Villa · Coviolo", tag: "VENDUTO" },
-  { src: "/assets/properties/property3.jpg", caption: "Appartamento · Zona Sud", tag: "VENDUTO" },
-  { src: "/assets/properties/property4.jpg", caption: "Casa · Mancasale", tag: "VENDUTO" },
+  { src: "/assets/Diba_servizi_immobiliari_vendita.webp", caption: "Appartamento · Centro Storico", tag: "VENDUTO" },
+  { src: "/assets/Diba_servizi_immobiliari_vendita_pochi_giorni.webp", caption: "Villa · Coviolo", tag: "VENDUTO" },
+  { src: "/assets/Diba_servizi_immobiliari_vendita_pochi_giorni_2.webp", caption: "Appartamento · Zona Sud", tag: "VENDUTO" },
+  { src: "/assets/Diba_servizi_immobiliari_vendita_pochi_giorni_22.webp", caption: "Casa · Mancasale", tag: "VENDUTO" },
 ];
 
 const reviews = [
@@ -54,7 +54,7 @@ export default function HomePage() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
-  const heroCtaRef = useRef<HTMLAnchorElement>(null);
+  const heroCtaRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     if (isModalOpen) {
@@ -122,7 +122,7 @@ export default function HomePage() {
     }
   };
 
-  const contactForm = (idPrefix: string) => (
+  const contactForm = (idPrefix: string, btnRef?: React.RefObject<HTMLButtonElement | null>) => (
     isSuccess ? (
       <div className="success-message">
         <h3>Richiesta ricevuta!</h3>
@@ -152,7 +152,7 @@ export default function HomePage() {
             <option value="Altro">Altro</option>
           </select>
         </div>
-        <button type="submit" className="btn-cta" disabled={isLoading}>
+        <button type="submit" className="btn-cta" ref={btnRef} disabled={isLoading}>
           {isLoading ? "Invio in corso..." : "Richiedi Consulenza Gratuita"}
         </button>
         {errorMsg && <p style={{ color: "#dc2626", fontSize: "0.875rem", marginTop: "8px", textAlign: "center" }}>{errorMsg}</p>}
@@ -166,30 +166,48 @@ export default function HomePage() {
       <Navbar />
 
       {/* HERO */}
-      <section className="hero-homepage">
+      <section className="hero">
         <div className="container">
-          <div className="hero-homepage-inner">
-            <div className="hero-label">Agenzia Immobiliare · Reggio Emilia</div>
-            <h1>
-              Vendi o compra casa a Reggio Emilia con chi conosce davvero il mercato
-            </h1>
-            <p className="subtitle">
-              Oltre 200 immobili gestiti, 4.9/5 su Google, 45 giorni medi di vendita.<br />
-              Consulenza gratuita e senza impegno entro 24 ore.
-            </p>
-            <div className="hero-cta-row">
-              <Link href="/consulenza-vendita" className="btn-hero-primary" ref={heroCtaRef}>
-                Voglio Vendere →
-              </Link>
-              <Link href="/consulenza-acquisto" className="btn-hero-secondary">
-                Voglio Comprare →
-              </Link>
+          <div className="hero-grid">
+            {/* TESTO SX */}
+            <div className="hero-text">
+              <span className="hero-label">Agenzia Immobiliare · Reggio Emilia</span>
+              <h1>
+                Vendi o compra casa a Reggio Emilia con chi conosce davvero il mercato
+              </h1>
+              <p className="subtitle">
+                Oltre 200 immobili gestiti, 4.9/5 su Google, 45 giorni medi di vendita.
+                Consulenza gratuita entro 24 ore.
+              </p>
             </div>
-            <div style={{ display: "flex", justifyContent: "center" }}>
-              <div className="google-trust-badge">
+
+            {/* BENEFIT SX (sotto il testo su desktop) */}
+            <div className="hero-benefits">
+              <ul className="benefits-list">
+                {[
+                  "Valutazione gratuita entro 24 ore",
+                  "45 giorni medi dalla messa in vendita al rogito",
+                  "Compenso solo a vendita o acquisto concluso",
+                  "4.9/5 su Google · 60+ recensioni verificate",
+                ].map((b) => (
+                  <li key={b}>
+                    <svg className="check-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                    {b}
+                  </li>
+                ))}
+              </ul>
+              <div className="google-trust-badge" style={{ marginTop: "20px" }}>
                 <span className="stars">★★★★★</span>
                 <span>4.9/5 su Google</span>
                 <span style={{ color: "#6b7280", fontWeight: 400 }}>· 60+ recensioni</span>
+              </div>
+            </div>
+
+            {/* FORM DX */}
+            <div className="form-column">
+              <div className="hero-form-card" id="hero-form">
+                <div className="form-title">Richiedi Consulenza Gratuita</div>
+                {contactForm("hero", heroCtaRef)}
               </div>
             </div>
           </div>
