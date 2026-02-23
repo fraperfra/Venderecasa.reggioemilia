@@ -26,12 +26,10 @@ export default function Footer({
                     <div className="footer-col">
                         <div className="logo" style={{ marginBottom: "20px" }}>
                             <img
-                                src="/assets/logo.png"
+                                src="/assets/Logo Diba Bianco.png"
                                 alt="DIBA Immobiliare"
                                 className="logo-img"
-                                style={{ height: "40px" }}
-                                width="130"
-                                height="40"
+                                style={{ height: "40px", width: "auto" }}
                             />
                         </div>
                         <p>{description}</p>
