@@ -39,8 +39,8 @@ export default function ContattiPage() {
                             <div className="card-icon" style={{ fontSize: '3rem', marginBottom: '20px' }}>✉️</div>
                             <h3 style={{ marginBottom: '15px' }}>Inviaci un'Email</h3>
                             <p style={{ marginBottom: '25px', color: 'var(--text-light)' }}>Per richieste dettagliate o invio di documentazione tecnica.</p>
-                            <a href="mailto:info@dibaimmobiliare.it" className="btn-outline" style={{ width: '100%', textDecoration: 'none', border: '2px solid var(--primary)', color: 'var(--primary)', padding: '12px', borderRadius: '8px', fontWeight: 'bold' }}>
-                                info@dibaimmobiliare.it
+                            <a href="mailto:segreteria@immobiliarediba.it" className="btn-outline" style={{ width: '100%', textDecoration: 'none', border: '2px solid var(--primary)', color: 'var(--primary)', padding: '12px', borderRadius: '8px', fontWeight: 'bold' }}>
+                                segreteria@immobiliarediba.it
                             </a>
                         </div>
 

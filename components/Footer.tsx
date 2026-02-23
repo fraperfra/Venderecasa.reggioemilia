@@ -55,7 +55,7 @@ export default function Footer({
                         <h4>Contatti</h4>
                         <ul>
                             <li><a href="tel:3274911031">📞 327 491 1031</a></li>
-                            <li><a href="mailto:info@dibaimmobiliare.it">✉️ info@dibaimmobiliare.it</a></li>
+                            <li><a href="mailto:segreteria@immobiliarediba.it">✉️ segreteria@immobiliarediba.it</a></li>
                             <li>📍 Via Vittorio Veneto, 3/D – Reggio Emilia</li>
                         </ul>
                     </div>

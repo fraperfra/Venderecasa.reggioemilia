@@ -253,7 +253,7 @@ export default function LandingPageTemplate({ config }: { config: PageConfig }) 
         description: config.subtitle,
         url: "https://venderecasa.reggioemilia.it",
         telephone: "+39 327 491 1031",
-        email: "info@dibaimmobiliare.it",
+        email: "segreteria@immobiliarediba.it",
         address: {
             "@type": "PostalAddress",
             streetAddress: "Via Vittorio Veneto, 3/D",

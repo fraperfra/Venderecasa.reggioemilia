@@ -134,7 +134,7 @@ export default function ChiSiamoPage() {
                                 <span style={{ fontSize: '1.5rem' }}>✉️</span>
                                 <div>
                                     <strong>Email</strong>
-                                    <p><a href="mailto:info@dibaimmobiliare.it" style={{ color: 'inherit', textDecoration: 'none' }}>info@dibaimmobiliare.it</a></p>
+                                    <p><a href="mailto:segreteria@immobiliarediba.it" style={{ color: 'inherit', textDecoration: 'none' }}>segreteria@immobiliarediba.it</a></p>
                                 </div>
                             </div>
                         </div>
