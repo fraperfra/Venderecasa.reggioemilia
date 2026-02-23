@@ -428,10 +428,19 @@ export default function LandingPageTemplate({ config }: { config: PageConfig }) 
                     <div className="faq-container">
                         {config.faqs.map((faq, i) => (
                             <div key={i} className={`faq-item${activeFaq === i ? " active" : ""}`}>
-                                <button className="faq-question" onClick={() => toggleFaq(i)} aria-expanded={activeFaq === i}>
+                                <button
+                                    className={`faq-question${activeFaq === i ? " active" : ""}`}
+                                    onClick={() => toggleFaq(i)}
+                                    aria-expanded={activeFaq === i}
+                                >
                                     {faq.q}
                                 </button>
-                                {activeFaq === i && <div className="faq-answer"><p dangerouslySetInnerHTML={{ __html: faq.a }} /></div>}
+                                <div
+                                    className="faq-answer"
+                                    style={{ maxHeight: activeFaq === i ? "800px" : "0" }}
+                                >
+                                    <p dangerouslySetInnerHTML={{ __html: faq.a }} />
+                                </div>
                             </div>
                         ))}
                     </div>
