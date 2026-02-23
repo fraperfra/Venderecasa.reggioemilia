@@ -6,7 +6,9 @@ export const metadata: Metadata = {
   title: "Casa Ereditata a Reggio Emilia? Valutazione Gratuita | Diba",
   description: "Casa ereditata da successione? Ti aiutiamo a capire quanto vale e cosa conviene fare. Valutazione gratuita entro 24 ore, anche in comproprietà tra eredi.",
   icons: {
-    icon: "/assets/favicon.png",
+    icon: [{ url: "/assets/favicon.png", type: "image/png" }],
+    shortcut: [{ url: "/assets/favicon.png" }],
+    apple: [{ url: "/assets/favicon.png" }],
   },
   alternates: {
     canonical: "https://venderecasa.reggioemilia.it/valutazione-gratuita-eredita",
