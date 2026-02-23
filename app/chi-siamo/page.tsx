@@ -19,7 +19,7 @@ export default function ChiSiamoPage() {
             </header>
 
             {/* HERO SECTION */}
-            <section className="about-hero py-section" style={{ background: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80")', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', textAlign: 'center', padding: '100px 0' }}>
+            <section className="about-hero" style={{ background: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80")', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', textAlign: 'center' }}>
                 <div className="container">
                     <h1 style={{ color: 'white', marginBottom: '20px' }}>Eccellenza Immobiliare a Reggio Emilia</h1>
                     <p className="subtitle" style={{ color: 'rgba(255,255,255,0.9)', maxWidth: '800px', margin: '0 auto' }}>
@@ -30,7 +30,7 @@ export default function ChiSiamoPage() {
 
             {/* STORY SECTION */}
             <section className="py-section">
-                <div className="container grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
+                <div className="container responsive-grid-2">
                     <div className="about-text">
                         <div className="hero-label" style={{ marginBottom: '20px' }}>La Nostra Storia</div>
                         <h2 style={{ marginBottom: '24px' }}>Radici Locali, Visione Professionale</h2>
@@ -45,7 +45,7 @@ export default function ChiSiamoPage() {
                         <img
                             src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                             alt="Team Diba"
-                            style={{ width: '100%', borderRadius: '12px', boxShadow: 'var(--shadow-lg)' }}
+                            style={{ width: '100%', borderRadius: '12px', boxShadow: 'var(--shadow)' }}
                         />
                     </div>
                 </div>
@@ -85,7 +85,7 @@ export default function ChiSiamoPage() {
                         <h2>Il Nostro Team</h2>
                         <p style={{ color: 'var(--text-light)', fontSize: '1.1rem' }}>Professionisti esperti al tuo servizio.</p>
                     </div>
-                    <div className="sold-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
+                    <div className="team-grid">
                         {[
                             {
                                 name: "Daniele Barani",
@@ -104,10 +104,10 @@ export default function ChiSiamoPage() {
                             }
                         ].map((member, idx) => (
                             <div key={idx} className="sold-card" style={{ padding: '0', overflow: 'hidden' }}>
-                                <img src={member.image} alt={member.name} style={{ width: '100%', height: '350px', objectFit: 'cover' }} />
+                                <img src={member.image} alt={member.name} style={{ width: '100%', height: '260px', objectFit: 'cover' }} />
                                 <div className="sold-info" style={{ padding: '20px', textAlign: 'center' }}>
                                     <h4 style={{ margin: '0' }}>{member.name}</h4>
-                                    <p style={{ color: 'var(--brand-primary)', fontWeight: '600', fontSize: '0.9rem', marginTop: '5px' }}>{member.role}</p>
+                                    <p style={{ color: 'var(--primary)', fontWeight: '600', fontSize: '0.9rem', marginTop: '5px' }}>{member.role}</p>
                                 </div>
                             </div>
                         ))}
@@ -117,7 +117,7 @@ export default function ChiSiamoPage() {
 
             {/* CONTACT & OFFICE */}
             <section className="py-section bg-light" id="contatti-uﬃcio">
-                <div className="container grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
+                <div className="container responsive-grid-2">
                     <div className="office-info">
                         <h2>Vieni a trovarci in sede</h2>
                         <p style={{ color: 'var(--text-light)', fontSize: '1.1rem', marginBottom: '30px' }}>

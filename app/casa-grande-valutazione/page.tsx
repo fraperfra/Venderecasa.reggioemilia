@@ -19,12 +19,12 @@ const config: PageConfig = {
         { value: "affittare", label: "Sto valutando di affittare" },
         { value: "non_so", label: "Non so ancora cosa fare" },
     ],
-    problemTitle: "Perché tenere una casa grande in pensione diventa oneroso",
-    problemSubtitle: "I costi di una casa grande si moltiplicano nel tempo, riducendo le tue risorse economiche e la qualità della vita.",
+    problemTitle: "Una casa grande, una volta sola, era perfetta. Adesso?",
+    problemSubtitle: "Nessuno lo dice apertamente, ma tenere una casa troppo grande in pensione può pesare più di quanto si pensi.",
     problems: [
-        { icon: "🔧", title: "Manutenzione costante", desc: "Tetto, caldaia, facciata, giardino: una casa grande richiede <strong>interventi continui</strong> che <strong>pesano sulla pensione</strong>." },
-        { icon: "💶", title: "IMU e spese fisse elevate", desc: "Le tasse sulla proprietà, le spese condominiali e le utenze di una casa grande <strong>erodono il budget mensile</strong>." },
-        { icon: "😔", title: "Troppo spazio, poca vita", desc: "Stanze vuote, scale, giardino da gestire: una casa grande può diventare <strong>faticosa da vivere</strong> da soli o in coppia." },
+        { icon: "🔧", title: "La manutenzione non finisce mai", desc: "Caldaia, tetto, facciata, giardino, impianti... una casa grande ha sempre qualcosa che chiede attenzione, tempo e soldi. <strong>In pensione, gestire tutto questo è un lavoro.</strong>" },
+        { icon: "💶", title: "Quanto ti costa davvero quella casa ogni anno?", desc: "IMU, condominio, utenze, assicurazione... sommate, le spese fisse di una casa grande possono superare i <strong>5.000–8.000€ l'anno</strong>. Soldi che potrebbero restare in tasca." },
+        { icon: "😔", title: "Stanze chiuse e scale da salire non sono vita", desc: "Ci sono camere che non si aprono più da mesi. Un piano che si usa sempre meno. Un giardino che era bello quando c'erano i figli. <strong>Una casa più piccola non è una rinuncia: è spesso una libertà.</strong>" },
     ],
     stepsTitle: "Il nostro approccio per te",
     steps: [

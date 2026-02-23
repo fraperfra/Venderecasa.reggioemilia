@@ -58,7 +58,19 @@ ul {
   width: 100%;
   max-width: var(--container);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 16px;
+}
+
+@media (min-width: 480px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
 }
 
 .text-center {
@@ -413,15 +425,15 @@ select.form-control {
 
 .google-trust-badge {
   background: #ffffff;
-  padding: 10px 20px;
+  padding: 10px 16px;
   border-radius: var(--radius);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  flex-wrap: wrap;
+  gap: 6px 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   width: fit-content;
-  white-space: nowrap;
   max-width: 100%;
 }
 
@@ -441,8 +453,14 @@ select.form-control {
 /* PROBLEM SECTION */
 .section-header {
   max-width: 800px;
-  margin: 0 auto 50px;
+  margin: 0 auto 32px;
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  .section-header {
+    margin: 0 auto 50px;
+  }
 }
 
 .section-header h2 {
@@ -474,12 +492,18 @@ select.form-control {
 
 .problem-card {
   background: var(--white);
-  padding: 30px 24px;
+  padding: 20px 16px;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   border-top: 4px solid var(--primary);
   text-align: center;
   transition: transform 0.3s;
+}
+
+@media (min-width: 768px) {
+  .problem-card {
+    padding: 30px 24px;
+  }
 }
 
 @media (min-width: 992px) {
@@ -512,9 +536,16 @@ select.form-control {
 .steps-container {
   display: flex;
   flex-direction: column;
-  gap: 50px;
-  margin-top: 40px;
+  gap: 28px;
+  margin-top: 24px;
   position: relative;
+}
+
+@media (min-width: 768px) {
+  .steps-container {
+    gap: 40px;
+    margin-top: 32px;
+  }
 }
 
 @media (min-width: 992px) {
@@ -522,6 +553,8 @@ select.form-control {
     flex-direction: row;
     justify-content: space-between;
     text-align: center;
+    gap: 50px;
+    margin-top: 40px;
   }
 
   .steps-container::before {
@@ -577,11 +610,17 @@ select.form-control {
 }
 
 .step-item p {
-  max-width: 300px;
+  max-width: 100%;
   font-size: 1rem; /* 16px — body standard */
   line-height: 1.6;
   margin: 0 auto;
   color: var(--text-light);
+}
+
+@media (min-width: 992px) {
+  .step-item p {
+    max-width: 300px;
+  }
 }
 
 /* SUCCESS CARD */
@@ -676,7 +715,14 @@ select.form-control {
 .reviews-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
 }
 
 @media (min-width: 992px) {
@@ -688,10 +734,16 @@ select.form-control {
 
 .review-card {
   background: var(--bg-light);
-  padding: 30px;
+  padding: 20px;
   border-radius: var(--radius);
   font-style: italic;
   border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 768px) {
+  .review-card {
+    padding: 28px;
+  }
 }
 
 .stars {
@@ -736,9 +788,9 @@ select.form-control {
   font-size: 0.9rem;
   color: #374151;
   border-bottom: 1px solid #f3f4f6;
-  white-space: nowrap;
+  white-space: normal;
   overflow: hidden;
-  text-overflow: ellipsis;
+  word-break: break-word;
 }
 
 .suggestion-item:last-child {
@@ -771,7 +823,7 @@ select.form-control {
 .faq-question {
   width: 100%;
   text-align: left;
-  padding: 20px 0;
+  padding: 18px 0;
   background: none;
   border: none;
   font-size: 1rem; /* 16px — body standard */
@@ -780,8 +832,10 @@ select.form-control {
   cursor: pointer;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  gap: 12px;
   transition: color 0.2s;
+  line-height: 1.4;
 }
 
 .faq-question:hover {
@@ -790,10 +844,12 @@ select.form-control {
 
 .faq-question::after {
   content: "+";
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: var(--primary);
   font-weight: 400;
-  margin-left: 15px;
+  flex-shrink: 0;
+  margin-left: 0;
+  margin-top: 1px;
 }
 
 .faq-question.active::after {
@@ -816,8 +872,14 @@ select.form-control {
 footer {
   background: #111827;
   color: #9ca3af;
-  padding: 60px 0 30px;
+  padding: 40px 0 24px;
   font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+  footer {
+    padding: 60px 0 30px;
+  }
 }
 
 .footer-grid {
@@ -1022,8 +1084,15 @@ footer {
 /* SOCIAL PROOF SECTION */
 .social-proof-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 480px) {
+  .social-proof-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
 }
 
 @media (min-width: 992px) {
@@ -1164,7 +1233,7 @@ footer {
 .detailed-form-row {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0;
+  gap: 12px;
 }
 
 @media (min-width: 576px) {
@@ -1177,7 +1246,7 @@ footer {
 /* FINAL CTA SECTION */
 .final-cta-section {
   background: linear-gradient(135deg, #120a01 0%, var(--primary-dark) 50%, #9a6e1a 100%);
-  padding: 70px 0;
+  padding: 50px 0;
   position: relative;
   overflow: hidden;
 }
@@ -1307,4 +1376,117 @@ footer {
 
 .final-cta-right {
   width: 100%;
+}
+
+/* STICKY CTA (used in LandingPageTemplate) */
+.sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  padding: 12px 16px;
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+  border-top: none;
+  pointer-events: none;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.sticky-cta.visible {
+  transform: translateY(0);
+}
+
+@media (min-width: 768px) {
+  .sticky-cta {
+    display: none;
+  }
+}
+
+/* BOTTOM CTA SECTION (homepage) */
+.bg-cta-section {
+  background: var(--bg-light);
+}
+
+.bottom-form-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ABOUT HERO (chi-siamo, contatti) */
+.about-hero {
+  padding: 60px 0;
+}
+
+@media (min-width: 768px) {
+  .about-hero {
+    padding: 80px 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .about-hero {
+    padding: 100px 0;
+  }
+}
+
+/* RESPONSIVE 2-COL GRID (replaces hardcoded style grids) */
+.responsive-grid-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media (min-width: 768px) {
+  .responsive-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+}
+
+/* TEAM GRID */
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+@media (min-width: 576px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+
+/* MAP WRAPPER — responsive height */
+.map-wrapper-responsive {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 280px;
+  box-shadow: var(--shadow);
+}
+
+@media (min-width: 768px) {
+  .map-wrapper-responsive {
+    height: 380px;
+  }
+}
+
+@media (min-width: 992px) {
+  .map-wrapper-responsive {
+    height: 450px;
+  }
 }

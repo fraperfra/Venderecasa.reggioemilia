@@ -19,12 +19,12 @@ const config: PageConfig = {
         { value: "valutare", label: "Voglio solo una valutazione" },
         { value: "non_so", label: "Non lo so ancora" },
     ],
-    problemTitle: "Le sfide della casa durante una separazione",
-    problemSubtitle: "Gestire un immobile in comproprietà durante una separazione è complesso. Ecco perché affidarsi a un professionista fa la differenza.",
+    problemTitle: "La casa è l'ultima cosa di cui vorresti occuparti adesso",
+    problemSubtitle: "Eppure è lì, con le sue spese, i suoi ricordi e le sue decisioni da prendere. Ecco cosa rende tutto più complicato.",
     problems: [
-        { icon: "⚖️", title: "Disaccordo tra coniugi", desc: "Spesso uno vuole vendere e l'altro no. Un valutatore neutro aiuta a trovare un <strong>punto d'incontro oggettivo</strong>." },
-        { icon: "⏳", title: "Tempi legali lunghi", desc: "L'iter giuridico può rallentare tutto. Noi ti supportiamo parallelamente alla procedura legale per <strong>non perdere tempo</strong>." },
-        { icon: "💸", title: "Valore non ottimizzato", desc: "Vendere in fretta per ansia porta a <strong>perdere migliaia di euro</strong>. Massimizziamo il prezzo anche nei tempi stretti." },
+        { icon: "⚖️", title: "Uno vuole vendere, l'altro no", desc: "È forse il blocco più comune. In un momento già difficile, discutere del prezzo di casa rischia di diventare un'altra battaglia. Una valutazione oggettiva fatta da un terzo spesso <strong>sblocca tutto in pochi giorni</strong>." },
+        { icon: "⏳", title: "L'avvocato fa il suo, ma la casa rimane ferma", desc: "Mentre la separazione legale va avanti, la casa continua a costare: mutuo, condominio, IMU. <strong>Lavorare in parallelo</strong> tra gestione legale e vendita evita mesi di costi inutili." },
+        { icon: "💸", title: "L'ansia porta a svendere", desc: "Chi ha fretta di chiudere spesso accetta la prima offerta, anche quando non è quella giusta. Noi gestiamo la trattativa con testa fredda, <strong>tutelando entrambe le parti</strong>, anche quando le emozioni sono ancora calde." },
     ],
     stepsTitle: "Come funziona con noi",
     steps: [

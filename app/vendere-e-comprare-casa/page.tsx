@@ -19,12 +19,12 @@ const config: PageConfig = {
         { value: "entrambi", label: "Voglio fare tutto insieme" },
         { value: "valutare", label: "Non ho ancora deciso" },
     ],
-    problemTitle: "Le insidie del cambio casa fai da te",
-    problemSubtitle: "Coordinare vendita e acquisto senza un piano preciso può costarti molto caro.",
+    problemTitle: "Il cambio casa fai-da-te ha più insidie di quanto sembri",
+    problemSubtitle: "Non è solo una questione logistica. Senza un piano coordinato, i rischi sono concreti — e costosi.",
     problems: [
-        { icon: "⏱️", title: "Tempi sfasati", desc: "Vendi prima del previsto e non hai ancora trovato la nuova? Oppure compri e poi non riesci a vendere? Senza coordinamento rischi <strong>mesi in affitto o con due mutui</strong>." },
-        { icon: "💸", title: "Perdita di potere contrattuale", desc: "Chi vende urgente per comprare rischia di <strong>svendere</strong>. Chi compra urgente per aver già venduto finisce per <strong>pagare troppo</strong>. Noi bilanciamo entrambe le operazioni." },
-        { icon: "🤯", title: "Stress da gestione parallela", desc: "Visite, proposte, trattative, mutui, notai: gestire tutto in parallelo da soli è estenuante. <strong>Noi facciamo da regia per te</strong>." },
+        { icon: "⏱️", title: "Il timing è tutto, e nessuno te lo dice", desc: "Vendi troppo presto e ti ritrovi in affitto per mesi. Compri prima e poi non riesci a vendere la vecchia casa. <strong>Coordinare i due rogiti senza un piano preciso</strong> è come camminare su un filo." },
+        { icon: "💸", title: "L'urgenza ti fa perdere soldi, in entrambe le direzioni", desc: "Chi ha fretta di vendere accetta offerte più basse. Chi ha fretta di comprare paga di più. <strong>Quando gestisci le due trattative senza un filo conduttore, il rischio di sbagliare è doppio.</strong>" },
+        { icon: "🤯", title: "Da soli è davvero troppo", desc: "Due agenzie, due notai, due mutui, visite incrociate, caparre da bilanciare... gestire tutto in autonomia, mentre si lavora e si vive, è una fonte di stress enorme. <strong>Non devi farlo da solo.</strong>" },
     ],
     stepsTitle: "Il nostro piano in 3 passi",
     steps: [

@@ -177,26 +177,26 @@ export default function EreditaLandingPage() {
             <section className="py-section bg-light">
                 <div className="container">
                     <div className="section-header">
-                        <h2>Le sfide di una casa ereditata</h2>
+                        <h2>I pensieri che non ti aspettavi</h2>
                         <p style={{ color: "var(--text-light)", fontSize: "1rem" }}>
-                            Gestire un immobile ricevuto in successione può diventare un problema costoso se non si agisce subito.
+                            Ereditare una casa porta con sé responsabilità che non sempre si vedono subito. Ecco cosa succede davvero.
                         </p>
                     </div>
                     <div className="problem-grid">
                         <div className="problem-card">
                             <span className="card-icon">💸</span>
-                            <h3>Costi fissi che si accumulano</h3>
-                            <p dangerouslySetInnerHTML={{ __html: "IMU, spese condominiali, manutenzione: una casa ereditata non gestita costa in media <strong>€1.500–3.000 l'anno</strong> senza rendita." }} />
+                            <h3>I costi che non vedi ma che pesano</h3>
+                            <p dangerouslySetInnerHTML={{ __html: "IMU, condominio, piccole manutenzioni... una casa ereditata, se resta ferma, può arrivare a costare anche <strong>3.000€ l'anno</strong>. E intanto resta lì, senza rendita e con più pensieri che soluzioni." }} />
                         </div>
                         <div className="problem-card">
                             <span className="card-icon">⚖️</span>
-                            <h3>Accordo difficile tra eredi</h3>
-                            <p dangerouslySetInnerHTML={{ __html: "Quando siete più eredi, trovare un accordo è complicato. Una <strong>valutazione oggettiva e indipendente</strong> aiuta tutti a decidere." }} />
+                            <h3>Quando siete più eredi, tutto si complica</h3>
+                            <p dangerouslySetInnerHTML={{ __html: "Trovare un accordo non è semplice. Ognuno ha la sua idea, il suo ricordo, la sua opinione sul valore della casa. Per questo una <strong>valutazione fatta da un professionista</strong> aiuta tutti a vedere le cose con più chiarezza." }} />
                         </div>
                         <div className="problem-card">
                             <span className="card-icon">📋</span>
-                            <h3>Burocrazia successoria</h3>
-                            <p dangerouslySetInnerHTML={{ __html: "Dichiarazione di successione, aggiornamento catastale, volture: la burocrazia è complessa. <strong>Noi la gestiamo per te</strong>." }} />
+                            <h3>La burocrazia non aiuta</h3>
+                            <p dangerouslySetInnerHTML={{ __html: "Successione, volture, aggiornamenti catastali… carte su carte. Noi ci occupiamo di tutto, dalla gestione dei documenti alla vendita, così <strong>tu puoi concentrarti sulle scelte importanti</strong>." }} />
                         </div>
                     </div>
                 </div>

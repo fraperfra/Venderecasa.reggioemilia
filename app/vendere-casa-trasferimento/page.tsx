@@ -19,12 +19,12 @@ const config: PageConfig = {
         { value: "valutare", label: "Voglio valutare prima di decidere" },
         { value: "gia_trasferito", label: "Mi sono già trasferito" },
     ],
-    problemTitle: "I rischi di lasciare casa vuota",
-    problemSubtitle: "Una casa non venduta diventa rapidamente un costo inutile e un rischio patrimoniale.",
+    problemTitle: "Quella casa lasciata a Reggio costa più di quanto pensi",
+    problemSubtitle: "Non vendere non è neutro. Ogni mese che passa ha un costo reale — economico e mentale.",
     problems: [
-        { icon: "💰", title: "Doppia spesa ogni mese", desc: "Pagare l'affitto nella nuova città E le spese della casa vuota (mutuo, IMU, condominio) <strong>erode il tuo budget rapidamente</strong>." },
-        { icon: "🏚️", title: "Svalutazione progressiva", desc: "Una casa sfitta e non curata <strong>perde valore</strong>. Umidità, usura, problemi tecnici possono emergere senza che tu lo sappia." },
-        { icon: "📍", title: "Difficoltà gestione a distanza", desc: "Trovare acquirenti, fare visite, gestire la trattativa — tutto è <strong>molto più difficile</strong> quando non sei in città." },
+        { icon: "💰", title: "Due spese al mese, senza capirci niente", desc: "L'affitto nella nuova città più il mutuo (o le spese) della casa lasciata vuota a Reggio Emilia: ogni mese che passa senza vendere sono <strong>soldi veri che escono</strong> senza un motivo." },
+        { icon: "🏚️", title: "Una casa vuota si deteriora prima di quanto pensi", desc: "Umidità, piccoli danni non visti, caldaia che si guasta... quando sei lontano, i problemi si scoprono sempre tardi. <strong>E risolverli a distanza è ancora più costoso.</strong>" },
+        { icon: "📍", title: "Organizzare visite da un'altra città è un incubo", desc: "Prendere ferie, rientrare a Reggio solo per un appuntamento, gestire trattative via messaggio mentre sei in ufficio nella nuova città. <strong>Non è così che deve andare.</strong>" },
     ],
     stepsTitle: "Come lavoriamo anche a distanza",
     steps: [

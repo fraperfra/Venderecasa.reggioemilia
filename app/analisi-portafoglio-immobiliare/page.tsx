@@ -19,12 +19,12 @@ const config: PageConfig = {
         { value: "7+", label: "7 o più immobili" },
         { value: "non_so", label: "Da definire" },
     ],
-    problemTitle: "I problemi nascosti del portafoglio immobiliare",
-    problemSubtitle: "Molti investitori scoprono tardi che alcune proprietà costano più di quanto rendono.",
+    problemTitle: "Hai davvero il controllo del tuo portafoglio?",
+    problemSubtitle: "Molti investitori scoprono tardi — a volte troppo tardi — che alcune proprietà costano più di quanto rendono.",
     problems: [
-        { icon: "📊", title: "Rendimenti sotto mercato", desc: "Un affitto fissato anni fa può essere <strong>molto più basso</strong> dell'attuale valore di mercato. Stai <strong>lasciando soldi sul tavolo</strong> ogni mese." },
-        { icon: "💰", title: "Carico fiscale elevato", desc: "IMU, IRPEF sugli affitti, cedolare secca: la fiscalità sugli immobili è complessa. Un'ottimizzazione può valere <strong>migliaia di euro l'anno</strong>." },
-        { icon: "🔧", title: "Immobili che costano invece di rendere", desc: "Proprietà sfitte, in manutenzione o con inquilini morosi <strong>consumano risorse</strong>. Liquidarle spesso è la scelta <strong>più intelligente</strong>." },
+        { icon: "📊", title: "Stai affittando a prezzi di 5 anni fa", desc: "I canoni di mercato a Reggio Emilia sono cambiati, ma molti contratti sono rimasti fermi. Se non hai aggiornato i tuoi affitti di recente, potresti <strong>guadagnare ogni mese meno di quanto potresti</strong>." },
+        { icon: "💰", title: "La fiscalità immobiliare è un labirinto", desc: "IMU, cedolare secca, IRPEF sugli affitti: pochi investitori hanno davvero chiaro quanto stanno pagando. <strong>Un errore di regime fiscale può costare migliaia di euro l'anno</strong> — e spesso non se ne accorge nessuno." },
+        { icon: "🔧", title: "Hai immobili che costano anziché rendere?", desc: "Sfitta da mesi, con inquilino moroso, o in continua manutenzione: certe proprietà drenano risorse e tempo senza dare niente in cambio. <strong>Spesso il problema non è il mercato, è che quell'immobile va venduto.</strong>" },
     ],
     stepsTitle: "Come gestiamo l'analisi del portafoglio",
     steps: [

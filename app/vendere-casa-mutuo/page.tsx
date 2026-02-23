@@ -19,12 +19,12 @@ const config: PageConfig = {
         { value: "valutare", label: "Voglio solo capire le opzioni" },
         { value: "non_so", label: "Non lo so ancora" },
     ],
-    problemTitle: "Le insidie di una difficoltà con il mutuo",
-    problemSubtitle: "Aspettare peggiora sempre le cose. Ecco perché agire adesso, con la guida giusta, ti tutela davvero.",
+    problemTitle: "Aspettare non risolve niente. Anzi.",
+    problemSubtitle: "Lo sappiamo: affrontare queste situazioni fa paura. Ma più si aspetta, meno margine resta. Ecco perché.",
     problems: [
-        { icon: "📉", title: "Interessi di mora crescenti", desc: "Ogni rata non pagata accumula interessi aggiuntivi. Più aspetti, <strong>più il debito cresce</strong> e il margine di vendita si riduce." },
-        { icon: "🔨", title: "Rischio pignoramento", desc: "Dopo un certo numero di insoluti la banca può avviare la procedura esecutiva. <strong>Una vendita volontaria evita tutto questo</strong>." },
-        { icon: "😓", title: "Stress quotidiano", desc: "L'ansia finanziaria pesa su tutta la famiglia. Risolvere la situazione immobiliare spesso è il <strong>primo passo per ritrovare equilibrio</strong>." },
+        { icon: "📉", title: "Il debito cresce ogni giorno che passa", desc: "Le rate arretrate non aspettano. Gli interessi di mora si sommano, il margine tra il valore della casa e il debito si restringe. <strong>Prima si agisce, più opzioni si hanno</strong> per chiudere in modo dignitoso." },
+        { icon: "🔨", title: "Una vendita volontaria è un'altra cosa rispetto all'asta", desc: "Se la banca avvia la procedura esecutiva, il prezzo di aggiudicazione è quasi sempre molto più basso di quello di mercato. <strong>Vendere adesso, da soli, vuol dire incassare molto di più</strong> e non avere brutte sorprese." },
+        { icon: "😓", title: "Il peso mentale è reale", desc: "L'ansia di non riuscire a pagare la rata del mutuo è estenuante. Non è solo una questione economica: pesa sulla famiglia, sui rapporti, sul sonno. Spesso, trovare una via d'uscita concreta è già <strong>il primo sollievo vero</strong>." },
     ],
     stepsTitle: "Come ti aiutiamo",
     steps: [

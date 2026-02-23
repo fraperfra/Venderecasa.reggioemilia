@@ -278,36 +278,32 @@ export default function LandingPage() {
             <section className="py-section bg-light">
                 <div className="container">
                     <div className="section-header">
-                        <h2>Le sfide di una casa ereditata</h2>
+                        <h2>I pensieri che non ti aspettavi</h2>
                         <p style={{ color: "var(--text-light)", fontSize: "1.1rem" }}>
-                            Gestire un immobile ricevuto in successione può diventare un
-                            problema costoso se non si agisce subito.
+                            Ereditare una casa porta con sé responsabilità che non sempre si vedono subito. Ecco cosa succede davvero.
                         </p>
                     </div>
 
                     <div className="problem-grid">
                         <div className="problem-card">
                             <span className="card-icon">💸</span>
-                            <h3>Costi fissi che si accumulano</h3>
+                            <h3>I costi che non vedi ma che pesano</h3>
                             <p>
-                                IMU, spese condominiali, manutenzione: una casa ereditata non
-                                gestita costa in media €1.500-3.000 l&apos;anno senza rendita.
+                                IMU, condominio, piccole manutenzioni... una casa ereditata, se resta ferma, può arrivare a costare anche 3.000€ l&apos;anno. E intanto resta lì, senza rendita e con più pensieri che soluzioni.
                             </p>
                         </div>
                         <div className="problem-card">
                             <span className="card-icon">⚖️</span>
-                            <h3>Accordo difficile tra eredi</h3>
+                            <h3>Quando siete più eredi, tutto si complica</h3>
                             <p>
-                                Quando siete più eredi, trovare un accordo è complicato. Una
-                                valutazione oggettiva e indipendente aiuta tutti a decidere.
+                                Trovare un accordo non è semplice. Ognuno ha la sua idea, il suo ricordo, la sua opinione sul valore della casa. Una valutazione fatta da un professionista aiuta tutti a vedere le cose con più chiarezza.
                             </p>
                         </div>
                         <div className="problem-card">
                             <span className="card-icon">📋</span>
-                            <h3>Burocrazia successoria</h3>
+                            <h3>La burocrazia non aiuta</h3>
                             <p>
-                                Dichiarazione di successione, aggiornamento catastale, volture:
-                                la burocrazia è complessa. Noi la gestiamo per te.
+                                Successione, volture, aggiornamenti catastali… carte su carte. Noi ci occupiamo di tutto, dalla gestione dei documenti alla vendita, così tu puoi concentrarti sulle scelte importanti.
                             </p>
                         </div>
                     </div>
