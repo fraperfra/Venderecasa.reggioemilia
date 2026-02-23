@@ -314,55 +314,30 @@ export default function LandingPage() {
             <section className="py-section">
                 <div className="container">
                     <div className="section-header">
-                        <h2>Successi Recenti a Reggio Emilia</h2>
+                        <h2>Immobili venduti. Risultati veri.</h2>
                         <p style={{ color: "var(--text-light)", fontSize: "1.1rem" }}>
-                            Alcuni degli immobili ereditati che abbiamo aiutato a vendere in tempi record.
+                            Questi sono i risultati reali delle compravendite gestite da Diba a Reggio Emilia.
                         </p>
                     </div>
 
-                    <div className="sold-grid">
+                    <div className="social-proof-grid">
                         {[
-                            {
-                                title: "Appartamento Centro Storico",
-                                type: "Appartamento",
-                                soldIn: "12 giorni",
-                                image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            },
-                            {
-                                title: "Villa Indipendente",
-                                type: "Villa",
-                                soldIn: "45 giorni",
-                                image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            },
-                            {
-                                title: "Rustico da Ristrutturare",
-                                type: "Rustico",
-                                soldIn: "28 giorni",
-                                image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            },
-                            {
-                                title: "Attico Vista Parco",
-                                type: "Attico",
-                                soldIn: "7 giorni",
-                                image: "https://images.unsplash.com/photo-1515263487990-61b07816b324?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            }
+                            { src: "/assets/Diba_servizi_immobiliari_vendita.webp", alt: "Appartamento venduto in 2 giorni a prezzo pieno, Reggio Emilia", caption: "Appartamento · 2 giorni, prezzo pieno", tag: "APPARTAMENTO" },
+                            { src: "/assets/Diba_servizi_immobiliari_vendita_pochi_giorni_22.webp", alt: "Appartamento venduto in 21 giorni, Reggio Emilia", caption: "Appartamento · Venduto in 21 giorni", tag: "APPARTAMENTO" },
+                            { src: "/assets/Diba_servizi_immobiliari_vendita_pochi_giorni.webp", alt: "Appartamento venduto in 33 giorni, Reggio Emilia", caption: "Appartamento · Venduto in 33 giorni", tag: "APPARTAMENTO" },
+                            { src: "/assets/Diba_servizi_immobiliari_vendita_pochi_giorni_2.webp", alt: "Villa con giardino, 12 visite e 8 proposte, Reggio Emilia", caption: "Villa con giardino · 12 visite, 8 proposte", tag: "VILLA" },
                         ].map((item, idx) => (
-                            <div key={idx} className="sold-card">
-                                <div className="sold-badge">VENDUTO IN {item.soldIn.toUpperCase()}</div>
-                                <div className="sold-image-wrapper">
+                            <div key={idx} className="social-proof-card">
+                                <span className="social-proof-tag">{item.tag}</span>
+                                <div className="social-proof-img-wrapper">
                                     <img
-                                        src={item.image}
-                                        alt={item.title}
-                                        width="800"
-                                        height="600"
+                                        src={item.src}
+                                        alt={item.alt}
+                                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
                                         loading="lazy"
                                     />
                                 </div>
-                                <div className="sold-info">
-                                    <h4>{item.title}</h4>
-                                    <p>{item.type} • Reggio Emilia</p>
-                                    <span className="status-badge">Affare concluso</span>
-                                </div>
+                                <p className="social-proof-caption">{item.caption}</p>
                             </div>
                         ))}
                     </div>

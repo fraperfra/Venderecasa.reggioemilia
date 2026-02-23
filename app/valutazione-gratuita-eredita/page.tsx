@@ -245,22 +245,22 @@ export default function EreditaLandingPage() {
             <section className="py-section bg-light social-proof-section">
                 <div className="container">
                     <div className="section-header">
-                        <h2>Immobili ereditati che abbiamo venduto</h2>
+                        <h2>Immobili venduti. Risultati veri.</h2>
                         <p style={{ color: "var(--text-light)", fontSize: "1rem" }}>
-                            Alcuni degli immobili ereditati che abbiamo aiutato a vendere in tempi record a Reggio Emilia. Foto reali in arrivo.
+                            Questi sono i risultati reali delle compravendite gestite da Diba a Reggio Emilia.
                         </p>
                     </div>
                     <div className="social-proof-grid">
                         {[
-                            { caption: "Appartamento Centro Storico · venduto in 12 giorni", tag: "VENDUTO" },
-                            { caption: "Villa Indipendente · venduta in 45 giorni", tag: "VENDUTO" },
-                            { caption: "Rustico da Ristrutturare · venduto in 28 giorni", tag: "VENDUTO" },
-                            { caption: "Attico Vista Parco · venduto in 7 giorni", tag: "VENDUTO" },
+                            { src: "/assets/Diba_servizi_immobiliari_vendita.webp", alt: "Appartamento venduto in 2 giorni a prezzo pieno, Reggio Emilia", caption: "Appartamento · 2 giorni, prezzo pieno", tag: "APPARTAMENTO" },
+                            { src: "/assets/Diba_servizi_immobiliari_vendita_pochi_giorni_22.webp", alt: "Appartamento venduto in 21 giorni, Reggio Emilia", caption: "Appartamento · Venduto in 21 giorni", tag: "APPARTAMENTO" },
+                            { src: "/assets/Diba_servizi_immobiliari_vendita_pochi_giorni.webp", alt: "Appartamento venduto in 33 giorni, Reggio Emilia", caption: "Appartamento · Venduto in 33 giorni", tag: "APPARTAMENTO" },
+                            { src: "/assets/Diba_servizi_immobiliari_vendita_pochi_giorni_2.webp", alt: "Villa con giardino, 12 visite e 8 proposte, Reggio Emilia", caption: "Villa con giardino · 12 visite, 8 proposte", tag: "VILLA" },
                         ].map((item, i) => (
                             <div key={i} className="social-proof-card">
                                 <span className="social-proof-tag">{item.tag}</span>
                                 <div className="social-proof-img-wrapper">
-                                    <div className="social-proof-placeholder">📷</div>
+                                    <img src={item.src} alt={item.alt} style={{ width: "100%", height: "100%", objectFit: "cover" }} loading="lazy" />
                                 </div>
                                 <p className="social-proof-caption">{item.caption}</p>
                             </div>
