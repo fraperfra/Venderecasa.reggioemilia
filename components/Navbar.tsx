@@ -27,11 +27,11 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="navbar-logo" onClick={() => setMenuOpen(false)}>
           <img
-            src="/assets/logo.png"
+            src="/assets/logo-diba.png"
             alt="Diba Servizi Immobiliari"
             className="logo-img"
-            width="150"
-            height="49"
+            width="147"
+            height="48"
           />
         </Link>
 

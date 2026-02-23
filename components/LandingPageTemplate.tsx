@@ -303,7 +303,7 @@ export default function LandingPageTemplate({ config }: { config: PageConfig }) 
             <header>
                 <div className="container header-content">
                     <div className="logo">
-                        <img src="/assets/logo.png" alt="Diba Servizi Immobiliari" className="logo-img" width="200" height="65" />
+                        <img src="/assets/logo-diba.png" alt="Diba Servizi Immobiliari" className="logo-img" width="147" height="48" />
                     </div>
                 </div>
             </header>

@@ -117,7 +117,7 @@ export default async function ArticlePage({ params }: Props) {
             <div key={i}>
               <h2>{section.h2}</h2>
               {section.content.split("\n\n").map((paragraph, j) => (
-                <p key={j}>{paragraph}</p>
+                <p key={j} dangerouslySetInnerHTML={{ __html: paragraph }} />
               ))}
             </div>
           ))}

@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(npx next build)",
+      "Bash(ls \"C:\\\\Users\\\\FRANCESCO COPPOLA\\\\Desktop\\\\7 Landing vendor\\\\app\"\" 2>/dev/null || echo \"NOT FOUND \")"
+    ]
+  }
+}

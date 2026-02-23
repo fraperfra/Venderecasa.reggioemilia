@@ -54,7 +54,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": ["LocalBusiness", "RealEstateAgent"],
               "name": "Diba Servizi Immobiliari",
-              "image": "https://venderecasa.reggioemilia.it/assets/logo.png",
+              "image": "https://venderecasa.reggioemilia.it/assets/logo-diba.png",
               "telephone": "3274911031",
               "url": "https://venderecasa.reggioemilia.it/vendere-casa-ereditata-da-successione",
               "address": {

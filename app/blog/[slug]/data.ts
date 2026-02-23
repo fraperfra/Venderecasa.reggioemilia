@@ -31,27 +31,27 @@ export const articles: Record<string, Article> = {
     sections: [
       {
         h2: "Primo passo: la dichiarazione di successione",
-        content: "Entro 12 mesi dalla data del decesso, gli eredi devono presentare la dichiarazione di successione all'Agenzia delle Entrate. Questo documento è fondamentale per poter poi procedere alla vendita dell'immobile. Senza la dichiarazione di successione (e la successiva trascrizione nei registri immobiliari), l'immobile non può essere venduto.\n\nI documenti necessari includono: certificato di morte, atti di stato civile degli eredi, documenti dell'immobile (visure catastali, planimetrie), eventuale testamento. Un professionista può aiutarti a raccogliere tutto il necessario e presentare la pratica nei termini di legge.",
+        content: "Entro <strong>12 mesi</strong> dalla data del decesso, gli eredi devono presentare la <strong>dichiarazione di successione</strong> all'Agenzia delle Entrate. Questo documento è fondamentale per poter poi procedere alla vendita dell'immobile. Senza la dichiarazione di successione (e la successiva <strong>trascrizione nei registri immobiliari</strong>), l'immobile non può essere venduto.\n\nI documenti necessari includono: certificato di morte, atti di stato civile degli eredi, documenti dell'immobile (visure catastali, planimetrie), eventuale testamento. Un professionista può aiutarti a raccogliere tutto il necessario e presentare la pratica nei termini di legge.",
       },
       {
         h2: "Comproprietà tra eredi: come funziona la vendita",
-        content: "Quando l'immobile viene ereditato da più eredi, ogni decisione richiede l'accordo di tutti. Per vendere è necessario il consenso unanime dei comproprietari. Se uno degli eredi non vuole vendere, la situazione si complica: è possibile ricorrere alla divisione giudiziale, ma è un procedimento lungo e costoso.\n\nIn questi casi, il ruolo di un mediatore esperto è fondamentale. Spesso riusciamo a trovare accordi che soddisfano tutte le parti, evitando contenziosi legali e ritardi nella vendita.",
+        content: "Quando l'immobile viene ereditato da più eredi, ogni decisione richiede l'accordo di tutti. Per vendere è necessario il <strong>consenso unanime</strong> dei comproprietari. Se uno degli eredi non vuole vendere, la situazione si complica: è possibile ricorrere alla <strong>divisione giudiziale</strong>, ma è un procedimento lungo e costoso.\n\nIn questi casi, il ruolo di un mediatore esperto è fondamentale. Spesso riusciamo a trovare accordi che soddisfano tutte le parti, evitando contenziosi legali e ritardi nella vendita.",
       },
       {
         h2: "Valutare correttamente l'immobile ereditato",
-        content: "Un errore comune è affidarsi a valutazioni di rendita catastale o a stime non aggiornate. Il mercato immobiliare di Reggio Emilia ha dinamiche proprie per ogni quartiere e tipologia di immobile. Una valutazione professionale basata sulle compravendite recenti nella stessa zona è fondamentale per stabilire il prezzo corretto.\n\nUn prezzo troppo alto allontana gli acquirenti seri. Un prezzo troppo basso significa lasciare soldi sul tavolo. La valutazione Diba analizza le transazioni reali degli ultimi 6-12 mesi nella stessa area.",
+        content: "Un errore comune è affidarsi a valutazioni di rendita catastale o a stime non aggiornate. Il mercato immobiliare di Reggio Emilia ha dinamiche proprie per ogni quartiere e tipologia di immobile. Una <strong>valutazione professionale</strong> basata sulle compravendite recenti nella stessa zona è fondamentale per stabilire il prezzo corretto.\n\nUn prezzo troppo alto allontana gli acquirenti seri. Un prezzo troppo basso significa lasciare soldi sul tavolo. La valutazione Diba analizza le <strong>transazioni reali</strong> degli ultimi 6-12 mesi nella stessa area.",
       },
       {
         h2: "Tempistiche e imposte sulla vendita",
-        content: "La plusvalenza sulla vendita di un immobile ereditato è normalmente esente da IRPEF, purché la vendita avvenga dopo 5 anni dall'acquisto originario da parte del de cuius oppure se l'immobile era abitazione principale. È sempre consigliabile verificare la situazione specifica con un commercialista.\n\nLe imposte di successione invece dipendono dal grado di parentela e dal valore dell'asse ereditario. Per figli e coniuge sono esenti fino a 1 milione di euro per erede.",
+        content: "La <strong>plusvalenza</strong> sulla vendita di un immobile ereditato è normalmente <strong>esente da IRPEF</strong>, purché la vendita avvenga dopo <strong>5 anni</strong> dall'acquisto originario da parte del de cuius oppure se l'immobile era abitazione principale. È sempre consigliabile verificare la situazione specifica con un commercialista.\n\nLe imposte di successione invece dipendono dal grado di parentela e dal valore dell'asse ereditario. Per figli e coniuge sono esenti fino a <strong>1 milione di euro</strong> per erede.",
       },
       {
         h2: "Come Diba gestisce la vendita di case ereditate",
-        content: "In 15 anni abbiamo gestito centinaia di successioni immobiliari a Reggio Emilia. Il nostro approccio include: coordinamento con notai e commercialisti di fiducia, gestione delle pratiche catastali e ipotecarie, mediazione tra eredi in caso di disaccordo, marketing professionale dell'immobile, gestione di tutta la fase trattativa.\n\nLa nostra esperienza nelle situazioni complesse ci permette di trovare soluzioni che altri non vedono.",
+        content: "In 15 anni abbiamo gestito centinaia di successioni immobiliari a Reggio Emilia. Il nostro approccio include: <strong>coordinamento con notai e commercialisti</strong> di fiducia, gestione delle pratiche catastali e ipotecarie, <strong>mediazione tra eredi</strong> in caso di disaccordo, marketing professionale dell'immobile, gestione di tutta la fase trattativa.\n\nLa nostra esperienza nelle situazioni complesse ci permette di trovare soluzioni che altri non vedono.",
       },
     ],
     faqs: [
-      { q: "Posso vendere prima di completare la successione?", a: "No. La trascrizione della successione nei registri immobiliari è un prerequisito indispensabile per la vendita. Il processo richiede in media 3-6 mesi dalla presentazione della dichiarazione." },
+      { q: "Posso vendere prima di completare la successione?", a: "No. La <strong>trascrizione della successione</strong> nei registri immobiliari è un prerequisito indispensabile per la vendita. Il processo richiede in media 3-6 mesi dalla presentazione della dichiarazione." },
       { q: "Cosa succede se uno degli eredi non è rintracciabile?", a: "La situazione richiede un intervento legale. Si può ricorrere alla nomina di un curatore dell'assente o intraprendere un procedimento di divisione giudiziale. Un avvocato specializzato può guidarvi nel percorso più efficiente." },
       { q: "Devo fare lavori prima di vendere?", a: "Dipende dallo stato dell'immobile e dal mercato. Spesso piccoli interventi di pulizia e piccola manutenzione aumentano il valore percepito più del loro costo. Lo valutiamo insieme durante il sopralluogo gratuito." },
     ],
@@ -71,29 +71,29 @@ export const articles: Record<string, Article> = {
     sections: [
       {
         h2: "Il prezzo: la variabile più importante",
-        content: "L'errore più comune è partire con un prezzo di listino troppo alto con l'intenzione di abbassarlo. Questa strategia è controproducente: gli acquirenti seri monitorano il mercato e quando vedono un immobile fermo da mesi iniziano a fare offerte molto basse.\n\nIl prezzo corretto è quello che massimizza le offerte nella prima settimana di pubblicazione. Devi analizzare le compravendite reali degli ultimi 6 mesi nella stessa zona, non il prezzo degli annunci attivi (che spesso sono sopravvalutati).",
+        content: "L'errore più comune è partire con un prezzo di listino troppo alto con l'intenzione di abbassarlo. Questa strategia è <strong>controproducente</strong>: gli acquirenti seri monitorano il mercato e quando vedono un immobile fermo da mesi iniziano a fare offerte molto basse.\n\nIl <strong>prezzo corretto</strong> è quello che massimizza le offerte nella prima settimana di pubblicazione. Devi analizzare le <strong>compravendite reali</strong> degli ultimi 6 mesi nella stessa zona, non il prezzo degli annunci attivi.",
       },
       {
         h2: "Home staging: come presentare l'immobile",
-        content: "Le foto di un immobile in vendita vengono viste in media da 200-300 potenziali acquirenti online prima che qualcuno decida di visitarlo. Se le foto sono brutte o l'appartamento è disordinato, stai perdendo opportunità preziose.\n\nNon serve una ristrutturazione completa: spesso bastano pulizia profonda, rimozione di oggetti personali, piccole riparazioni (rubinetti che perdono, pareti da ritinteggiare) e una sessione fotografica professionale. Il ritorno sull'investimento è quasi sempre positivo.",
+        content: "Le foto di un immobile in vendita vengono viste in media da 200-300 potenziali acquirenti online prima che qualcuno decida di visitarlo. Se le <strong>foto sono brutte</strong> o l'appartamento è disordinato, stai perdendo opportunità preziose.\n\nNon serve una ristrutturazione completa: spesso bastano pulizia profonda, rimozione di oggetti personali e una <strong>sessione fotografica professionale</strong>. Il ritorno sull'investimento è quasi sempre positivo.",
       },
       {
         h2: "La distribuzione dell'annuncio",
-        content: "Un annuncio ben scritto con foto professionali, pianta dell'appartamento e virtual tour 3D raggiunge il doppio delle visualizzazioni rispetto a un annuncio standard. Distribuirlo su tutti i principali portali (Idealista, Immobiliare.it, Casa.it) contemporaneamente al lancio massimizza l'esposizione nella fase più importante.\n\nTroppoi privati pubblicano solo su uno o due portali, o lo fanno in modo disomogeneo. La distribuzione multcanale sincronizzata è uno dei vantaggi principali di lavorare con un'agenzia strutturata.",
+        content: "Un annuncio ben scritto con foto professionali, pianta dell'appartamento e <strong>virtual tour 3D</strong> raggiunge il doppio delle visualizzazioni rispetto a un annuncio standard. Distribuirlo su tutti i principali portali (<strong>Idealista, Immobiliare.it, Casa.it</strong>) contemporaneamente al lancio massimizza l'esposizione nella fase più importante.",
       },
       {
         h2: "La gestione delle visite",
-        content: "Ogni visita è un'opportunità che può trasformarsi in offerta, ma anche in un'occasione persa se gestita male. L'immobile deve essere sempre pulito e in ordine. Il clima deve essere accogliente. Le domande degli acquirenti devono ricevere risposte oneste e convincenti.\n\nNoi gestiamo mediamente 8-12 visite qualificate per immobile prima di ricevere un'offerta seria. Qualificate significa: acquirenti che hanno già la pre-approvazione del mutuo o la disponibilità finanziaria, e che cercano esattamente quella tipologia in quella zona.",
+        content: "Ogni visita è un'opportunità che può trasformarsi in offerta. Noi gestiamo mediamente <strong>8-12 visite qualificate</strong> per immobile prima di ricevere un'offerta seria. Qualificate significa: acquirenti che hanno già la <strong>pre-approvazione del mutuo</strong> e che cercano esattamente quella tipologia in quella zona.",
       },
       {
         h2: "Negoziazione: come non cedere più del necessario",
-        content: "Ogni acquirente proverà a negoziare. La chiave è arrivare alla trattativa con dati di mercato concreti che giustifichino il tuo prezzo. Se sai esattamente quanto hanno pagato le ultime 5 case simili nella stessa strada, sei in una posizione di forza.\n\nUna concessione ragionevole di 3-5% rispetto al prezzo di listino è normale e sana. Più di questo significa che qualcosa non ha funzionato nelle fasi precedenti: prezzo, presentazione o targeting degli acquirenti.",
+        content: "Ogni acquirente proverà a negoziare. La chiave è arrivare alla trattativa con <strong>dati di mercato concreti</strong> che giustifichino il tuo prezzo. Se sai esattamente quanto hanno pagato le ultime 5 case simili nella stessa strada, sei in una posizione di forza.",
       },
     ],
     faqs: [
-      { q: "È meglio vendere con un'agenzia o da privato?", a: "I dati mostrano che le case vendute tramite agenzia ottengono in media prezzi più alti (5-10%) e si vendono più velocemente. Il costo della provvigione viene quasi sempre più che compensato dal prezzo finale." },
-      { q: "Qual è il momento migliore dell'anno per vendere?", a: "Primavera (marzo-giugno) e autunno (settembre-novembre) sono i periodi più attivi. Ma un immobile ben presentato e prezzato correttamente si vende bene in qualsiasi stagione." },
-      { q: "Devo obbligatoriamente fare il virtual tour?", a: "Non è obbligatorio, ma aumenta significativamente le visualizzazioni e filtra meglio i visitatori: chi prenota dopo aver visto il virtual tour è già convinto dell'immobile e ha meno probabilità di rinunciare dopo la visita." },
+      { q: "È meglio vendere con un'agenzia o da privato?", a: "I dati mostrano che le case vendute tramite agenzia ottengono in media <strong>prezzi più alti (5-10%)</strong> e si vendono più velocemente." },
+      { q: "Qual è il momento migliore dell'anno per vendere?", a: "<strong>Primavera</strong> (marzo-giugno) e <strong>autunno</strong> (settembre-novembre) sono i periodi più attivi." },
+      { q: "Devo obbligatoriamente fare il virtual tour?", a: "Non è obbligatorio, ma aumenta significativamente le visualizzazioni e filtra meglio i visitatori realmente interessati." },
     ],
     ctaTitle: "Vuoi vendere casa a Reggio Emilia rapidamente?",
     ctaDesc: "Contattaci per una valutazione gratuita. Ti diciamo esattamente quanto vale la tua casa e come venderla nel minor tempo possibile.",
@@ -111,32 +111,27 @@ export const articles: Record<string, Article> = {
     sections: [
       {
         h2: "Le fasi della procedura di pignoramento",
-        content: "Molti proprietari aspettano troppo prima di agire, pensando che la situazione si risolva da sola. In realtà il processo bancario segue tempi precisi:\n\nDopo 3 rate non pagate: la banca invia un sollecito formale.\nDopo 6-9 rate non pagate: la banca può dichiarare il mutuo decaduto e avviare il recupero.\nDopo la dichiarazione di decadenza: inizia l'iter legale per il pignoramento, che può richiedere 12-18 mesi.\n\nHai molto più tempo di quanto pensi, ma ogni mese che passa riduce le tue opzioni.",
+        content: "Molti proprietari aspettano troppo prima di agire. In realtà il processo bancario segue tempi precisi:\n\nDopo <strong>3 rate non pagate</strong>: la banca invia un sollecito formale.\nDopo <strong>6-9 rate non pagate</strong>: la banca può dichiarare il mutuo decaduto.\nDopo la decadenza: inizia l'iter legale per il <strong>pignoramento</strong>.",
       },
       {
         h2: "Perché vendere prima è sempre meglio",
-        content: "Un immobile all'asta esecutiva si vende mediamente al 30-40% sotto il valore di mercato. Se l'immobile vale 200.000€, all'asta potrebbe aggiudicarsi per 120.000-140.000€. Se il mutuo residuo è 160.000€, il ricavato non basta a estinguerlo e resti comunque con un debito.\n\nVendendo prima sul mercato libero, ottieni il prezzo pieno, estingui il mutuo, e puoi anche recuperare la differenza come liquidità.",
+        content: "Un immobile all'asta esecutiva si vende mediamente al <strong>30-40% sotto il valore di mercato</strong>. Vendendo prima sul <strong>mercato libero</strong>, ottieni il prezzo pieno, estingui il mutuo, e puoi anche recuperare la differenza come liquidità.",
       },
       {
         h2: "Cosa fare se il mutuo supera il valore dell'immobile",
-        content: "In alcuni casi, soprattutto se il mutuo è stato acceso molti anni fa a prezzi alti, l'importo residuo del mutuo può essere superiore al valore attuale dell'immobile. In questo caso si parla di 'underwater mortgage' o 'negative equity'.\n\nEsistono soluzioni anche in questi casi: la dazione in pagamento (consegnare l'immobile alla banca in estinzione del debito), la ristrutturazione del debito, o in casi estremi la procedura di sovraindebitamento. È fondamentale agire in anticipo e con la consulenza di un professionista.",
+        content: "Esistono soluzioni anche quando il debito è superiore al valore della casa: la <strong>ristrutturazione del debito</strong> o la procedura di <strong>sovraindebitamento</strong>. È fondamentale agire in anticipo.",
       },
       {
         h2: "Come Diba gestisce queste situazioni",
-        content: "Lavoriamo con discrezione totale. Il mercato non deve sapere del tuo stato di difficoltà perché abbasserebbe il potere contrattuale. L'annuncio è normale, la presentazione è professionale, e la vendita avviene nei tempi di mercato.\n\nCollegati con la banca per sospendere temporaneamente le rate (moratoria) durante la vendita è spesso possibile. Conosciamo i referenti di diversi istituti di credito locali e possiamo facilitare questa comunicazione.",
-      },
-      {
-        h2: "Tempi e procedure: cosa aspettarsi",
-        content: "Una volta deciso di vendere, il processo richiede:\n\nSettimana 1-2: valutazione, documentazione, servizio fotografico.\nSettimana 3-4: pubblicazione e prime visite.\nSettimana 5-8: offerta accettata, contratto preliminare.\nSettimana 9-12: rogito notarile e estinzione del mutuo.\n\nIn totale, da 2 a 3 mesi. Abbondantemente prima che una procedura esecutiva arrivi al pignoramento.",
+        content: "Lavoriamo con <strong>discrezione totale</strong>. Il mercato non deve sapere del tuo stato di difficoltà perché abbasserebbe il potere contrattuale. Concordare con la banca una <strong>moratoria</strong> temporanea durante la vendita è spesso possibile.",
       },
     ],
     faqs: [
-      { q: "La banca può bloccare la vendita?", a: "No. L'immobile è tuo finché non c'è il pignoramento formale. Puoi venderlo liberamente. Al rogito, il notaio provvede all'estinzione del mutuo e alla cancellazione dell'ipoteca direttamente con il ricavato della vendita." },
-      { q: "Devo comunicare alla banca che voglio vendere?", a: "Non è obbligatorio, ma può essere utile per concordare una sospensione temporanea delle rate durante la vendita. In alcuni casi la banca è disposta a collaborare perché preferisce un rimborso voluntario all'asta esecutiva." },
-      { q: "Cosa succede se il rogito avviene dopo che la banca ha già avviato la procedura?", a: "È ancora possibile vendere fino al momento del pignoramento formale (che richiede anni). Anche dopo un precetto, hai ancora margine. L'importante è agire il prima possibile e farsi assistere da professionisti." },
+      { q: "La banca può bloccare la vendita?", a: "No. L'immobile è tuo finché non c'è il pignoramento formale. Puoi venderlo liberamente." },
+      { q: "Devo comunicare alla banca che voglio vendere?", a: "È utile per concordare una <strong>sospensione temporanea</strong> delle rate: le banche preferiscono un rimborso volontario all'asta." },
     ],
     ctaTitle: "Sei in difficoltà con il mutuo?",
-    ctaDesc: "Contattaci in modo riservato. Ti aiutiamo a valutare la situazione e a trovare la soluzione migliore prima che sia troppo tardi.",
+    ctaDesc: "Contattaci in modo riservato. Ti aiutiamo a trovare la soluzione migliore prima che sia troppo tardi.",
   },
   "estinzione-anticipata-mutuo-vendita-casa": {
     title: "Estinzione anticipata del mutuo in fase di vendita: come procedere",
@@ -150,20 +145,20 @@ export const articles: Record<string, Article> = {
     sections: [
       {
         h2: "L'estinzione contestuale al rogito",
-        content: "La modalità più comune è l'estinzione del mutuo durante l'atto notarile di vendita (rogito). L'acquirente consegna un assegno circolare (o dispone un bonifico) intestato direttamente alla tua banca per l'importo del debito residuo. La banca rilascia quietanza e si impegna alla cancellazione dell'ipoteca.\n\nIl residuo del prezzo di vendita viene poi consegnato a te tramite un secondo assegno o bonifico. Questo garantisce a tutte le parti che l'immobile venga trasferito libero da pesi e ipoteche.",
+        content: "La modalità più comune è l'<strong>estinzione contestuale</strong> durante l'atto notarile di vendita. L'acquirente dispone un bonifico intestato direttamente alla tua banca per l'importo del <strong>debito residuo</strong>. La banca rilascia quietanza e si impegna alla cancellazione dell'ipoteca.",
       },
       {
         h2: "Cosa sono i dietimi giornalieri?",
-        content: "Quando chiedi il conteggio di estinzione alla banca, questo ha una validità legata a una data specifica. Se il rogito slitta di qualche giorno, dovrai aggiungere i 'dietimi', ovvero gli interessi calcolati giorno per giorno sul capitale residuo. È fondamentale coordinare con precisione la data dell'atto per avere un conteggio esatto.",
+        content: "Quando chiedi il <strong>conteggio di estinzione</strong>, questo ha una validità legata a una data specifica. Se il rogito slitta, dovrai aggiungere i <strong>dietimi</strong>, ovvero gli interessi calcolati giorno per giorno sul capitale residuo.",
       },
       {
         h2: "Penali di estinzione: esistono ancora?",
-        content: "Grazie alla Legge Bersani del 2007, le penali per l'estinzione anticipata dei mutui immobiliari (per acquisto di abitazione principale o attività professionale) sono state abolite. Se il tuo mutuo è stato stipulato dopo il 2 febbraio 2007, non dovrai pagare penali. Per i mutui precedenti, le penali sono state fortemente ridotte.",
+        content: "Grazie alla <strong>Legge Bersani del 2007</strong>, le penali per l'estinzione anticipata dei mutui immobiliari (per abitazione principale) sono state <strong>abolite</strong>. Se il tuo mutuo è post 2007, non pagherai penali.",
       },
     ],
     faqs: [
-      { q: "Devo avvisare la banca prima della vendita?", a: "Sì, è necessario richiedere il 'conteggio di estinzione' con almeno 10-15 giorni di anticipo rispetto alla data prevista per il rogito." },
-      { q: "Chi cancella l'ipoteca?", a: "La banca procede alla cancellazione automatica (cancellazione semplificata o Bersani) entro 30 giorni dall'estinzione totale del debito, senza costi notarili aggiuntivi per te." },
+      { q: "Devo avvisare la banca prima della vendita?", a: "Sì, richiedi il conteggio di estinzione con almeno <strong>10-15 giorni di anticipo</strong>." },
+      { q: "Chi cancella l'ipoteca?", a: "La banca procede alla <strong>cancellazione semplificata</strong> entro 30 giorni dall'estinzione, senza costi notarili per te." },
     ],
     ctaTitle: "Vuoi vendere casa con mutuo a Reggio Emilia?",
     ctaDesc: "Gestiamo noi i rapporti con la tua banca e coordiniamo il tutto con il notaio per una vendita senza pensieri.",
@@ -177,23 +172,23 @@ export const articles: Record<string, Article> = {
     category: "Situazioni Difficili",
     readTime: "9 min",
     coverImage: "https://images.unsplash.com/photo-1575505586569-646b2ca09974?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "Molte persone credono che, una volta ricevuto l'atto di pignoramento, la casa sia persa e destinata inevitabilmente all'asta. Non è così. Fino al momento dell'aggiudicazione definitiva, è possibile intervenire per vendere l'immobile sul mercato libero, spesso con risultati molto migliori per il debitore.",
+    intro: "Molte persone credono che, una volta ricevuto l'atto di pignoramento, la casa sia persa. Non è così. È possibile intervenire per vendere l'immobile sul <strong>mercato libero</strong>, con risultati migliori per il debitore.",
     sections: [
       {
         h2: "Vendere con l'accordo dei creditori",
-        content: "Per vendere una casa pignorata serve l'autorizzazione del giudice dell'esecuzione o, più comunemente, l'accordo con tutti i creditori che hanno iscritto il pignoramento. La strategia migliore è trovare un acquirente a prezzo di mercato e proporre ai creditori un 'saldo e stralcio'.\n\nI creditori accettano una somma inferiore al debito totale, ma con il vantaggio di incassarla subito e con certezza, evitando i tempi lunghi e i costi delle aste giudiziarie.",
+        content: "Per vendere serve l'accordo con tutti i creditori. La strategia migliore è proporre un <strong>saldo e stralcio</strong>: i creditori accettano una somma inferiore, ma certa e immediata, evitando i tempi lunghi delle aste.",
       },
       {
         h2: "Perché evitare l'asta immobiliare",
-        content: "L'asta è un tritacarne economico. Tra ribassi del 25% a ogni seduta andata deserta e spese di procedura che gravano sul debitore, il rischio è che la casa venga svenduta a una frazione del suo valore, lasciandoti con un debito residuo enorme anche dopo aver perso l'immobile.",
+        content: "L'asta è un tritacarne economico. Con <strong>ribassi del 25%</strong> a ogni seduta, il rischio è che la casa venga svenduta, lasciandoti con un <strong>debito residuo</strong> enorme anche dopo aver perso l'immobile.",
       },
     ],
     faqs: [
-      { q: "Posso vendere autonomamente una casa pignorata?", a: "No, devi avere l'assistenza di un legale o di un consulente specializzato che tratti con i creditori e ottenga la rinuncia alla procedura esecutiva contestualmente alla vendita." },
-      { q: "Quanto tempo ho per agire?", a: "I tempi variano, ma in genere hai diversi mesi dall'atto di pignoramento alla prima asta. Prima intervieni, maggiori sono le possibilità di successo." },
+      { q: "Posso vendere autonomamente?", a: "No, serve l'assistenza di professionisti che ottengano la <strong>rinuncia alla procedura esecutiva</strong> contestualmente alla vendita." },
+      { q: "Quanto tempo ho per agire?", a: "Prima intervieni, maggiori sono le possibilità di successo. Hai diversi mesi dall'atto di pignoramento alla prima asta." },
     ],
     ctaTitle: "Ricevuto un pignoramento a Reggio Emilia?",
-    ctaDesc: "Non aspettare l'asta. Contattaci per una consulenza riservata e scopri se possiamo salvare la tua situazione finanziaria.",
+    ctaDesc: "Non aspettare l'asta. Contattaci per una consulenza riservata e scopri come salvare la tua situazione.",
   },
 
   "accettazione-eredita-beneficio-inventario-debiti": {
@@ -204,23 +199,23 @@ export const articles: Record<string, Article> = {
     category: "Successioni",
     readTime: "7 min",
     coverImage: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "Ereditare non significa solo ricevere beni, ma a volte anche farsi carico di debiti. Se l'immobile ereditato ha un mutuo residuo importante o il defunto aveva pendenze finanziarie, è fondamentale agire con cautela per non rischiare il proprio patrimonio personale.",
+    intro: "Ereditare non significa solo ricevere beni, ma a volte anche farsi carico di debiti. Se l'immobile ereditato ha un <strong>mutuo residuo</strong> o il defunto aveva pendenze, è fondamentale proteggere il proprio patrimonio personale.",
     sections: [
       {
         h2: "Cos'è il beneficio d'inventario?",
-        content: "È una procedura legale che permette all'erede di tenere separato il proprio patrimonio da quello del defunto. In questo modo, l'erede risponde degli eventuali debiti solo nei limiti del valore dei beni ricevuti in eredità. Se i debiti superano il valore della casa, i creditori non possono rivalersi sui tuoi risparmi personali.",
+        content: "È una procedura legale che permette di tenere <strong>separato il tuo patrimonio</strong> da quello del defunto. Rispondi dei debiti solo nei limiti del valore dei beni ricevuti: i creditori <strong>non possono rivalersi</strong> sui tuoi risparmi personali.",
       },
       {
         h2: "La gestione del mutuo del defunto",
-        content: "Gli eredi subentrano nel contratto di mutuo. Le opzioni sono: continuare a pagare le rate, estinguere il mutuo vendendo l'immobile, oppure procedere all'accollo del mutuo se uno degli eredi decide di tenere la casa. È un passaggio che richiede un dialogo costante con la banca.",
+        content: "Le opzioni sono: continuare a pagare, estinguere il mutuo vendendo l'immobile, o procedere all'<strong>accollo del mutuo</strong> se decidi di tenere la casa. Richiede un dialogo costante con la banca.",
       },
     ],
     faqs: [
-      { q: "Quali sono i tempi per il beneficio d'inventario?", a: "La dichiarazione va fatta entro 3 mesi se sei in possesso dei beni, o entro 10 anni se non lo sei. L'inventario vero e proprio ha tempi tecnici definiti dal tribunale o dal notaio." },
-      { q: "Posso vendere se accetto con beneficio d'inventario?", a: "Sì, ma serve l'autorizzazione del giudice per non perdere il beneficio stesso. Ti seguiamo noi in tutto l'iter burocratico." },
+      { q: "Posso vendere se accetto con beneficio d'inventario?", a: "Sì, ma serve l'<strong>autorizzazione del giudice</strong> per non perdere il beneficio stesso. Ti seguiamo noi in tutto l'iter." },
+      { q: "Quali sono i tempi?", a: "La dichiarazione va fatta entro <strong>3 mesi</strong> se sei in possesso dei beni." },
     ],
     ctaTitle: "Eredità complessa a Reggio Emilia?",
-    ctaDesc: "Ti aiutiamo a fare chiarezza tra debiti e patrimonio immobiliare, proteggendo i tuoi interessi.",
+    ctaDesc: "Ti aiutiamo a fare chiarezza tra debiti e patrimonio, proteggendo i tuoi interessi.",
   },
 
   "saldo-e-stralcio-immobiliare-guida": {
@@ -231,23 +226,23 @@ export const articles: Record<string, Article> = {
     category: "Situazioni Difficili",
     readTime: "8 min",
     coverImage: "https://images.unsplash.com/photo-1554224155-1697467275c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "Il saldo e stralcio è la soluzione definitiva per chi ha un debito con la banca che non riesce più a sostenere e rischia di perdere la casa all'asta. È un accordo 'win-win' che permette di cancellare completamente il debito attraverso la vendita dell'immobile a un terzo acquirente.",
+    intro: "Il <strong>saldo e stralcio</strong> è la soluzione per chi ha un debito con la banca che non riesce più a sostenere. Permette di <strong>cancellare il debito</strong> vendendo l'immobile a un terzo acquirente.",
     sections: [
       {
         h2: "Il meccanismo dell'accordo",
-        content: "La banca accetta di chiudere la posizione debitoria ricevendo una somma inferiore (lo 'stralcio') rispetto al totale dovuto. In cambio, ottiene liquidità immediata e risparmia anni di procedure legali. Il debitore, d'altro canto, ottiene la liberazione totale dal debito: anche se la vendita non copre tutto il mutuo originario, la banca firma una rinuncia a qualsiasi pretesa futura.",
+        content: "La banca accetta di chiudere la posizione ricevendo una <strong>somma inferiore</strong> rispetto al dovuto. In cambio, ottiene liquidità immediata. Il debitore ottiene la <strong>liberazione totale</strong>: la banca firma una rinuncia a qualsiasi pretesa futura.",
       },
       {
         h2: "I vantaggi per il debitore",
-        content: "Oltre a evitare la svendita all'asta, il vantaggio principale è la pulizia del profilo creditizio. Una volta chiuso il debito a saldo e stralcio, dopo alcuni anni è possibile tornare a essere finanziabili, cosa quasi impossibile se si subisce un pignoramento completo.",
+        content: "Oltre a evitare la svendita all'asta, il vantaggio è la <strong>pulizia del profilo creditizio</strong>. Dopo alcuni anni è possibile tornare a essere finanziabili, cosa impossibile con un pignoramento.",
       },
     ],
     faqs: [
-      { q: "Serve l'avvocato per il saldo e stralcio?", a: "È caldamente consigliato farsi assistere da professionisti che sappiano negoziare con gli uffici legali delle banche e redigere accordi inattaccabili." },
-      { q: "La banca è obbligata ad accettare?", a: "No, è una libera negoziazione. La proposta deve essere credibile e supportata da una reale capacità di chiudere la vendita in tempi brevi." },
+      { q: "Serve l'avvocato?", a: "È consigliato farsi assistere da professionisti che sappiano negoziare con gli <strong>uffici legali delle banche</strong>." },
+      { q: "La banca è obbligata ad accettare?", a: "No, è una libera negoziazione. La proposta deve essere <strong>credibile e supportata</strong> da una reale vendita rapida." },
     ],
     ctaTitle: "Debiti immobiliari insostenibili?",
-    ctaDesc: "Analizziamo gratuitamente la tua situazione per capire se il saldo e stralcio è la via d'uscita giusta per te.",
+    ctaDesc: "Analizziamo la tua situazione per capire se il saldo e stralcio è la tua via d'uscita.",
   },
   "calcolo-rendimento-immobiliare-reggio-emilia": {
     title: "Come calcolare il rendimento reale del tuo portafoglio a Reggio Emilia",
@@ -257,23 +252,23 @@ export const articles: Record<string, Article> = {
     category: "Investimento",
     readTime: "7 min",
     coverImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "Gestire un portafoglio immobiliare senza conoscerne il rendimento reale è come navigare senza bussola. A Reggio Emilia, un buon rendimento non si misura solo dal canone mensile, ma dalla combinazione di flussi di cassa e apprezzamento del capitale.",
+    intro: "Gestire un portafoglio senza conoscerne il rendimento reale è come navigare senza bussola. A Reggio Emilia, il successo si misura dalla combinazione di <strong>flussi di cassa</strong> e <strong>apprezzamento del capitale</strong>.",
     sections: [
       {
         h2: "Rendimento Lordo vs Rendimento Netto",
-        content: "Il rendimento lordo (Canone Annuo / Prezzo d'Acquisto) è solo la punta dell'iceberg. Per conoscere il rendimento netto devi sottrarre: IMU, cedolare secca (o IRPEF), spese condominiali a carico del proprietario, assicurazioni e una percentuale per la manutenzione straordinaria e la sfitto (vacance rate).\n\nA Reggio Emilia, un rendimento lordo del 5-7% si traduce spesso in un netto del 3-4,5%. Capire questi numeri è fondamentale per decidere se mantenere o vendere un asset.",
+        content: "Il rendimento netto si ottiene sottraendo: IMU, <strong>cedolare secca</strong>, spese condominiali, assicurazioni e manutenzione. A Reggio Emilia, un rendimento lordo del 5-7% si traduce spesso in un <strong>netto del 3-4,5%</strong>.",
       },
       {
         h2: "La variabile rivalutazione",
-        content: "Oltre all'affitto, devi considerare l'andamento del mercato locale. Alcune zone di Reggio Emilia, come il quartiere Santa Croce o le zone limitrofe al polo universitario, hanno visto un apprezzamento significativo negli ultimi anni. Questo 'capital gain' latente deve essere parte integrante della tua analisi di portafoglio.",
+        content: "Oltre all'affitto, considera l'andamento del mercato. Zone come il <strong>quartiere Santa Croce</strong> o le aree <strong>universitarie</strong> hanno visto un apprezzamento significativo. Il 'capital gain' è parte integrante dell'analisi.",
       },
     ],
     faqs: [
-      { q: "Qual è un buon rendimento netto a Reggio Emilia?", a: "Attualmente un rendimento netto superiore al 4% è considerato buono per immobili residenziali standard. Per il commerciale, ci si aspetta qualcosa in più (5-6%) a fronte di maggiori rischi." },
-      { q: "Devo considerare l'ammortamento?", a: "In ambito residenziale privato non si calcola l'ammortamento contabile, ma è saggio accantonare almeno lo 0,5-1% del valore dell'immobile ogni anno per future ristrutturazioni pesanti." },
+      { q: "Qual è un buon rendimento netto?", a: "Un <strong>netto superiore al 4%</strong> è considerato buono per il residenziale a Reggio Emilia." },
+      { q: "Devo accantonare per manutenzioni?", a: "Sì, è saggio accantonare lo <strong>0,5-1% del valore</strong> ogni anno per future ristrutturazioni." },
     ],
-    ctaTitle: "Vuoi un'analisi professionale del tuo portafoglio?",
-    ctaDesc: "Calcoliamo per te il rendimento reale di ogni tuo immobile a Reggio Emilia e ti suggeriamo come ottimizzarlo.",
+    ctaTitle: "Analisi professionale del portafoglio?",
+    ctaDesc: "Calcoliamo il rendimento reale e ti suggeriamo come ottimizzare i tuoi asset.",
   },
 
   "diversificazione-investimento-immobiliare-locali": {
@@ -284,20 +279,20 @@ export const articles: Record<string, Article> = {
     category: "Investimento",
     readTime: "8 min",
     coverImage: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "Non mettere tutte le uova in un solo paniere. Questa regola aurea della finanza vale anche per l'immobiliare locale. Diversificare significa scegliere tipologie di immobili e zone diverse per bilanciare rischio e rendimento.",
+    intro: "Non mettere tutte le uova in un solo paniere. Questa regola aurea della finanza vale anche per l'immobiliare locale. Diversificare significa scegliere tipologie di immobili e zone diverse per bilanciare <strong>rischio e rendimento</strong>.",
     sections: [
       {
         h2: "Quartieri su cui puntare",
-        content: "Reggio Emilia sta cambiando. Il centro storico rimane un porto sicuro ma con rendimenti da affitto più bassi. Zone come il quartiere Ospizio o la zona Annonaria stanno beneficiando di nuovi servizi e riqualificazioni.\n\nIl Polo Universitario e l'area della Stazione Mediopadana (per gli affitti brevi business) rappresentano le opportunità più interessanti per chi cerca una rivalutazione rapida o rendimenti da locazione superiori alla media.",
+        content: "Reggio Emilia sta cambiando. Il centro storico rimane un porto sicuro ma con rendimenti da affitto più bassi. Zone come il <strong>quartiere Ospizio</strong> o la zona Annonaria stanno beneficiando di nuovi servizi e riqualificazioni.\n\nIl <strong>Polo Universitario</strong> e l'area della <strong>Stazione Mediopadana</strong> (per gli affitti brevi business) rappresentano le opportunità più interessanti per chi cerca una <strong>rivalutazione rapida</strong> o rendimenti superiori alla media.",
       },
       {
         h2: "Tipologie di immobili a confronto",
-        content: "Il trilocale classico è facile da rivendere, ma il monolocale o il bilocale in zone strategiche spesso garantiscono un rendimento percentuale superiore. Valutare anche il frazionamento di grandi appartamenti ereditati può essere una mossa di diversificazione molto intelligente.",
+        content: "Il trilocale classico è facile da rivendere, ma il <strong>monolocale</strong> o il <strong>bilocale</strong> in zone strategiche spesso garantiscono un <strong>rendimento percentuale superiore</strong>. Valutare anche il <strong>frazionamento</strong> di grandi appartamenti può essere una mossa molto intelligente.",
       },
     ],
     faqs: [
-      { q: "Conviene ancora investire nel centro storico?", a: "Sì, ma per conservazione del capitale più che per rendimento immediato. La domanda di affitto è altissima, ma i costi di manutenzione e i vincoli architettonici sono superiori." },
-      { q: "Gli affitti brevi sono una buona idea a Reggio?", a: "Nelle zone vicino alla Stazione Alta Velocità e al Parco Innovazione la domanda business è forte e i rendimenti possono superare quelli tradizionali del 30-50%." },
+      { q: "Conviene ancora investire nel centro storico?", a: "Sì, ma per <strong>conservazione del capitale</strong> più che per rendimento immediato." },
+      { q: "Gli affitti brevi sono una buona idea a Reggio?", a: "Nelle zone vicino alla Stazione Alta Velocità e al <strong>Parco Innovazione</strong> la domanda business è forte." },
     ],
     ctaTitle: "Cerchi nuove opportunità di investimento?",
     ctaDesc: "Ti segnaliamo in anteprima le migliori occasioni off-market a Reggio Emilia.",
@@ -311,20 +306,20 @@ export const articles: Record<string, Article> = {
     category: "Investimento",
     readTime: "7 min",
     coverImage: "https://images.unsplash.com/photo-1554224154-26032fb68cf8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "Le tasse possono erodere gran parte del tuo guadagno se non conosci le agevolazioni disponibili. A Reggio Emilia, la scelta del regime fiscale può fare una differenza di migliaia di euro all'anno sul tuo reddito netto.",
+    intro: "Le tasse possono erodere gran parte del tuo guadagno se non conosci le agevolazioni disponibili. A Reggio Emilia, la scelta del <strong>regime fiscale</strong> può fare una differenza di migliaia di euro all'anno.",
     sections: [
       {
         h2: "Cedolare Secca: conviene sempre?",
-        content: "La cedolare secca al 21% (per canone libero) o al 10% (per canone concordato) è spesso la scelta migliore perché sostituisce IRPEF, imposta di registro e di bollo. Tuttavia, se hai molte detrazioni fiscali (es. per ristrutturazioni), il regime ordinario potrebbe essere paradossalmente più conveniente. Analizziamo ogni caso con il tuo commercialista.",
+        content: "La <strong>cedolare secca al 21%</strong> (canone libero) o al <strong>10%</strong> (canone concordato) è spesso la scelta migliore perché sostituisce IRPEF, imposta di registro e di bollo. Se hai molte <strong>detrazioni per ristrutturazioni</strong>, il regime ordinario potrebbe essere più conveniente.",
       },
       {
         h2: "L'IMU a Reggio Emilia",
-        content: "Le aliquote IMU variano a seconda del comune e del tipo di contratto. Per i contratti a canone concordato, oltre alla cedolare al 10%, si ha diritto a una riduzione dell'IMU del 25% prevista per legge statale. Alcuni comuni offrono ulteriori sconti a livello locale.",
+        content: "Per i contratti a <strong>canone concordato</strong>, oltre alla cedolare al 10%, si ha diritto a una <strong>riduzione dell'IMU del 25%</strong> prevista per legge statale. Alcuni comuni offrono ulteriori sconti locali.",
       },
     ],
     faqs: [
-      { q: "Quanto si paga di tasse sulla plusvalenza?", a: "Se vendi un immobile non ereditato e non abitato come principale prima di 5 anni, paghi il 26% sulla differenza tra prezzo di vendita e di acquisto (più spese documentate)." },
-      { q: "Esistono agevolazioni per le case date in affitto?", a: "Sì, il canone concordato è lo strumento principale per abbattere sia le tasse sul reddito che l'IMU." },
+      { q: "Tasse sulla plusvalenza?", a: "Se vendi prima di <strong>5 anni</strong> un immobile non ereditato, paghi il <strong>26%</strong> sulla plusvalenza." },
+      { q: "Canone concordato?", a: "È lo strumento principale per abbattere sia le <strong>tasse sul reddito</strong> che l'<strong>IMU</strong>." },
     ],
     ctaTitle: "Dubbi sulla fiscalità immobiliare?",
     ctaDesc: "Ti aiutiamo a calcolare l'impatto fiscale del tuo investimento e a scegliere il regime più vantaggioso.",
@@ -338,20 +333,20 @@ export const articles: Record<string, Article> = {
     category: "Investimento",
     readTime: "6 min",
     coverImage: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "Tenere un immobile 'per sempre' può essere una strategia pigra e inefficiente. Esistono momenti in cui il costo opportunità di mantenere un asset è troppo alto rispetto ad altre opportunità di investimento.",
+    intro: "Tenere un immobile 'per sempre' può essere inefficiente. Esistono momenti in cui il <strong>costo opportunità</strong> di mantenere un asset è troppo alto rispetto ad altre opportunità.",
     sections: [
       {
         h2: "Segnali di allarme",
-        content: "Quando i costi di manutenzione iniziano a superare i 2-3 canoni mensili all'anno, o quando la zona in cui si trova l'immobile inizia a mostrare segni di degrado o calo dei prezzi, è il momento di agire.\n\nUn altro segnale è l'esaurimento delle detrazioni per ristrutturazione: se non hai più 'scudi fiscali', il rendimento netto reale diminuisce.",
+        content: "Quando i <strong>costi di manutenzione</strong> superano i 2-3 canoni annui, o quando la zona mostra segni di <strong>degrado</strong>, è il momento di agire. Un altro segnale è l'esaurimento delle <strong>detrazioni fiscali</strong>: senza 'scudi', il rendimento netto cala.",
       },
       {
         h2: "Reinvestire il capitale",
-        content: "A volte vendere un vecchio appartamento con rendimento al 3% per acquistarne uno nuovo o in una zona più dinamica che rende il 5% è la mossa che fa svoltare il portafoglio. Calcoliamo insieme il punto di pareggio per decidere se tenere o vendere.",
+        content: "Vendere un vecchio appartamento al 3% per acquistarne uno nuovo che rende il <strong>5%</strong> è la mossa che fa svoltare il portafoglio. Calcoliamo il <strong>punto di pareggio</strong> per decidere.",
       },
     ],
     faqs: [
-      { q: "Conviene vendere con l'inquilino dentro?", a: "Vendere un immobile occupato restringe il campo agli investitori e in genere comporta uno sconto del 10-20%. Se possibile, è meglio attendere la fine del contratto per massimizzare il prezzo." },
-      { q: "Come capisco se la zona sta calando?", a: "Monitoriamo costantemente i dati dell'Osservatorio del Mercato Immobiliare e i tempi medi di vendita nel tuo specifico quartiere a Reggio Emilia." },
+      { q: "Vendere con l'inquilino?", a: "Vendere un immobile occupato comporta spesso uno <strong>sconto del 10-20%</strong>. Meglio attendere la fine del contratto." },
+      { q: "Analisi di mercato?", a: "Monitoriamo costantemente i dati <strong>OMI</strong> e i tempi di vendita nel tuo quartiere." },
     ],
     ctaTitle: "Il tuo immobile rende quanto dovrebbe?",
     ctaDesc: "Analizziamo lo stato di salute del tuo investimento e ti diamo un parere onesto sulla convenienza di vendere oggi.",
@@ -364,23 +359,23 @@ export const articles: Record<string, Article> = {
     category: "Transizione",
     readTime: "6 min",
     coverImage: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "C'è un momento in cui la casa che ha ospitato la crescita della famiglia diventa un peso. Troppe scale, stanze inutilizzate da pulire, costi di riscaldamento eccessivi. Il downsizing non è una rinuncia, ma una scelta strategica per vivere meglio la maturità.",
+    intro: "C'è un momento in cui la casa di famiglia diventa un peso. Il <strong>downsizing</strong> non è una rinuncia, ma una scelta strategica per vivere meglio la maturità.",
     sections: [
       {
         h2: "Meno costi, più libertà",
-        content: "Passare da una villa o un grande appartamento a un trilocale moderno in centro o in una zona servita riduce drasticamente le spese fisse. IMU, riscaldamento e manutenzione ordinaria possono calare anche del 50%. La liquidità ricavata dalla differenza di prezzo può diventare un'integrazione importante alla pensione o un fondo per i nipoti.",
+        content: "Passare a un trilocale moderno riduce drasticamente le spese fisse. <strong>IMU, riscaldamento e manutenzione</strong> possono calare anche del <strong>50%</strong>. La liquidità ricavata può diventare un fondo importante per il futuro.",
       },
       {
         h2: "La comodità di una casa moderna",
-        content: "Le nuove costruzioni offrono ascensori a norma, assenza di barriere architettoniche, domotica semplificata e classi energetiche elevate che garantiscono un comfort termico sconosciuto alle vecchie case di famiglia. Vivere in un ambiente funzionale significa preservare la propria autonomia più a lungo.",
+        content: "Le nuove costruzioni offrono <strong>ascensori a norma</strong>, classe energetica elevata e assenza di barriere architettoniche. Vivere in un ambiente funzionale significa preservare la propria <strong>autonomia</strong>.",
       },
     ],
     faqs: [
-      { q: "Qual è la zona migliore per fare downsizing a Reggio?", a: "Consigliamo zone pianeggianti e servite come il quartiere Rosta Nuova o le aree limitrofe al centro storico, dove i servizi (farmacie, supermercati, parchi) sono raggiungibili a piedi." },
-      { q: "Devo vendere prima di comprare?", a: "In genere sì, per avere la certezza del budget. Ma con il nostro piano coordinato, sincronizziamo le due operazioni per permetterti un unico trasloco sereno." },
+      { q: "Zone migliori a Reggio?", a: "Consigliamo zone pianeggianti come <strong>Rosta Nuova</strong>, dove i servizi sono raggiungibili a piedi." },
+      { q: "Vendere prima di comprare?", a: "Sì, per certezza del budget. Ma sincronizziamo le operazioni per un <strong>unico trasloco</strong>." },
     ],
     ctaTitle: "La tua casa è diventata troppo grande?",
-    ctaDesc: "Ti aiutiamo a trovare la tua nuova casa ideale e a vendere quella attuale al valore massimo, gestendo tutta la logistica del cambio.",
+    ctaDesc: "Ti aiutiamo a trovare la tua nuova casa ideale e a vendere quella attuale al valore massimo.",
   },
 
   "gestire-trasloco-casa-grande-appartamento": {
@@ -391,20 +386,20 @@ export const articles: Record<string, Article> = {
     category: "Transizione",
     readTime: "8 min",
     coverImage: "https://images.unsplash.com/photo-1600518464441-915c84093424?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "La sfida più grande del downsizing non è vendere la casa, ma svuotarla. Mobili antichi, ricordi, soffitte piene di oggetti accumulati in decenni. Affrontare tutto questo richiede metodo e un approccio psicologico corretto.",
+    intro: "La sfida più grande del downsizing è svuotare la casa. Affrontare decenni di ricordi richiede <strong>metodo</strong> e il giusto <strong>approccio psicologico</strong>.",
     sections: [
       {
         h2: "Il metodo delle tre scatole",
-        content: "Inizia stanza per stanza con tre contenitori: 'Da tenere', 'Da regalare/vendere', 'Da buttare'. Non cercare di fare tutto in un giorno. Dedica due ore al mattino a una singola area. Coinvolgi i figli e i nipoti: è il momento perfetto per passare loro oggetti di valore affettivo che non avranno spazio nella nuova casa.",
+        content: "Usa tre contenitori: 'Da tenere', 'Da regalare/vendere', 'Da buttare'. Non fare tutto subito: dedica <strong>due ore al giorno</strong> a una singola area. È il momento per passare oggetti ai nipoti, evitando di ingombrare la nuova casa.",
       },
       {
-        h2: "Cosa fare con i mobili che non servono più?",
-        content: "A Reggio Emilia collaboriamo con ditte di sgombero serie e mercatini dell'usato che possono valutare i tuoi mobili. Spesso quello che per te è un peso, per altri può essere una risorsa. Se i mobili hanno valore antiquario, ti mettiamo in contatto con periti specializzati.",
+        h2: "Sgombero e mercatini",
+        content: "Collaboriamo con ditte di <strong>sgombero</strong> e mercatini a Reggio Emilia. Quello che per te è un peso, per altri è una risorsa. Se hai <strong>mobili antichi</strong>, ti mettiamo in contatto con periti specializzati.",
       },
     ],
     faqs: [
-      { q: "Quanto tempo prima devo iniziare a svuotare?", a: "Consigliamo di iniziare il decluttering non appena metti la casa in vendita. Una casa meno carica appare anche più grande e attraente agli occhi dei compratori." },
-      { q: "Chi si occupa di smontare e rimontare?", a: "Ti segnaliamo noi ditte di traslochi affidabili che offrono il servizio completo 'chiavi in mano', incluso l'imballaggio degli oggetti fragili." },
+      { q: "Quando iniziare?", a: "Inizia il <strong>decluttering</strong> non appena metti la casa in vendita: apparirà più grande." },
+      { q: "Chi smonta i mobili?", a: "Ti segnaliamo ditte affidabili per un servizio <strong>chiavi in mano</strong>." },
     ],
     ctaTitle: "Paura del trasloco?",
     ctaDesc: "Non lasciare che gli oggetti ti blocchino. Ti supportiamo anche nella fase organizzativa del tuo trasloco.",
@@ -418,23 +413,23 @@ export const articles: Record<string, Article> = {
     category: "Transizione",
     readTime: "7 min",
     coverImage: "https://images.unsplash.com/photo-1554224155-16578802d583?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "Dopo aver venduto la villa e acquistato un appartamento moderno, spesso rimane una liquidità importante (anche 100.000€ o 200.000€). Come gestire al meglio questo 'tesoretto' per garantire serenità ai propri anni futuri?",
+    intro: "Dopo aver venduto la villa, spesso rimane un <strong>tesoretto</strong> importante. Come gestirlo per garantire <strong>serenità finanziaria</strong>?",
     sections: [
       {
         h2: "Integrazione del reddito",
-        content: "Una delle scelte più comuni è investire la liquidità in un piccolo immobile da mettere a reddito. Un bilocale ben posizionato a Reggio Emilia può generare una rendita mensile netta che integra perfettamente la pensione, mantenendo il capitale protetto nel mattone.",
+        content: "Acquistare un piccolo immobile da affittare a Reggio Emilia può generare una <strong>rendita mensile netta</strong> che integra la pensione, proteggendo il capitale nel <strong>mattone</strong>.",
       },
       {
         h2: "Donazioni e successione",
-        content: "Molti clienti scelgono questo momento per aiutare i figli nell'acquisto della loro prima casa, anticipando di fatto l'eredità ed evitando future tasse di successione elevate. È una mossa che va pianificata con un notaio per garantire equità tra i vari eredi.",
+        content: "Molti scelgono di aiutare i figli anticipando l'<strong>eredità</strong>. È una mossa che va pianificata con un <strong>notaio</strong> per garantire equità tra gli eredi ed evitare future tasse elevate.",
       },
     ],
     faqs: [
-      { q: "Qual è il rendimento medio di un investimento a Reggio?", a: "Per un appartamento da affitto a lungo termine, calcola un 4-5% netto. È un investimento a basso rischio che batte storicamente l'inflazione." },
-      { q: "Posso intestare la nuova casa piccola ai figli mantenendo l'usufrutto?", a: "Sì, è un'ottima strategia per semplificare la successione e spesso per risparmiare sulle imposte di acquisto." },
+      { q: "Rendimento medio?", a: "Per un affitto a lungo termine a Reggio, calcola un <strong>4-5% netto</strong>." },
+      { q: "Usufrutto?", a: "Sì, puoi intestare la casa ai figli mantenendo l'<strong>usufrutto</strong>: semplifica la successione." },
     ],
     ctaTitle: "Vuoi far fruttare il tuo capitale?",
-    ctaDesc: "Ti aiutiamo a trovare l'investimento immobiliare più sicuro e redditizio per la tua nuova fase di vita.",
+    ctaDesc: "Ti aiutiamo a trovare l'investimento immobiliare più sicuro e redditizio.",
   },
 
   "adattare-casa-nuova-esigenze-eta": {
@@ -445,23 +440,23 @@ export const articles: Record<string, Article> = {
     category: "Transizione",
     readTime: "6 min",
     coverImage: "https://images.unsplash.com/photo-1512918728675-ed5a9ecde9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "Quando si sceglie la 'casa definitiva' dopo i 60 anni, l'estetica deve sposarsi con la funzionalità a lungo termine. Dettagli che oggi sembrano irrilevanti potrebbero diventare fondamentali tra 15 anni.",
+    intro: "Nella scelta della 'casa definitiva', l'estetica deve sposarsi con la <strong>funzionalità a lungo termine</strong>. Dettagli oggi irrilevanti saranno fondamentali tra 15 anni.",
     sections: [
       {
         h2: "Accessibilità e Comfort",
-        content: "L'ascensore a livello strada (senza gradini per raggiungerlo) è il requisito numero uno. All'interno dell'appartamento, cerca porte ampie e bagni spaziosi dove sia possibile inserire una doccia a filo pavimento senza barriere. La domotica può aiutare molto: tapparelle elettriche e sensori di allagamento o fumo aumentano la sicurezza.",
+        content: "L'<strong>ascensore a livello strada</strong> è il requisito numero uno. Cerca porte ampie e bagni con <strong>doccia a filo pavimento</strong>. La domotica (tapparelle elettriche, sensori) aumenta la sicurezza senza fatica.",
       },
       {
         h2: "La forza del quartiere",
-        content: "La 'città dei 15 minuti' è il modello ideale. La tua nuova casa dovrebbe avere farmacia, medico di base, un piccolo supermercato e una fermata dell'autobus a meno di 500 metri. La vicinanza a un parco pubblico o a un centro sociale aiuta anche a mantenere attiva la vita sociale.",
+        content: "Punta sulla 'città dei 15 minuti': farmacia, medico e supermercato a meno di <strong>500 metri</strong>. La vicinanza a un parco o un centro sociale aiuta a mantenere attiva la <strong>vita sociale</strong>.",
       },
     ],
     faqs: [
-      { q: "Meglio il centro storico o la prima periferia?", a: "Il centro è affascinante ma può essere rumoroso e difficile per il parcheggio degli ospiti. La prima periferia (es. zona Buco del Signore) offre spesso edifici più moderni e accessibili con ampi spazi verdi." },
-      { q: "Il piano terra con giardino è una buona idea?", a: "Sì, ma solo se ben protetto. Spesso i piani alti con grandi terrazze offrono maggiore luminosità e sicurezza, garantendo comunque uno sfogo esterno." },
+      { q: "Centro o periferia?", a: "La prima periferia (es. <strong>Buco del Signore</strong>) offre spesso edifici più moderni, accessibili e ricchi di verde." },
+      { q: "Piano terra?", a: "Sì, se protetto. Altrimenti i piani alti con <strong>ascensore</strong> garantiscono più luce e sicurezza." },
     ],
     ctaTitle: "Cerchi la tua casa ideale a Reggio Emilia?",
-    ctaDesc: "Conosciamo ogni condominio della città. Troviamo per te l'appartamento che risponde a tutte le tue esigenze presenti e future.",
+    ctaDesc: "Troviamo l'appartamento che risponde a tutte le tue esigenze presenti e future.",
   },
   "errori-evitare-acquisto-prima-casa": {
     title: "I 5 errori da evitare assolutamente quando compri la tua prima casa",
@@ -471,23 +466,23 @@ export const articles: Record<string, Article> = {
     category: "Acquirente",
     readTime: "7 min",
     coverImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "L'entusiasmo della prima casa può accecare. Molti acquirenti, spinti dal desiderio di trovare subito il proprio nido, trascurano dettagli tecnici o finanziari che possono trasformarsi in costosi rimpianti. Ecco i 5 errori fatali raccolti in 15 anni di esperienza a Reggio Emilia.",
+    intro: "L'entusiasmo della prima casa può accecare. Trascurare dettagli tecnici o finanziari porta a costosi rimpianti. Ecco i <strong>5 errori fatali</strong> da evitare a Reggio Emilia.",
     sections: [
       {
         h2: "1. Innamorarsi senza fare i conti con la banca",
-        content: "Visitare case prima di avere una pre-delibera del mutuo è l'errore numero uno. Rischi di innamorarti di un immobile che non puoi permetterti o di perdere l'occasione perché un altro acquirente, già finanziato, arriva prima di te. Definisci il tuo budget REALE (prezzo + tasse + agenzia + mobili) con un consulente creditizio prima di iniziare i tour.",
+        content: "Senza una <strong>pre-delibera del mutuo</strong>, rischi di perdere tempo o occasioni. Definisci il tuo <strong>budget REALE</strong> (prezzo + tasse + agenzia + mobili) con un consulente prima di iniziare le visite.",
       },
       {
-        h2: "2. Trascurare lo stato degli impianti e del condominio",
-        content: "Un bell'arredamento può nascondere una caldaia vecchia di 20 anni o impianti non certificati. Chiedi sempre il libretto della caldaia e l'attestazione di prestazione energetica (APE). Inoltre, verifica se sono previste spese straordinarie deliberate nel condominio (facciate, tetto): potrebbero costarti migliaia di euro subito dopo il rogito.",
+        h2: "2. Trascurare impianti e condominio",
+        content: "Verifica sempre il libretto della <strong>caldaia</strong> e l'APE. Controlla se sono previste <strong>spese straordinarie</strong> deliberate (facciate, tetto): potrebbero costarti migliaia di euro subito dopo il rogito.",
       },
     ],
     faqs: [
-      { q: "Posso chiedere lo sconto sul prezzo di listino?", a: "Sì, una negoziazione del 5-8% è media per Reggio Emilia, ma se l'immobile è prezzato correttamente e ha molte richieste, lo spazio di manovra si riduce." },
-      { q: "Quali tasse si pagano sulla prima casa?", a: "Se compri da privato, paghi l'imposta di registro al 2% sul valore catastale (non sul prezzo di vendita), oltre alle imposte ipotecaria e catastale fisse di 50€ l'una." },
+      { q: "Sconto sul prezzo?", a: "Una negoziazione del <strong>5-8%</strong> è la media locale, ma cala per immobili molto richiesti." },
+      { q: "Tasse prima casa?", a: "Se compri da privato, l'<strong>imposta di registro è al 2%</strong> sul valore catastale." },
     ],
     ctaTitle: "Vuoi comprare la tua prima casa senza rischi?",
-    ctaDesc: "Ti accompagniamo in ogni visita e controlliamo tutta la documentazione tecnica per garantirti un acquisto sicuro al 100%.",
+    ctaDesc: "Ti accompagniamo e controlliamo tutta la documentazione tecnica per un acquisto sicuro.",
   },
 
   "comprare-casa-asta-rischi-opportunita": {
@@ -498,23 +493,23 @@ export const articles: Record<string, Article> = {
     category: "Acquirente",
     readTime: "9 min",
     coverImage: "https://images.unsplash.com/photo-1582457380669-c833e7c77e01?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "Il mito del risparmio del 50% attira molti curiosi verso le aste giudiziarie. Sebbene sia possibile fare ottimi affari, le regole sono diverse dal mercato libero e non c'è spazio per l'improvvisazione. Ecco quello che devi sapere prima di versare la cauzione.",
+    intro: "Il risparmio attira molti verso le <strong>aste giudiziarie</strong>. Ma le regole sono diverse dal mercato libero: non c'è spazio per l'improvvisazione.",
     sections: [
       {
         h2: "L'importanza della perizia tecnica (CTU)",
-        content: "L'immobile all'asta si compra 'nello stato di fatto e di diritto in cui si trova'. Significa che se ci sono abusi edilizi o debiti condominiali pregressi, spesso spettano a te. Leggere attentamente la perizia del tribunale (CTU) è l'unico modo per capire i costi reali di ripristino o sanatoria che dovrai affrontare.",
+        content: "Si compra 'nello stato di fatto e di diritto in cui si trova'. Leggere la <strong>perizia del tribunale (CTU)</strong> è l'unico modo per capire abusi edilizi o debiti condominiali che spetteranno a te.",
       },
       {
-        h2: "Stato di occupazione: libera o occupata?",
-        content: "Un immobile libero è pronto all'uso. Se è occupato dal debitore o da terzi senza titolo, dovrai gestire la liberazione tramite il custode giudiziario. I tempi a Reggio Emilia possono variare da 4 a 8 mesi. Se l'immobile è occupato con un contratto di affitto regolare opponibile alla procedura, dovrai rispettarne la scadenza.",
+        h2: "Stato di occupazione",
+        content: "Se l'immobile è occupato dal debitore, la liberazione tramite <strong>custode giudiziario</strong> a Reggio Emilia richiede 4-8 mesi. Se c'è un affitto regolare, va rispettata la scadenza.",
       },
     ],
     faqs: [
-      { q: "Si può fare il mutuo per una casa all'asta?", a: "Sì, esistono convenzioni tra banche e tribunali. È fondamentale però avere la delibera PRONTA prima di partecipare all'asta, perché i tempi per il saldo prezzo sono tassativi (solitamente 60-120 giorni)." },
-      { q: "Quanto si risparmia davvero?", a: "In media, dopo 1 o 2 aste deserte, il risparmio reale rispetto al mercato libero si attesta tra il 20% e il 30%, al netto delle spese di procedura e sanatorie." },
+      { q: "Mutuo per l'asta?", a: "Sì, ma serve la <strong>delibera PRONTA</strong> prima di partecipare, i tempi di saldo sono tassativi." },
+      { q: "Quanto si risparmia?", a: "Tra il <strong>20% e il 30%</strong> rispetto al mercato libero, al netto di spese e sanatorie." },
     ],
     ctaTitle: "Ti interessa un immobile all'asta?",
-    ctaDesc: "Analizziamo per te la perizia e ti assistiamo in tutta la fase di partecipazione per evitare brutte sorprese.",
+    ctaDesc: "Analizziamo la perizia e ti assistiamo in ogni fase per evitare brutte sorprese.",
   },
 
   "controlli-urbanistici-catastali-acquisto": {
@@ -525,23 +520,23 @@ export const articles: Record<string, Article> = {
     category: "Acquirente",
     readTime: "8 min",
     coverImage: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "In Italia, un immobile non è vendibile se non c'è conformità tra lo stato di fatto, la planimetria depositata in catasto e i progetti approvati in comune. Scoprire un abuso edilizio il giorno del rogito è un incubo che può far saltare la vendita e costarti la caparra.",
+    intro: "Un immobile non è vendibile senza <strong>conformità</strong> tra stato di fatto, planimetria catastale e progetti comunali. Scoprire un abuso al rogito è un incubo.",
     sections: [
       {
-        h2: "Catasto vs Urbanistica: la differenza",
-        content: "Molti pensano che se la planimetria catastale corrisponde alla casa, tutto sia in regola. Errore. Il catasto ha fini fiscali, l'urbanistica (comune) ha fini abilitativi. Quello che conta davvero è l'ultimo progetto depositato in comune. Se hanno spostato un muro interno senza presentare una CILA, l'immobile è formalmente difforme.",
+        h2: "Catasto vs Urbanistica",
+        content: "Il catasto ha fini fiscali, l'urbanistica (comune) ha fini abilitativi. Conta l'ultimo <strong>progetto depositato in comune</strong>. Se hanno spostato un muro senza <strong>CILA</strong>, l'immobile è formalmente difforme.",
       },
       {
-        h2: "L'Relazione Tecnica Integrata (RTI)",
-        content: "A Reggio Emilia e in Emilia-Romagna è ormai prassi (e spesso obbligatoria per legge o richiesta dai notai) la Relazione Tecnica Integrata redatta da un tecnico abilitato. Questo documento certifica che l'immobile sia conforme a tutte le normative. Chiedi sempre al venditore se è già disponibile o se intende fornirla.",
+        h2: "Relazione Tecnica Integrata (RTI)",
+        content: "A Reggio Emilia è prassi consolidata l'uso della <strong>RTI</strong> redatta da un tecnico. Certifica che tutto sia a norma. Chiedi sempre se è già disponibile o se il venditore intende fornirla.",
       },
     ],
     faqs: [
-      { q: "Cosa succede se trovo un abuso?", a: "Se l'abuso è sanabile, il venditore deve provvedere a proprie spese prima del rogito. Se non è sanabile, l'immobile non può essere venduto e hai diritto alla restituzione del doppio della caparra." },
-      { q: "Quanto costa una sanatoria?", a: "Dipende dall'entità. Per spostamenti di pareti interne (CILA in sanatoria) si parla di circa 2.000-3.000€ tra sanzioni e onorari tecnici." },
+      { q: "Abuso edilizio?", a: "Se non è sanabile, l'immobile non è vendibile e hai diritto al <strong>doppio della caparra</strong>." },
+      { q: "Costo sanatoria?", a: "Per difformità interne lievi (CILA in sanatoria) si spendono circa <strong>2.000-3.000€</strong>." },
     ],
     ctaTitle: "Hai dubbi sulla regolarità di una casa?",
-    ctaDesc: "I nostri tecnici interni effettuano un controllo preliminare gratuito su ogni immobile che trattiamo.",
+    ctaDesc: "I nostri tecnici effettuano un controllo preliminare gratuito su ogni immobile.",
   },
 
   "come-ottenere-miglior-mutuo-2025": {
@@ -605,23 +600,23 @@ export const articles: Record<string, Article> = {
     category: "Vendita",
     readTime: "6 min",
     coverImage: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "Non hai una seconda occasione per fare una prima buona impressione. L'Home Staging non è arredamento, ma marketing visivo. L'obiettivo è depersonalizzare la casa affinché l'acquirente possa immaginarsi subito a viverci dentro.",
+    intro: "Non hai una seconda occasione per fare una prima buona impressione. L'Home Staging è <strong>marketing visivo</strong>: l'obiettivo è depersonalizzare la casa.",
     sections: [
       {
         h2: "Elimina il superfluo (Decluttering)",
-        content: "Le foto di famiglia, la collezione di calamite sul frigo, i troppi soprammobili: sono tutte distrazioni. Una casa vuota (o percepita come tale) sembra più grande e luminosa. Riduci i mobili ingombranti e libera le superfici: meno è meglio.\n\nPulisci le finestre: la luce naturale è il miglior venditore che tu possa avere. Una casa luminosa si vende al 15% in più rispetto a una cupa.",
+        content: "Foto di famiglia e troppi soprammobili sono distrazioni. Una casa sgombra sembra più grande e luminosa. Riduci i mobili ingombranti: <strong>meno è meglio</strong>.\n\nPulisci le finestre: la <strong>luce naturale</strong> è il miglior venditore. Una casa luminosa si vende fino al 15% in più.",
       },
       {
-        h2: "Il potere dei colori neutri e dei profumi",
-        content: "Una rinfrescata di bianco alle pareti toglie anni di vita all'immobile e lo rende subito pronto all'uso. E non sottovalutare l'olfatto: arieggia sempre prima delle visite. Evita profumatori chimici troppo forti; meglio l'odore di pulito o di caffè appena fatto.",
+        h2: "Colori neutri e profumi",
+        content: "Una rinfrescata di <strong>bianco alle pareti</strong> toglie anni all'immobile. Arieggia sempre prima delle visite: l'odore di pulito o di caffè appena fatto è imbattibile.",
       },
     ],
     faqs: [
-      { q: "Devo spendere molto per l'home staging?", a: "Assolutamente no. Spesso basta spostare i mobili esistenti, aggiungere qualche cuscino colorato e una pianta per cambiare faccia a una stanza." },
-      { q: "Funziona anche per le case da ristrutturare?", a: "Sì, anzi è fondamentale. In una casa vuota e malandata l'acquirente vede solo problemi. Con un allestimento base (anche con mobili di cartone) aiuti a percepire gli spazi." },
+      { q: "Costa molto?", a: "No. Spesso basta spostare i mobili esistenti e aggiungere qualche <strong>elemento decorativo</strong>." },
+      { q: "Case da ristrutturare?", a: "Fondamentale: l'acquirente deve poter <strong>percepire gli spazi</strong> oltre i difetti." },
     ],
     ctaTitle: "Vuoi che la tua casa risalti tra gli annunci?",
-    ctaDesc: "Offriamo un servizio di Home Staging professionale incluso per tutti i nostri clienti a Reggio Emilia.",
+    ctaDesc: "Offriamo un servizio di Home Staging professionale incluso per tutti i nostri clienti.",
   },
 
   "marketing-immobiliare-digitale-efficace": {
@@ -632,23 +627,23 @@ export const articles: Record<string, Article> = {
     category: "Vendita",
     readTime: "7 min",
     coverImage: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "Il 92% delle persone cerca casa partendo da uno smartphone. Se il tuo immobile non appare nei primi risultati o ha un aspetto amatoriale, per il mercato non esiste. Ecco come la tecnologia ha cambiato le regole del gioco.",
+    intro: "Il <strong>92% delle persone</strong> cerca casa partendo da uno smartphone. Il marketing digitale è la chiave per non essere invisibili.",
     sections: [
       {
         h2: "Oltre i portali tradizionali",
-        content: "Immobiliare.it e Idealista sono fondamentali, ma sono saturi. Noi usiamo campagne mirate su Facebook e Instagram (Targeting per interessi e area geografica) per far apparire la tua casa proprio davanti agli occhi di chi sta cercando in quella zona di Reggio Emilia.\n\nUn video tour professionale montato per TikTok o Reels attira l'attenzione tre volte di più rispetto a una serie di foto statiche.",
+        content: "Usiamo campagne mirate su <strong>Facebook e Instagram</strong> (Targeting per interessi) per intercettare chi cerca a Reggio Emilia. Un <strong>video tour professionale</strong> attira l'attenzione tre volte di più delle foto statiche.",
       },
       {
         h2: "Il Virtual Tour 3D",
-        content: "Permettere a un potenziale acquirente di 'camminare' dentro casa tua alle 11 di sera comodamente dal suo divano è un filtro potentissimo. Chi poi prenota la visita fisica è un cliente realmente interessato, abbattendo il numero di 'turisti immobiliari' che ti fanno perdere tempo e sporcano casa.",
+        content: "Il <strong>Virtual Tour 3D</strong> permette di visitare casa a distanza. È un filtro potente: chi prenota la visita fisica è un <strong>cliente realmente interessato</strong>, eliminando i perditempo.",
       },
     ],
     faqs: [
-      { q: "Quanto conta la qualità delle foto?", a: "Tutto. Un annuncio con foto professionali riceve il 500% in più di clic rispetto a uno con foto fatte con il cellulare." },
-      { q: "Usate l'intelligenza artificiale?", a: "Sì, per ottimizzare le descrizioni degli annunci e per analizzare i comportamenti degli utenti sui nostri siti, così da mostrare la tua casa al pubblico più propenso all'acquisto." },
+      { q: "Qualità delle foto?", a: "Fondamentale. Foto professionali ottengono il <strong>500% in più di clic</strong>." },
+      { q: "Intelligenza Artificiale?", a: "Sì, per ottimizzare i contenuti e analizzare il <strong>comportamento degli utenti</strong>." },
     ],
     ctaTitle: "Vuoi una strategia di marketing moderna?",
-    ctaDesc: "Investiamo migliaia di euro ogni mese per dare la massima visibilità ai nostri immobili. La tua casa merita di essere vista.",
+    ctaDesc: "Investiamo per dare la massima visibilità alla tua casa.",
   },
 
   "scegliere-migliore-agenzia-immobiliare": {
@@ -659,23 +654,23 @@ export const articles: Record<string, Article> = {
     category: "Vendita",
     readTime: "8 min",
     coverImage: "https://images.unsplash.com/photo-1556761175-5973cf0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "Affidare la vendita del bene più prezioso al primo che capita è un rischio inutile. A Reggio Emilia ci sono oltre 200 agenzie: alcune sono eccellenti, altre sono semplici portachiavi. Ecco come distinguere i professionisti dai dilettanti.",
+    intro: "Affidare il bene più prezioso al primo che capita è un rischio. Ecco come distinguere i <strong>professionisti</strong> dai dilettanti.",
     sections: [
       {
-        h2: "Non scegliere chi ti valuta la casa di più",
-        content: "Il trucco più vecchio del mondo: un agente ti dà una valutazione gonfiata per farti firmare il mandato, salvo poi chiederti ribassi ogni 15 giorni quando non arrivano visite. Scegli chi ti mostra dati reali di vendita (venduto, non chiesto) nella tua zona. La verità fa vendere, le favole fanno perdere tempo.",
+        h2: "Evita stime gonfiate",
+        content: "Non scegliere chi ti valuta la casa di più solo per farti firmare. Scegli chi mostra <strong>dati reali di vendita</strong> (prezzi reali di rogito) nella tua zona. La verità fa vendere, le favole fanno perdere tempo.",
       },
       {
-        h2: "Guarda il portafoglio e il metodo",
-        content: "L'agenzia ha troppi immobili? Forse non dedicherà il giusto tempo alla tua casa. Ha foto brutte? Non investirà nel marketing per te. Chiedi esplicitamente: 'Qual è il piano d'azione specifico per vendere casa mia?'. Se la risposta è 'la mettiamo sul portale e aspettiamo', scappa.",
+        h2: "Metodo e marketing",
+        content: "Chiedi esplicitamente un <strong>piano d'azione specifico</strong>. Se la strategia è solo 'aspettare la chiamata dal portale', non è il partner giusto per te.",
       },
     ],
     faqs: [
-      { q: "Conviene dare l'esclusiva?", a: "Sì, se l'agenzia è valida. Con l'esclusiva l'agente è motivato a investire budget pubblicitario proprio perché sa che il suo lavoro sarà ripagato. Senza esclusiva, nessuno investe davvero." },
-      { q: "Cosa devo controllare nel contratto?", a: "La durata (evita mandati oltre i 6 mesi), la provvigione e se sono previsti costi extra per il marketing (che noi di Diba, ad esempio, includiamo sempre)." },
+      { q: "Esclusiva?", a: "Sì, motiva l'agenzia a investire <strong>budget pubblicitario</strong> sulla tua casa." },
+      { q: "Contratto?", a: "Verifica durata (massimo 6 mesi) e che i <strong>costi marketing</strong> siano inclusi." },
     ],
     ctaTitle: "Cerchi affidabilità e risultati?",
-    ctaDesc: "Guarda le nostre recensioni su Google. La nostra storia a Reggio Emilia parla per noi.",
+    ctaDesc: "Le nostre recensioni e la nostra storia parlano per noi.",
   },
   "costi-successione-immobiliare-2025": {
     title: "Quanto costa davvero la successione di un immobile? Tasse e spese",
@@ -685,23 +680,23 @@ export const articles: Record<string, Article> = {
     category: "Successioni",
     readTime: "7 min",
     coverImage: "https://images.unsplash.com/photo-1554224155-b111294d7cbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "Spesso si pensa che ereditare sia un guadagno netto, ma prima di poter disporre dell'immobile è necessario affrontare una serie di costi fissi. A Reggio Emilia, le imposte variano significativamente in base al valore dell'immobile e al rapporto di parentela.",
+    intro: "Ereditare non è solo un guadagno: ci sono <strong>costi fissi</strong> da affrontare. Le imposte dipendono dal <strong>rapporto di parentela</strong> e dal valore catastale.",
     sections: [
       {
         h2: "Le imposte obbligatorie",
-        content: "Anche se sei un figlio o coniuge e non paghi l'imposta di successione (fino a 1 milione di euro), dovrai comunque pagare l'imposta ipotecaria (2%) e l'imposta catastale (1%) calcolate sul valore catastale dell'immobile. Se però decidi di adibire la casa ereditata ad abitazione principale, queste imposte diventano fisse (200€ l'una).\n\nOltre alle tasse, considera l'onorario del notaio o del professionista che redige e presenta la pratica, e i diritti di segreteria per le visure e la trascrizione dei registri immobiliari.",
+        content: "Anche senza tassa di successione (sotto 1 milione per figli/coniugi), pagherai l'<strong>imposta ipotecaria (2%)</strong> e la <strong>catastale (1%)</strong>. Se diventa <strong>abitazione principale</strong>, le imposte diventano fisse (200€ l'una).\n\nAggiungi l'onorario del <strong>notaio</strong> e le spese per la <strong>trascrizione</strong> nei registri immobiliari.",
       },
       {
-        h2: "La tassa sulla plusvalenza",
-        content: "Se decidi di vendere l'immobile ereditato prima di 5 anni dalla morte del de cuius, solitamente non paghi plusvalenza IRPEF. Tuttavia, se la vendita avviene molti anni dopo, la situazione fiscale va analizzata con attenzione per evitare accertamenti.",
+        h2: "Tassa sulla plusvalenza",
+        content: "Vendere un immobile ereditato è solitamente <strong>esente da plusvalenza IRPEF</strong>. Tuttavia, è sempre meglio verificare la situazione fiscale specifica.",
       },
     ],
     faqs: [
-      { q: "Entro quanto tempo va pagata la successione?", a: "La dichiarazione va presentata entro 12 mesi dal decesso. Le imposte vanno pagate contestualmente alla presentazione della domanda telematica." },
-      { q: "Cosa succede se non ho i soldi per le tasse?", a: "Alcuni istituti di credito offrono prestiti dedicati al pagamento degli oneri di successione, oppure puoi concordare con l'acquirente un acconto importante per coprire queste spese prima del rogito." },
+      { q: "Tempi?", a: "Dichiarazione entro <strong>12 mesi</strong>. Le imposte si pagano alla presentazione della domanda." },
+      { q: "Senza liquidità?", a: "Si può concordare un <strong>acconto dall'acquirente</strong> per coprire gli oneri prima del rogito." },
     ],
     ctaTitle: "Dubbi sui costi della successione?",
-    ctaDesc: "Ti forniamo un preventivo gratuito di tutte le spese tecniche e fiscali che dovrai affrontare per la tua eredità a Reggio Emilia.",
+    ctaDesc: "Ti forniamo un preventivo gratuito di tutte le spese fiscali.",
   },
 
   "vendere-quota-ereditaria-immobiliare": {
@@ -712,23 +707,23 @@ export const articles: Record<string, Article> = {
     category: "Successioni",
     readTime: "8 min",
     coverImage: "https://images.unsplash.com/photo-1507679722336-43512c186c51?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "Gestire un immobile con fratelli, zii o cugini può essere complicato. Se tu vuoi vendere e gli altri no, o se vuoi semplicemente monetizzare la tua parte, esistono strade legali precise per farlo rispettando i diritti di tutti.",
+    intro: "Gestire un immobile in comproprietà può essere difficile. Se vuoi monetizzare la tua parte, devi rispettare i <strong>diritti dei coeredi</strong>.",
     sections: [
       {
-        h2: "Il Diritto di Prelazione",
-        content: "Se decidi di vendere la tua quota a un estraneo, i tuoi coeredi hanno il diritto di essere preferiti a parità di prezzo (diritto di prelazione). Devi notificare loro la proposta di vendita con l'indicazione del prezzo. Hanno due mesi di tempo per decidere se acquistare la tua quota. Se non lo fai, possono riscattare la quota dall'acquirente estraneo (retratto successorio).",
+        h2: "Diritto di Prelazione",
+        content: "I coeredi hanno il <strong>diritto di prelazione</strong>: devono essere preferiti a parità di prezzo. Devi notificare la proposta; hanno <strong>due mesi</strong> per decidere. Senza notifica, possono riscattare la quota dall'acquirente estraneo.",
       },
       {
-        h2: "La Divisione Ereditaria",
-        content: "Se nessuno vuole comprare la tua quota e non c'è accordo per vendere l'intero immobile, puoi chiedere la divisione ereditaria. Se l'immobile non è comodamente divisibile in parti fisiche, si procede alla vendita forzata tramite tribunale e alla ripartizione del ricavato. È una strada lunga e costosa che cerchiamo sempre di evitare tramite la nostra mediazione professionale.",
+        h2: "Divisione Ereditaria",
+        content: "Senza accordo, puoi chiedere la <strong>divisione giudiziale</strong>. Se l'immobile non è divisibile fisicamente, si va alla vendita forzata in tribunale. È una strada costosa da evitare con la <strong>mediazione professionale</strong>.",
       },
     ],
     faqs: [
-      { q: "A chi posso vendere la mia quota?", a: "Puoi venderla a uno degli altri coeredi (senza particolari formalità di prelazione verso gli altri) oppure a un terzo, rispettando però la notifica formale citata sopra." },
-      { q: "Quanto vale una quota?", a: "Spesso vale meno del valore matematico (es. il 50% di una casa da 200k non vale sempre 100k) perché un terzo acquirente sconta la difficoltà di convivenza con estranei. È quasi sempre più conveniente vendere tutto l'immobile insieme." },
+      { q: "A chi vendere?", a: "A un coerede o a un terzo (rispettando la prelazione)." },
+      { q: "Valore quota?", a: "Spesso vale meno del valore matematico. Conviene sempre <strong>vendere l'intero immobile</strong> insieme." },
     ],
     ctaTitle: "Difficoltà con i coeredi?",
-    ctaDesc: "Siamo esperti nella mediazione immobiliare tra familiari. Aiutiamo a sbloccare situazioni ferme da anni a Reggio Emilia.",
+    ctaDesc: "Siamo esperti nella mediazione tra familiari per sbloccare situazioni ferme.",
   },
 
   "manutenzione-casa-ereditata-disabitata": {
@@ -766,23 +761,23 @@ export const articles: Record<string, Article> = {
     category: "Successioni",
     readTime: "8 min",
     coverImage: "https://images.unsplash.com/photo-1573497620053-ea5310f94f17?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "Nelle successioni immobiliari il problema non è quasi mai tecnico, ma emotivo. Vecchi rancori, visioni diverse del mercato o necessità economiche contrastanti possono paralizzare la vendita per anni, portando l'immobile al degrado.",
+    intro: "Il problema nelle successioni è spesso <strong>emotivo</strong>. Vecchi rancori possono paralizzare la vendita per anni, svalutando il bene.",
     sections: [
       {
-        h2: "Il ruolo dell'agente come terzo imparziale",
-        content: "A differenza di un parente, noi siamo una figura neutra interessata solo al risultato oggettivo: vendere al miglior prezzo possibile. Spesso riusciamo a far parlare eredi che non si rivolgono la parola da anni, portandoli su un piano di ragionamento economico razionale anziché emotivo.",
+        h2: "L'agente come terzo imparziale",
+        content: "Siamo una figura neutra interessata solo a vendere al <strong>miglior prezzo</strong>. Spesso facciamo parlare eredi in conflitto portandoli su un piano di <strong>ragionamento economico</strong> razionale.",
       },
       {
         h2: "Trovare il punto di incontro",
-        content: "Proponiamo soluzioni basate sui dati: valutazioni oggettive, prospetti di ripartizione spese e tempi certi. Quando tutti vedono nero su bianco i vantaggi della vendita (e i costi del mantenimento), l'accordo diventa molto più vicino.",
+        content: "Offriamo valutazioni oggetive e <strong>prospetti spese</strong> chiari. Quando i vantaggi della vendita sono evidenti 'nero su bianco', l'accordo diventa possibile.",
       },
     ],
     faqs: [
-      { q: "Chi paga la provvigione in caso di più eredi?", a: "In genere la provvigione viene ripartita proporzionalmente alle quote di proprietà di ciascun erede, salvo accordi diversi tra le parti." },
-      { q: "Possiamo darvi mandati separati?", a: "Sì, è una pratica che usiamo spesso per garantire a ogni erede la propria indipendenza nella gestione dei rapporti con l'agenzia, mantenendo però l'unicità della proposta di vendita." },
+      { q: "Chi paga la provvigione?", a: "Viene ripartita <strong>proporzionalmente alle quote</strong> di proprietà." },
+      { q: "Mandati separati?", a: "Sì, garantiamo l'<strong>indipendenza di ogni erede</strong> nei rapporti con l'agenzia." },
     ],
     ctaTitle: "La famiglia è divisa sulla vendita?",
-    ctaDesc: "Parliamone insieme. Abbiamo l'esperienza e la pazienza per ricostruire l'accordo necessario a vendere casa tua.",
+    ctaDesc: "Aiutiamo a ricostruire l'accordo necessario per vendere casa.",
   },
   "casa-comune-separazione-cosa-fare": {
     title: "Casa in comproprietà e separazione: vendere, riscattare o affittare?",
@@ -792,23 +787,23 @@ export const articles: Record<string, Article> = {
     category: "Situazioni Difficili",
     readTime: "7 min",
     coverImage: "https://images.unsplash.com/photo-1543269664-76ec3997d9ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "La casa è spesso il bene più prezioso e il più difficile da dividere durante una separazione. Quando l'amore finisce, restano i muri in comune e la necessità di trovare una soluzione equa che permetta a entrambi di ricominciare.",
+    intro: "La casa è il bene più difficile da dividere. Serve una <strong>soluzione equa</strong> che permetta a entrambi di ricominciare.",
     sections: [
       {
-        h2: "Vendere a terzi: la soluzione più pulita",
-        content: "Vendere l'immobile sul mercato e dividere il ricavato (al netto del mutuo) è spesso la scelta migliore per evitare legami residui. Permette a entrambi di avere la liquidità necessaria per acquistare o affittare una nuova soluzione indipendente. A Reggio Emilia gestiamo queste vendite con estrema delicatezza, fungendo da unico punto di contatto per evitare tensioni tra gli ex coniugi.",
+        h2: "Vendere a terzi",
+        content: "Vendere e dividere il ricavato (netto mutuo) è la scelta più pulita. Fornisce la <strong>liquidità per ripartire</strong>. Diba funge da unico punto di contatto per gestire la vendita con delicatezza evitando tensioni.",
       },
       {
-        h2: "Il riscatto della quota",
-        content: "Se uno dei due vuole restare nella casa, può acquistare la quota dell'altro. In questo caso è fondamentale una valutazione professionale super partes: chi vende non vuole rimetterci, chi compra non vuole pagare più del dovuto. Il prezzo deve tenere conto anche dell'eventuale mutuo residuo che andrà accollato o estinto.",
+        h2: "Riscatto della quota",
+        content: "Se uno vuole restare, può <strong>acquistare la quota</strong> dell'altro. Essenziale una valutazione professionale super partes per non rimetterci e considerare il subentro nel mutuo.",
       },
     ],
     faqs: [
-      { q: "Cosa succede se uno non vuole vendere?", a: "Se non c'è accordo, si rischia la divisione giudiziale in tribunale, dove la casa viene messa all'asta. È un processo distruttivo per il valore del bene: la nostra mediazione mira proprio a evitare questo scenario." },
-      { q: "Possiamo affittarla e dividere il canone?", a: "Sì, è un'opzione valida se i rapporti lo permettono e se entrambi hanno già un'altra sistemazione. Tuttavia, rimane un legame economico che potrebbe complicare la gestione futura." },
+      { q: "Se uno non vuole vendere?", a: "Si rischia la <strong>divisione giudiziale</strong>. La nostra mediazione mira a evitare l'asta forzata." },
+      { q: "Si può affittare?", a: "Sì, se i rapporti lo permettono, ma resta un <strong>legame economico</strong> complesso." },
     ],
     ctaTitle: "Dovete dividere la casa comune?",
-    ctaDesc: "Offriamo una valutazione gratuita e imparziale per aiutarvi a prendere la decisione migliore per il futuro di entrambi.",
+    ctaDesc: "Offriamo una valutazione imparziale per aiutarvi a decidere il vostro futuro.",
   },
 
   "assegnazione-casa-familiare-diritti": {
@@ -819,23 +814,23 @@ export const articles: Record<string, Article> = {
     category: "Situazioni Difficili",
     readTime: "8 min",
     coverImage: "https://images.unsplash.com/photo-1506143925201-0252c51780b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "In presenza di figli minori o maggiorenni non autosufficienti, il giudice può assegnare il diritto di abitazione a uno dei genitori, anche se non è il proprietario esclusivo. Questa situazione ha un impatto enorme sulla commerciabilità dell'immobile.",
+    intro: "Il diritto di abitazione assegnato a un genitore ha un <strong>impatto enorme</strong> sulla commerciabilità della casa.",
     sections: [
       {
-        h2: "L'impatto sul valore di mercato",
-        content: "Un immobile occupato da un genitore assegnatario è tecnicamente vendibile, ma il suo valore di mercato subisce un forte abbattimento (anche del 30-40%) perché l'acquirente non può entrarne in possesso finché i figli non saranno indipendenti. In pratica, diventa un investimento a lunghissimo termine, simile alla nuda proprietà.",
+        h2: "Impatto sul valore",
+        content: "Un immobile assegnato subisce un abbattimento del valore (anche del <strong>30-40%</strong>) perché l'acquirente non può entrarne in possesso subito. Diventa un investimento simile alla <strong>nuda proprietà</strong>.",
       },
       {
         h2: "Vendere di comune accordo",
-        content: "La situazione ideale è che entrambi i genitori decidano di rinunciare all'assegnazione per vendere l'immobile a prezzo pieno, magari usando il ricavato per garantire due abitazioni più piccole ma funzionali alla nuova vita familiare. È un passaggio che richiede accordi legali precisi e una visione condivisa del benessere dei figli.",
+        content: "Se entrambi decidono di rinunciare all'assegnazione per vendere a <strong>prezzo pieno</strong>, possono usare il ricavato per due nuove case più funzionali alla nuova vita familiare.",
       },
     ],
     faqs: [
-      { q: "L'assegnazione scade mai?", a: "Sì, quando i figli diventano economicamente autosufficienti o quando il genitore assegnatario convive stabilmente con un nuovo partner o si risposa." },
-      { q: "Posso vendere la mia quota se la casa è assegnata?", a: "Sì, ma troverai solo investitori professionali disposti a comprare a un prezzo molto scontato, sapendo che l'immobile resterà occupato per anni." },
+      { q: "Scadenza?", a: "Quando i figli sono <strong>autosufficienti</strong> o il genitore convive con un nuovo partner." },
+      { q: "Vendere la quota?", a: "Sì, ma solo a investitori professionali disposti a un <strong>forte sconto</strong>." },
     ],
     ctaTitle: "Casa assegnata e volete vendere?",
-    ctaDesc: "Studiamo insieme la soluzione legale e immobiliare per massimizzare il valore del vostro patrimonio comune.",
+    ctaDesc: "Studiamo la soluzione per massimizzare il valore del vostro patrimonio.",
   },
 
   "mutuo-cointestato-separazione-soluzioni": {
@@ -846,23 +841,23 @@ export const articles: Record<string, Article> = {
     category: "Situazioni Difficili",
     readTime: "7 min",
     coverImage: "https://images.unsplash.com/photo-1554224155-8d04cb21cd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "Il mutuo cointestato è il legame più difficile da sciogliere. Per la banca, entrambi siete responsabili dell'intero debito (solidarietà), indipendentemente dagli accordi privati presi durante la separazione.",
+    intro: "Il mutuo cointestato è il legame più difficile da sciogliere. Per la banca, entrambi siete <strong>responsabili in solido</strong> del debito.",
     sections: [
       {
         h2: "L'Accollo Liberatorio",
-        content: "Se uno dei due tiene la casa, può subentrare nel mutuo. Ma attenzione: serve il consenso della banca. La banca libererà l'altro coniuge solo se chi resta ha un reddito sufficiente a garantire il pagamento delle rate da solo. In molti casi, la banca richiede un nuovo garante per procedere alla liberazione.",
+        content: "Chi tiene la casa può subentrare nel mutuo (accollo), ma serve il <strong>consenso della banca</strong>. La banca libererà l'altro coniuge solo se il reddito di chi resta è considerato <strong>sufficiente a garantire le rate</strong>.",
       },
       {
         h2: "L'Estinzione tramite vendita",
-        content: "Vendere la casa e usare il ricavato per chiudere il mutuo è l'unica via certa al 100% per risultare nuovamente finanziabili per un prossimo acquisto. Se resti 'incastrato' in un mutuo cointestato, anche se non paghi tu la rata, la tua capacità di ottenere un nuovo prestito sarà drasticamente ridotta.",
+        content: "Vendere e chiudere il mutuo è la via più sicura per risultare nuovamente <strong>finanziabili</strong>. Restare in un mutuo cointestato riduce drasticamente la tua capacità di ottenere nuovi prestiti.",
       },
     ],
     faqs: [
-      { q: "Posso smettere di pagare se non vivo più in casa?", a: "Legalmente no. Se l'altro coniuge non paga, la banca cercherà te. I ritardi macchieranno il profilo creditizio di entrambi, impedendo futuri finanziamenti." },
-      { q: "La banca può rifiutare l'accollo?", a: "Sì, e lo fa spesso se il reddito della persona che resta è considerato insufficiente. In questi casi la vendita rimane l'unica strada percorribile." },
+      { q: "Posso smettere di pagare?", a: "No. Se l'altro non paga, la banca cercherà te, macchiando il tuo <strong>profilo creditizio</strong>." },
+      { q: "La banca può rifiutare?", a: "Sì, se il reddito di chi resta è insufficiente. In quel caso la <strong>vendita è l'unica strada</strong>." },
     ],
     ctaTitle: "Problemi con il mutuo cointestato?",
-    ctaDesc: "Ti aiutiamo nel dialogo con la banca e velocizziamo la vendita per liberarti da ogni obbligo finanziario residuo.",
+    ctaDesc: "Ti aiutiamo nel dialogo con la banca per liberarti da ogni obbligo finanziario.",
   },
 
   "vendita-casa-separazione-tempi-legali": {
@@ -873,23 +868,23 @@ export const articles: Record<string, Article> = {
     category: "Situazioni Difficili",
     readTime: "8 min",
     coverImage: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "Moltissime persone ci chiedono se sia necessario aspettare la sentenza definitiva per vendere casa. La risposta è no: agire in anticipo, inserendo la vendita nell'accordo di separazione, può semplificare enormemente la vita e ridurre le spese legali.",
+    intro: "Non serve aspettare la sentenza definitiva. Inserire la vendita nell'<strong>accordo di separazione</strong> semplifica la vita e riduce le spese legali.",
     sections: [
       {
         h2: "Inserire la vendita nell'omologa",
-        content: "In caso di separazione consensuale, potete stabilire che la casa venga venduta entro una certa data e a un prezzo minimo. Questo accordo, una volta omologato dal tribunale, diventa una garanzia per entrambi. Inoltre, i trasferimenti immobiliari eseguiti in esecuzione di accordi di separazione o divorzio godono di importanti esenzioni fiscali sulle imposte di registro.",
+        content: "Potete stabilire tempi e prezzi minimi nell'<strong>omologa del tribunale</strong>. Oltre alla garanzia legale, i trasferimenti in esecuzione di accordi di divorzio godono di importanti <strong>esenzioni fiscali</strong>.",
       },
       {
-        h2: "La gestione delle visite in momenti di tensione",
-        content: "Se la convivenza è ancora in corso o se i rapporti sono tesi, gestire le visite degli acquirenti diventa complesso. Noi agiamo come filtro: organizziamo gli appuntamenti in orari concordati e gestiamo le obiezioni degli acquirenti senza che queste alimentino ulteriori conflitti tra le parti.",
+        h2: "Filtro e visite",
+        content: "Gestire le visite in tensione è complesso. Noi agiamo come <strong>filtro professionale</strong>: organizziamo appuntamenti concordati senza alimentare conflitti tra le parti.",
       },
     ],
     faqs: [
-      { q: "Devo avere il consenso scritto dell'ex?", a: "Se l'immobile è in comproprietà, sì. Se è di proprietà esclusiva di uno solo, ma è casa familiare assegnata, serve comunque un coordinamento legale per evitare opposizioni." },
-      { q: "Quanto tempo ci vuole per vendere in queste situazioni?", a: "I tempi tecnici di vendita sono i soliti (45-60 giorni), ma bisogna considerare i tempi per ottenere il nulla osta del giudice se previsto dagli accordi." },
+      { q: "Consenso dell'ex?", a: "In comproprietà è obbligatorio. Se la casa è <strong>assegnata</strong>, serve comunque coordinamento." },
+      { q: "Tempi?", a: "I soliti tempi tecnici (45-60 giorni), più l'eventuale <strong>nulla osta del giudice</strong>." },
     ],
     ctaTitle: "State pianificando la separazione?",
-    ctaDesc: "Inserite la vendita della casa nel vostro percorso di ripartenza. Vi aiutiamo a chiudere questo capitolo nel modo più sereno possibile.",
+    ctaDesc: "Vi aiutiamo a chiudere questo capitolo nel modo più sereno.",
   },
   "procura-speciale-vendita-immobiliare-distanza": {
     title: "La procura speciale: come vendere casa a Reggio stando all'estero",
@@ -899,23 +894,23 @@ export const articles: Record<string, Article> = {
     category: "Situazioni Difficili",
     readTime: "6 min",
     coverImage: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "Vendere casa a distanza è una necessità comune per chi si è trasferito per lavoro o per chi ha ereditato un immobile lontano dal proprio luogo di residenza. La tecnologia e gli strumenti legali permettono oggi di gestire l'intera operazione senza mai mettere piede a Reggio Emilia.",
+    intro: "Vendere a distanza è oggi possibile senza mai mettere piede a Reggio Emilia grazie alla <strong>procura speciale</strong>.",
     sections: [
       {
-        h2: "Cos'è e come si fa la procura speciale",
-        content: "La procura speciale è un atto notarile con cui deleghi una persona di tua fiducia (un parente o un amico) a compiere l'atto di vendita al posto tuo. Se sei all'estero, puoi redigerla presso il Consolato Italiano o un notaio locale (in questo caso servirà l'apostille e una traduzione giurata).\n\nAttenzione: contrariamente a quanto molti pensano, l'agente immobiliare non può essere il tuo procuratore per motivi di conflitto di interessi. Noi coordiniamo però tutto il flusso documentale tra te, il procuratore e il notaio.",
+        h2: "La Procura Speciale",
+        content: "Deleghi una persona di fiducia tramite <strong>atto notarile</strong>. Se sei all'estero, puoi farlo al <strong>Consolato</strong> o tramite notaio locale (con apostille). Noi coordiniamo il tutto tra te, il delegato e il notaio.",
       },
       {
-        h2: "Gestione chiavi e documentazione",
-        content: "Basta inviarci le chiavi tramite corriere assicurato. Da quel momento gestiamo noi tutto: sopralluoghi tecnici per l'APE e l'RTI, servizio fotografico e, ovviamente, tutte le visite. Tu sarai costantemente aggiornato tramite report digitali e videochiamate dopo ogni appuntamento importante.",
+        h2: "Gestione attiva",
+        content: "Gestiamo noi <strong>chiavi e sopralluoghi</strong> (APE, RTI) e tutte le visite. Sarai aggiornato con report digitali e videochiamate, garantendo trasparenza totale senza che tu debba viaggiare.",
       },
     ],
     faqs: [
-      { q: "La procura scade?", a: "La procura speciale è legata a un atto specifico (la vendita di quell'immobile). Si estingue una volta compiuto l'atto o se decidi di revocarla prima del rogito." },
-      { q: "Quanto costa fare una procura al consolato?", a: "Le tariffe consolari sono fisse e generalmente contenute (tra 30€ e 60€), ma i tempi di appuntamento possono essere lunghi: meglio muoversi con anticipo." },
+      { q: "Scadenza?", a: "Legata all'atto specifico. Si estingue al compimento della vendita o per revoca." },
+      { q: "Costo al Consolato?", a: "Pochi euro (30-60€), ma i <strong>tempi di appuntamento</strong> possono essere lunghi." },
     ],
     ctaTitle: "Vivi lontano da Reggio Emilia?",
-    ctaDesc: "Siamo il tuo occhio e il tuo braccio operativo sul posto. Gestiamo la vendita della tua casa con la stessa cura che avresti tu.",
+    ctaDesc: "Siamo il tuo braccio operativo sul posto.",
   },
 
   "gestione-utenze-casa-vuota-vendita": {
@@ -926,23 +921,23 @@ export const articles: Record<string, Article> = {
     category: "Situazioni Difficili",
     readTime: "7 min",
     coverImage: "https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "Una casa vuota è una casa fragile. Quando vendi a distanza, la gestione dei dettagli pratici può diventare un mal di testa. Ecco come pianificare il distacco o la continuità dei servizi per presentare l'immobile al meglio risparmiando.",
+    intro: "Una casa vuota è fragile. Gestire acqua, luce e gas in modo strategico è fondamentale per <strong>non far svalutare l'immobile</strong>.",
     sections: [
       {
         h2: "Utenze: Voltura o Chiusura?",
-        content: "Il nostro consiglio è di NON chiudere le utenze durante la vendita. Una casa al buio o senza riscaldamento invernale appare fredda, umida e poco accogliente. Inoltre, l'acquirente preferisce quasi sempre la voltura (semplice cambio di nome) che è più veloce ed economica rispetto alla riattivazione di contatori sigillati.\n\nPoi gestire tutto online o delegarci: noi monitoriamo che i consumi siano minimi e riportiamo le letture ai fornitori per evitare bollette stimate eccessive.",
+        content: "Consigliamo di <strong>NON chiudere le utenze</strong>: una casa al buio o fredda appare respingente. La <strong>voltura</strong> è più veloce della riattivazione. Delegaci il monitoraggio: garantiamo consumi minimi e letture corrette.",
       },
       {
-        h2: "Manutenzione Estiva e Invernale",
-        content: "Se la casa ha un giardino o una terrazza, la crescita incontrollata delle erbacce è il primo segnale di abbandono. Coordinano per te interventi periodici di pulizia e sfalcio. In inverno, garantiamo una temperatura minima (antigelo) per proteggere le tubature senza sprecare energia.",
+        h2: "Manutenzione",
+        content: "L'erba alta è segnale di abbandono. Coordiniamo <strong>pulizia e sfalcio</strong> periodici. In inverno garantiamo la funzione <strong>antigelo</strong> per proteggere le tubature.",
       },
     ],
     faqs: [
-      { q: "Chi paga le utenze durante la vendita?", a: "Le utenze restano a carico del venditore fino al giorno del rogito. Quel giorno prenderemo le letture finali insieme all'acquirente per la voltura definitiva." },
-      { q: "Devo continuare a pagare il condominio?", a: "Sì, tutte le spese condominiali (ordinarie e straordinarie deliberate) spettano a te fino al passaggio di proprietà. Ti forniamo noi la documentazione aggiornata da dare all'acquirente." },
+      { q: "Chi paga?", a: "Le utenze spettano al venditore fino al <strong>giorno del rogito</strong>." },
+      { q: "Condominio?", a: "Tutte le spese (ordinarie e straordinarie deliberate) spettano a te fino al passaggio." },
     ],
     ctaTitle: "Paura di lasciare la casa incustodita?",
-    ctaDesc: "Ci occupiamo noi di controllare periodicamente l'immobile e di gestire ogni piccola incombenza pratica mentre cerchiamo il miglior acquirente.",
+    ctaDesc: "Ci occupiamo noi di monitorare l'immobile mentre cerchiamo l'acquirente.",
   },
 
   "trovare-inquilino-breve-termine-vendita": {
@@ -953,23 +948,23 @@ export const articles: Record<string, Article> = {
     category: "Situazioni Difficili",
     readTime: "7 min",
     coverImage: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "Ti trasferisci subito ma pensi che la vendita richiederà qualche mese? Potresti essere tentato di affittare l'immobile per coprire le spese. È una scelta possibile, ma va gestita con clausole contrattuali blindate per non ostacolare la futura vendita.",
+    intro: "Affittare mentre si vende? È possibile, ma servono <strong>clausole blindate</strong> per non ostacolare la vendita futura.",
     sections: [
       {
-        h2: "Il Contratto Transitorio (1-18 mesi)",
-        content: "A Reggio Emilia, grazie agli accordi territoriali, puoi usare contratti transitori motivati dal fatto che l'immobile è in vendita. Devi però inserire una clausola che obbliga l'inquilino a permettere le visite dei potenziali acquirenti in giorni e orari prestabiliti. È fondamentale trovare un inquilino collaborativo (es. studenti o lavoratori fuori sede temporanei).",
+        h2: "Il Contratto Transitorio",
+        content: "Usa contratti motivati dalla <strong>vendita in corso</strong>. Devi inserire l'obbligo di permettere le <strong>visite agli acquirenti</strong>. È fondamentale scegliere inquilini temporanei e collaborativi.",
       },
       {
-        h2: "Rischi e Benefici",
-        content: "Il beneficio è economico: copri spese e IMU. Il rischio è che la casa appaia disordinata durante le visite o che l'inquilino crei difficoltà al momento del rogito. Noi sconsigliamo l'affitto se l'obiettivo è vendere velocemente al miglior prezzo: una casa vuota e allestita con l'home staging si vende quasi sempre meglio e più in fretta.",
+        h2: "Rischi e Strategia",
+        content: "Il canone copre le spese, ma la casa occupata può apparire disordinata. Una casa vuota con <strong>home staging</strong> si vende spesso meglio e a un prezzo superiore.",
       },
     ],
     faqs: [
-      { q: "L'inquilino ha diritto di prelazione?", a: "Nei contratti transitori standard NO. La prelazione scatta solo in casi specifici nei contratti 4+4 al momento della prima scadenza, se il proprietario vuole vendere." },
-      { q: "Posso vendere con l'inquilino dentro?", a: "Sì, ma riduci la platea di acquirenti a soli investitori, escludendo chi cerca una casa dove andare a vivere subito. Questo solitamente comporta un ribasso del prezzo." },
+      { q: "Prelazione?", a: "No, nei <strong>contratti transitori</strong> non è prevista per legge." },
+      { q: "Vendere occupato?", a: "Sì, ma riduci la platea agli <strong>investitori</strong>, spesso con un ribasso del prezzo." },
     ],
     ctaTitle: "Dubbi sulla strategia migliore?",
-    ctaDesc: "Valutiamo insieme se nel tuo caso specifico convenga affittare transitoriamente o puntare a una vendita rapida dell'immobile vuoto.",
+    ctaDesc: "Valutiamo se conviene affittare o puntare a una vendita rapida dell'immobile vuoto.",
   },
 
   "organizzazione-trasloco-internazionale-nazionale": {
@@ -980,23 +975,23 @@ export const articles: Record<string, Article> = {
     category: "Situazioni Difficili",
     readTime: "8 min",
     coverImage: "https://images.unsplash.com/photo-1512918728675-ed5a9ecde9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "Vendere casa a Reggio Emilia e contemporaneamente traslocare a Milano, Parigi o New York è un'operazione di logistica pura. Il segreto del successo sta tutto nel cronoprogramma.",
+    intro: "Sincronizzare vendita e trasloco internazionale è una sfida logistica che richiede un <strong>cronoprogramma rigido</strong>.",
     sections: [
       {
-        h2: "Sincronizzazione Rogito e Trasloco",
-        content: "La data del rogito deve essere concordata con largo anticipo per permettere alla ditta di traslochi internazionali di organizzare il carico. Se ti trasferisci molto lontano, consigliamo di liberare la casa 15 giorni prima del rogito, lasciando l'immobile pulito e ordinato. Questo ti toglie lo stress dell'ultimo minuto e ti permette di gestire eventuali imprevisti burocratici con calma.",
+        h2: "Sincronizzazione Rogito",
+        content: "Coordiniamo la data del rogito con la <strong>ditta di traslochi</strong>. Libera la casa 15 giorni prima: toglie stress e permette di gestire imprevisti burocratici con calma.",
       },
       {
-        h2: "Servizi di Deposito (Storage)",
-        content: "A Reggio Emilia abbiamo convenzioni con centri di self-storage. Se la tua nuova destinazione non è ancora pronta, puoi svuotare la casa lasciando i mobili in un deposito sicuro. Questo aiuta la vendita (casa meno carica) e ti dà flessibilità sulla data di arrivo nella nuova città.",
+        h2: "Deposito e Self-Storage",
+        content: "Usa il <strong>self-storage</strong> a Reggio Emilia. Svuotare la casa aiuta la vendita e ti dà flessibilità sulla data di arrivo nella nuova città.",
       },
     ],
     faqs: [
-      { q: "Posso lasciare dei mobili all'acquirente?", a: "Sì, se concordato. Spesso cucine su misura o armadi a muro vengono venduti insieme alla casa. Specifica sempre nel preliminare di vendita cosa resta e cosa porti via." },
-      { q: "Come gestisco la posta?", a: "Attiva il servizio 'Seguimi' di Poste Italiane per 6 o 12 mesi; è fondamentale per non perdere comunicazioni importanti (tasse, banche, assicurazioni) nel periodo di transizione." },
+      { q: "Mobili all'acquirente?", a: "Sì, se pattuito nel preliminare (es. <strong>cucina su misura</strong>)." },
+      { q: "Posta?", a: "Attiva il servizio <strong>'Seguimi'</strong> di Poste Italiane per non perdere comunicazioni fiscali." },
     ],
-    ctaTitle: "Hai un grande cambiamento in vista?",
-    ctaDesc: "Ti aiutiamo a gestire la vendita in modo che tu possa concentrarti solo sulla tua nuova vita altrove.",
+    ctaTitle: "Cambio vita in vista?",
+    ctaDesc: "Gestiamo la vendita così tu pensi solo alla nuova destinazione.",
   },
   "clausola-sospensiva-acquisto-vendita": {
     title: "La clausola sospensiva legata alla vendita: come usarla senza rischi",
@@ -1006,23 +1001,23 @@ export const articles: Record<string, Article> = {
     category: "Coordinamento",
     readTime: "7 min",
     coverImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "Il rischio più grande per chi cambia casa è trovarsi con due mutui o, peggio, perdere la caparra della nuova casa perché non si è riusciti a vendere la vecchia in tempo. La clausola sospensiva è lo scudo legale che azzera questo rischio.",
+    intro: "La <strong>clausola sospensiva</strong> azzera il rischio di trovarsi con due mutui o perdere la caparra della nuova casa.",
     sections: [
       {
-        h2: "Come funziona la sospensiva",
-        content: "In fase di proposta d'acquisto per la nuova casa, inseriamo una clausola che subordina l'efficacia del contratto alla vendita del tuo attuale immobile entro una data certa (es. 90-120 giorni). Se non vendi entro quel termine, il contratto si scioglie senza penali e rientri in possesso della tua caparra.\n\nÈ una clausola che i venditori accettano malvolentieri se non è supportata da un'agenzia seria (come Diba) che garantisce loro che l'immobile da vendere sia già sul mercato al prezzo corretto e con un piano di marketing attivo.",
+        h2: "Come funziona",
+        content: "Subordiniamo l'acquisto alla <strong>vendita del tuo immobile</strong> entro un termine (90-120 giorni). Se non vendi, il contratto si scioglie <strong>senza penali</strong> e recuperi la caparra.",
       },
       {
-        h2: "Il giusto equilibrio tra le parti",
-        content: "Per rendere la proposta accettabile, solitamente si concede al venditore il diritto di continuare a mostrare la casa ad altri. Se trova un acquirente 'pronto', ti darà un preavviso (es. 48 ore) per decidere se togliere la clausola o rinunciare all'acquisto.",
+        h2: "Equilibrio",
+        content: "Garantiamo al venditore un piano di marketing serio affinché accetti il rischio. Spesso si concede al venditore il diritto di continuare le visite: deciderai se procedere o rinunciare.",
       },
     ],
     faqs: [
-      { q: "La banca accetta la clausola sospensiva?", a: "Sì, anzi spesso la consiglia per evitare di sovraccaricare il tuo profilo di debito con un mutuo ponte non necessario." },
-      { q: "Quanto deve durare la sospensiva?", a: "A Reggio Emilia il tempo medio ideale è di 3-4 mesi. È un tempo sufficiente per una nostra campagna di vendita aggressiva che porti a un risultato concreto." },
+      { q: "La banca accetta?", a: "Sì, evita mutui ponte inutili e sovraccarico di debito." },
+      { q: "Durata ideale?", a: "A Reggio Emilia, <strong>3-4 mesi</strong> sono il tempo perfetto per una vendita efficace." },
     ],
     ctaTitle: "Hai paura di restare incastrato?",
-    ctaDesc: "Studiamo per te la proposta d'acquisto tecnicamente perfetta per permetterti di cambiare casa in totale sicurezza.",
+    ctaDesc: "Studiamo la proposta d'acquisto perfetta per te.",
   },
 
   "trasloco-unico-giorno-consigli-pratici": {
@@ -1033,23 +1028,23 @@ export const articles: Record<string, Article> = {
     category: "Coordinamento",
     readTime: "8 min",
     coverImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "Alle 10 del mattino firmi il rogito di vendita, alle 12 quello di acquisto. Hai poche ore per caricare un camion, scaricarne un altro e consegnare le chiavi. Sembra una missione impossibile, ma con la giusta pianificazione è la norma.",
+    intro: "Vendere e comprare nello stesso giorno è missione possibile con un'<strong>efficace pianificazione logistica</strong>.",
     sections: [
       {
-        h2: "La logistica del 'Giorno X'",
-        content: "Prenota il traslocatore con 2 mesi di anticipo. Richiedi due squadre separate se possibile: una che carica nella vecchia casa e una che inizia a scaricare nella nuova non appena ricevi le chiavi. Usa il servizio di deposito temporaneo (storage) per gli oggetti non fondamentali nei giorni precedenti: meno volume hai l'ultimo giorno, meno rischi di ritardi.",
+        h2: "Logistica del Giorno X",
+        content: "Prenota con mesi di anticipo. Usa squadre separate per carico e scarico. Svuota gli oggetti non necessari nei giorni precedenti usando il <strong>self-storage</strong>: meno volume significa meno stress.",
       },
       {
-        h2: "Documenti e Utenze",
-        content: "Prepara una 'cartella di emergenza' con tutti i contratti originali, le chiavi e le letture dei contatori fatte la mattina stessa. Assicurati che nella casa nuova l'elettricità sia già attiva: non vuoi montare i mobili al buio!",
+        h2: "Documentazione",
+        content: "Tieni a portata di mano <strong>utenze e letture</strong>. Assicurati che nella nuova casa la luce sia attiva prima di iniziare il montaggio dei mobili.",
       },
     ],
     faqs: [
-      { q: "Cosa succede se l'acquirente ritarda il pagamento?", a: "Coordiniamo i due notai (spesso lo stesso) in modo che i bonifici siano contestuali o che ci sia una garanzia di deposito prezzo che permetta lo sblocco immediato delle chiavi." },
-      { q: "Posso chiedere di restare qualche giorno dopo il rogito?", a: "Si chiama 'immissione in possesso differita'. È possibile, ma va pattuita nel preliminare e spesso prevede il deposito di una somma di garanzia presso il notaio fino all'effettiva consegna delle chiavi." },
+      { q: "Pagamenti in ritardo?", a: "Coordiniamo i notai per bonifici contestuali o <strong>deposito prezzo</strong>." },
+      { q: "Restare dopo il rogito?", a: "Si chiama <strong>possesso differita</strong>: possibile ma va pattuito con garanzie economiche." },
     ],
-    ctaTitle: "Vuoi un cambio casa senza intoppi?",
-    ctaDesc: "Il nostro servizio di coordinamento logistico azzera gli sprechi di tempo e ti garantisce una transizione fluida.",
+    ctaTitle: "Cambio casa senza intoppi?",
+    ctaDesc: "Il nostro coordinamento azzera gli sprechi di tempo.",
   },
 
   "finanziamento-ponte-cambio-casa": {
@@ -1060,23 +1055,23 @@ export const articles: Record<string, Article> = {
     category: "Coordinamento",
     readTime: "7 min",
     coverImage: "https://images.unsplash.com/photo-1554224155-b6d2109117df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "A volte il mercato corre più veloce di noi. Se l'occasione della vita bussa alla porta ma il tuo capitale è ancora 'bloccato' nei muri della tua attuale casa, il finanziamento ponte (bridge loan) può essere la soluzione finanziaria temporanea.",
+    intro: "Il <strong>finanziamento ponte</strong> è la soluzione se l'occasione bussa prima di aver venduto.",
     sections: [
       {
         h2: "Cos'è il Bridge Loan",
-        content: "È un finanziamento a breve termine (solitamente 12-24 mesi) che la banca ti concede per coprire l'acquisto della nuova casa in attesa che tu incassi i soldi della vendita della vecchia. Di solito prevede il pagamento dei soli interessi e il rimborso del capitale in un'unica soluzione al momento del rogito di vendita.",
+        content: "Prestito a breve (12-24 mesi) per coprire l'acquisto. Paghi solo gli <strong>interessi</strong> e rimborsi il capitale al rogito di vendita.",
       },
       {
         h2: "Costi e Rischi",
-        content: "I tassi sono generalmente più alti di un mutuo standard e ci sono commissioni di istruttoria. Il rischio principale è non vendere entro il termine concordato con la banca. Per questo, noi di Diba interveniamo certificando alla banca il valore reale dell'immobile in vendita e garantendo un piano di uscita rapido.",
+        content: "Tassi più alti e commissioni. Il rischio è non vendere in tempo: Diba interviene certificando il <strong>valore reale</strong> per un'uscita rapida.",
       },
     ],
     faqs: [
-      { q: "Quale banca lo fa a Reggio Emilia?", a: "Molti istituti locali (BPER, Credem) e nazionali offrono soluzioni di questo tipo, ma le condizioni variano molto. Ti mettiamo in contatto con i referenti giusti." },
-      { q: "Serve l'ipoteca?", a: "Sì, generalmente la banca iscrive ipoteca sulla casa che stai acquistando o su quella in vendita (o su entrambe) a garanzia del prestito ponte." },
+      { q: "Banche?", a: "Molti istituti a Reggio (BPER, Credem). Ti mettiamo in contatto con i referenti giusti." },
+      { q: "Ipoteca?", a: "Sì, generalmente sulla casa nuova o su quella in vendita." },
     ],
-    ctaTitle: "Trovato la casa dei sogni ma sei fermo?",
-    ctaDesc: "Analizziamo la tua fattibilità finanziaria per sbloccare l'acquisto subito, senza aspettare i tempi della vendita.",
+    ctaTitle: "Trovato la casa dei sogni?",
+    ctaDesc: "Analizziamo la fattibilità per sbloccare l'acquisto subito.",
   },
 
   "deposito-prezzo-notaio-garanzia": {
@@ -1087,22 +1082,22 @@ export const articles: Record<string, Article> = {
     category: "Coordinamento",
     readTime: "6 min",
     coverImage: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    intro: "In un'operazione di compravendita immobiliare, la sicurezza del denaro è tutto. La legge italiana prevede uno strumento potentissimo, spesso sottoutilizzato: il deposito del prezzo su un conto dedicato del notaio.",
+    intro: "La sicurezza del denaro è tutto nell'immobiliare. Il <strong>deposito prezzo</strong> dal notaio è la massima tutela legale.",
     sections: [
       {
-        h2: "Come funziona la tutela",
-        content: "L'acquirente, invece di consegnare l'assegno direttamente a te al rogito, versa la somma sul conto corrente dedicato del notaio. Il notaio svincola i soldi a tuo favore solo DOPO aver verificato che la trascrizione dell'atto sia avvenuta senza intoppi (ovvero che non siano apparsi pignoramenti o ipoteche dell'ultimo minuto).\n\nPer chi vende e ricompra, questo garantisce che la somma sia 'blindata' e pronta per essere girata al venditore della tua nuova casa nel rogito successivo.",
+        h2: "Massima tutela",
+        content: "L'acquirente versa la somma al notaio. I soldi sono svincolati solo dopo aver verificato l'assenza di pignoramenti dell'ultimo minuto. È una garanzia fondamentale se devi <strong>estinguere mutui</strong> contestualmente.",
       },
       {
-        h2: "Un vantaggio anche per chi vende",
-        content: "Sebbene sembri una tutela per l'acquirente, per il venditore significa avere la certezza assoluta dell'incasso (il notaio ha già i soldi) e una gestione professionale dei flussi finanziari, fondamentale se ci sono mutui da estinguere contestualmente.",
+        h2: "Vantaggi per tutti",
+        content: "Per chi vende significa <strong>certezza dell'incasso</strong> e gestione professionale dei flussi, eliminando rischi di assegni scoperti o problemi nel rogito successivo.",
       },
     ],
     faqs: [
-      { q: "Quanto costa il deposito prezzo?", a: "L'onorario del notaio per questa prestazione è minimo o azzerato, e gli interessi che maturano sul conto (se presenti) vanno a favore di fondi pubblici, quindi è uno strumento neutro per le parti ma sicurissimo." },
-      { q: "È obbligatorio?", a: "No, è facoltativo, ma se una delle parti (solitamente l'acquirente) lo richiede, il notaio è obbligato a procedere in tal senso per legge." },
+      { q: "Costi?", a: "Minimi o azzerati. È uno strumento sicurissimo." },
+      { q: "Obbligatorio?", a: "No, ma se richiesto da una parte, il notaio è <strong>obbligato a procedere</strong>." },
     ],
-    ctaTitle: "Vuoi una transazione sicura al 100%?",
-    ctaDesc: "Ti spieghiamo come usare gli strumenti legali più avanzati per proteggere il tuo patrimonio durante il cambio casa.",
+    ctaTitle: "Vuoi una transazione sicura?",
+    ctaDesc: "Ti spieghiamo come proteggere il patrimonio durante il cambio casa.",
   },
 };
