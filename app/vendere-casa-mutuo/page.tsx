@@ -28,9 +28,9 @@ const config: PageConfig = {
     ],
     stepsTitle: "Come ti aiutiamo",
     steps: [
-        { icon: "🔍", title: "Analisi della situazione", desc: "Valutiamo l'immobile e il debito residuo per capire qual è il <strong>margine reale</strong> che otterresti dalla vendita." },
-        { icon: "🏦", title: "Coordinamento con la banca", desc: "Ci occupiamo noi di comunicare con l'istituto di credito e gestire le <strong>tempistiche di svincolo dell'ipoteca</strong>." },
-        { icon: "✅", title: "Vendita veloce", desc: "Grazie alla nostra rete di acquirenti qualificati, chiudiamo in media in <strong>30-60 giorni</strong> al miglior prezzo." },
+        { icon: "📝", title: "Compila il form", desc: "Raccontaci la tua situazione con il mutuo. <strong>Tutto ciò che ci dici rimane riservato</strong>, senza nessun impegno." },
+        { icon: "🏦", title: "Analizziamo il margine reale", desc: "Valutiamo l'immobile e il debito residuo, poi ci occupiamo noi di <strong>coordinare i tempi con la banca</strong>." },
+        { icon: "✅", title: "Ti consigliamo la soluzione migliore", desc: "Ti diciamo esattamente cosa fare: vendere subito, trattare con la banca o aspettare. <strong>Senza sorprese</strong>." },
     ],
     socialProofTitle: "Immobili venduti. Risultati veri.",
     socialProofSubtitle: "Questi sono i risultati reali delle compravendite gestite da Diba a Reggio Emilia.",

@@ -8,8 +8,18 @@ import Footer from "@/components/Footer";
 export default function LandingPage() {
     const [isSuccess, setIsSuccess] = useState(false);
     const [isStickyVisible, setIsStickyVisible] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const formCtaRef = useRef<HTMLButtonElement>(null);
     const [activeFaq, setActiveFaq] = useState<number | null>(null);
+
+    useEffect(() => {
+        if (isModalOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+        }
+        return () => { document.body.style.overflow = ""; };
+    }, [isModalOpen]);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -354,24 +364,13 @@ export default function LandingPage() {
                     <div className="steps-container">
                         <div className="step-item">
                             <div className="step-icon-circle">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="32"
-                                    height="32"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                >
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
                                 </svg>
                             </div>
-                            <h3>1. Ci contatti</h3>
+                            <h3>1. Compila il form</h3>
                             <p>
-                                Compila il modulo o chiamaci. Disponibili anche in videochiamata
-                                se sei lontano.
+                                Bastano nome, telefono e l&apos;indirizzo dell&apos;immobile. Ci vuole meno di 2 minuti.
                             </p>
                         </div>
                         <div className="step-item">
@@ -413,10 +412,9 @@ export default function LandingPage() {
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
                             </div>
-                            <h3>3. Scegli tu</h3>
+                            <h3>3. Ti consigliamo la soluzione migliore</h3>
                             <p>
-                                Vendere, affittare o aspettare. Nessuna pressione, nessun costo
-                                anticipato.
+                                Vendere, affittare o aspettare: ti diciamo cosa fare e in che tempi. Nessuna pressione, nessun costo anticipato.
                             </p>
                         </div>
                     </div>
@@ -618,23 +616,90 @@ export default function LandingPage() {
 
             {/* STICKY MOBILE */}
             <div className={`sticky-mobile ${isStickyVisible ? "visible" : ""}`}>
-                <a href="tel:3274911031" className="btn-sticky">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                    >
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                <button className="btn-sticky" onClick={() => setIsModalOpen(true)}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
                     </svg>
-                    Chiamaci
-                </a>
+                    Richiedi Valutazione
+                </button>
             </div>
+
+            {/* MODAL FORM */}
+            {isModalOpen && (
+                <div className="modal-backdrop" onClick={() => setIsModalOpen(false)}>
+                    <div className="modal-card" onClick={(e) => e.stopPropagation()}>
+                        <button className="modal-close" onClick={() => setIsModalOpen(false)} aria-label="Chiudi">×</button>
+                        <p className="mid-form-tag" style={{ marginBottom: 4 }}>Consulenza Gratuita</p>
+                        <h2 className="modal-title">Raccontaci la tua situazione</h2>
+                        <p className="modal-sub">Compila il form e ti ricontattiamo entro 24 ore con una valutazione personalizzata.</p>
+                        <div style={{ padding: 0 }}>
+                            {!isSuccess ? (
+                                <form onSubmit={handleSubmit}>
+                                    <div className="detailed-form-row">
+                                        <div className="form-group">
+                                            <label>Nome e Cognome</label>
+                                            <input type="text" name="name" className="form-control" placeholder="Mario Rossi" required />
+                                        </div>
+                                        <div className="form-group">
+                                            <label>Telefono</label>
+                                            <input type="tel" name="phone" className="form-control" placeholder="333 1234567" required />
+                                        </div>
+                                    </div>
+                                    <div className="detailed-form-row">
+                                        <div className="form-group">
+                                            <label>Email (opzionale)</label>
+                                            <input type="email" name="email" className="form-control" placeholder="mario@esempio.it" />
+                                        </div>
+                                        <div className="form-group">
+                                            <label>Indirizzo immobile</label>
+                                            <AddressAutocomplete idPrefix="modal" />
+                                        </div>
+                                    </div>
+                                    <div className="detailed-form-row">
+                                        <div className="form-group">
+                                            <label>Cosa vorresti fare?</label>
+                                            <select name="intention" className="form-control">
+                                                <option value="vendere">Vorrei vendere</option>
+                                                <option value="valutare">Vorrei solo una valutazione</option>
+                                                <option value="affittare">Vorrei affittare</option>
+                                                <option value="non_so">Non lo so ancora</option>
+                                            </select>
+                                        </div>
+                                        <div className="form-group">
+                                            <label>Quando vorresti procedere?</label>
+                                            <select name="urgency" className="form-control">
+                                                <option value="subito">Il prima possibile</option>
+                                                <option value="3mesi">Entro 3 mesi</option>
+                                                <option value="6mesi">Entro 6 mesi</option>
+                                                <option value="no_fretta">Non ho fretta</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div className="form-group">
+                                        <label>Descrivi la tua situazione (opzionale)</label>
+                                        <textarea name="note" className="form-control" placeholder="Es: ho ereditato un appartamento di 90mq, voglio capire quanto vale..." rows={3} style={{ height: "auto", paddingTop: "12px", paddingBottom: "12px", resize: "vertical" }} />
+                                    </div>
+                                    <button type="submit" className="btn-cta" disabled={isLoading}>
+                                        {isLoading ? "Invio in corso..." : "Invia Richiesta"}
+                                    </button>
+                                    {errorMsg && <p style={{ color: "#dc2626", fontSize: "0.875rem", marginTop: "8px", textAlign: "center" }}>{errorMsg}</p>}
+                                    <p className="privacy-text">I tuoi dati sono al sicuro. Non li condividiamo con terzi.</p>
+                                </form>
+                            ) : (
+                                <div className="success-card">
+                                    <div className="success-icon-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                    </div>
+                                    <h3>Richiesta inviata!</h3>
+                                    <p className="success-desc">Ti ricontattiamo entro 24 ore con la valutazione personalizzata.</p>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

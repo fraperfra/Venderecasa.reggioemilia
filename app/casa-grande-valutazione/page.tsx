@@ -28,9 +28,9 @@ const config: PageConfig = {
     ],
     stepsTitle: "Il nostro approccio per te",
     steps: [
-        { icon: "☕", title: "Un caffè insieme", desc: "Veniamo da te, <strong>senza fretta</strong>, per capire la tua situazione e i tuoi desideri per il futuro." },
-        { icon: "📊", title: "Valutazione trasparente", desc: "Ti diciamo <strong>onestamente quanto vale</strong> la tua casa e quali sono le opzioni più convenienti per te." },
-        { icon: "🏡", title: "Ti seguiamo fino in fondo", desc: "Dalla vendita all'eventuale acquisto della nuova casa: <strong>ti teniamo per mano</strong> per tutto il percorso." },
+        { icon: "📝", title: "Compila il form", desc: "Bastano nome, telefono e l'indirizzo della casa. Ci vuole meno di 2 minuti, poi pensiamo noi a tutto." },
+        { icon: "📊", title: "Valutiamo la tua casa", desc: "Ti diciamo <strong>onestamente quanto vale</strong> la tua casa e quali sono le opzioni più convenienti per te." },
+        { icon: "🏡", title: "Ti consigliamo la soluzione migliore", desc: "Vendere, affittare o aspettare: ti diciamo cosa fare, come farlo e in che tempi — <strong>senza nessun impegno</strong>." },
     ],
     socialProofTitle: "Immobili venduti. Risultati veri.",
     socialProofSubtitle: "Questi sono i risultati reali delle compravendite gestite da Diba a Reggio Emilia.",

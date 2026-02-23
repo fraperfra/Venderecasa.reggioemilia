@@ -28,9 +28,9 @@ const config: PageConfig = {
     ],
     stepsTitle: "Come lavoriamo anche a distanza",
     steps: [
-        { icon: "📱", title: "Video call iniziale", desc: "Prima consulenza in remoto per valutare l'immobile e capire le tue <strong>esigenze di tempistica</strong>." },
-        { icon: "🔑", title: "Deleghiamo noi le visite", desc: "Accogliamo gli acquirenti, mostriamo l'immobile e <strong>gestiamo le trattative per tuo conto</strong>." },
-        { icon: "📝", title: "Rogito a distanza", desc: "Con delega notarile o videoconferenza puoi <strong>firmare il rogito anche senza tornare</strong> a Reggio Emilia." },
+        { icon: "📝", title: "Compila il form", desc: "Puoi farlo comodamente da dove sei. <strong>Prima consulenza in video call</strong>, senza doverti spostare." },
+        { icon: "🔑", title: "Gestiamo tutto noi", desc: "Accogliamo gli acquirenti, mostriamo l'immobile e <strong>gestiamo le trattative per tuo conto</strong>. Tu ricevi aggiornamenti costanti." },
+        { icon: "✅", title: "Ti consigliamo la soluzione migliore", desc: "Ti diciamo prezzo, tempistiche e strategia. Con delega notarile puoi <strong>firmare il rogito senza tornare</strong> a Reggio Emilia." },
     ],
     socialProofTitle: "Immobili venduti. Risultati veri.",
     socialProofSubtitle: "Questi sono i risultati reali delle compravendite gestite da Diba a Reggio Emilia.",

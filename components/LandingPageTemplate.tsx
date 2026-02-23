@@ -38,10 +38,21 @@ export interface PageConfig {
 export default function LandingPageTemplate({ config }: { config: PageConfig }) {
     const [isSuccess, setIsSuccess] = useState(false);
     const [isStickyVisible, setIsStickyVisible] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const formCtaRef = useRef<HTMLButtonElement>(null);
     const [activeFaq, setActiveFaq] = useState<number | null>(null);
     const [isLoading, setIsLoading] = useState(false);
     const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
+    // Lock body scroll when modal is open
+    useEffect(() => {
+        if (isModalOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+        }
+        return () => { document.body.style.overflow = ""; };
+    }, [isModalOpen]);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -480,10 +491,28 @@ export default function LandingPageTemplate({ config }: { config: PageConfig }) 
 
             {/* STICKY MOBILE CTA */}
             {isStickyVisible && (
-                <div className="sticky-cta">
-                    <a href="#contact-form-container" className="btn-cta" style={{ textDecoration: "none", display: "block", textAlign: "center" }}>
-                        Valutazione Gratuita →
-                    </a>
+                <div className="sticky-cta visible">
+                    <button className="btn-sticky" onClick={() => setIsModalOpen(true)}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                        </svg>
+                        Richiedi Valutazione
+                    </button>
+                </div>
+            )}
+
+            {/* MODAL FORM */}
+            {isModalOpen && (
+                <div className="modal-backdrop" onClick={() => setIsModalOpen(false)}>
+                    <div className="modal-card" onClick={(e) => e.stopPropagation()}>
+                        <button className="modal-close" onClick={() => setIsModalOpen(false)} aria-label="Chiudi">×</button>
+                        <p className="mid-form-tag" style={{ marginBottom: 4 }}>Consulenza Gratuita</p>
+                        <h2 className="modal-title">Raccontaci la tua situazione</h2>
+                        <p className="modal-sub">Compila il form e ti ricontattiamo entro 24 ore con una valutazione personalizzata.</p>
+                        <div className="hero-form-card" style={{ boxShadow: "none", padding: 0 }}>
+                            {renderDetailedForm("modal")}
+                        </div>
+                    </div>
                 </div>
             )}
         </div>

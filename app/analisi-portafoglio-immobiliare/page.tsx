@@ -28,9 +28,9 @@ const config: PageConfig = {
     ],
     stepsTitle: "Come gestiamo l'analisi del portafoglio",
     steps: [
-        { icon: "📋", title: "Mappa degli asset", desc: "Rileviamo tutti gli immobili: tipologia, <strong>valore attuale</strong>, rendita lorda e netta, spese e carichi fiscali." },
-        { icon: "📈", title: "Analisi performance", desc: "Calcoliamo il <strong>ROI reale</strong> di ogni immobile e lo confrontiamo con le alternative di mercato disponibili oggi." },
-        { icon: "🎯", title: "Piano d'azione", desc: "Ti forniamo una <strong>raccomandazione chiara</strong>: cosa tenere, cosa ottimizzare e cosa vendere per <strong>massimizzare il patrimonio</strong>." },
+        { icon: "📝", title: "Compila il form", desc: "Bastano nome, telefono e qualche dettaglio sul tuo portafoglio. Ci vuole meno di 2 minuti." },
+        { icon: "📈", title: "Analizziamo il portafoglio", desc: "Calcoliamo il <strong>ROI reale</strong> di ogni immobile e lo confrontiamo con le alternative di mercato disponibili oggi." },
+        { icon: "🎯", title: "Ti consigliamo la soluzione migliore", desc: "Cosa tenere, cosa ottimizzare e cosa vendere: una <strong>raccomandazione chiara</strong>, basata sui dati reali del tuo patrimonio." },
     ],
     socialProofTitle: "Immobili venduti. Risultati veri.",
     socialProofSubtitle: "Questi sono i risultati reali delle compravendite gestite da Diba a Reggio Emilia.",

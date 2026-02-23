@@ -28,9 +28,9 @@ const config: PageConfig = {
     ],
     stepsTitle: "Il nostro piano in 3 passi",
     steps: [
-        { icon: "🗺️", title: "Definiamo il piano", desc: "Captiamo le tue esigenze, valutiamo l'immobile attuale e definiamo il <strong>budget per il nuovo acquisto</strong>." },
-        { icon: "🔄", title: "Coordinamento parallelo", desc: "Attiviamo la vendita e la ricerca <strong>contemporaneamente</strong>, sincronizzando i tempi per garantire la continuità abitativa." },
-        { icon: "🏠", title: "Doppio rogito coordinato", desc: "Organizziamo i due rogiti in <strong>sequenza stretta (anche stesso giorno)</strong> per evitare periodi senza casa." },
+        { icon: "📝", title: "Compila il form", desc: "Raccontaci dove sei nel percorso: cosa vuoi vendere, cosa cerchi e in che tempi. Ci vuole meno di 2 minuti." },
+        { icon: "🔄", title: "Coordiniamo vendita e acquisto", desc: "Attiviamo le due operazioni <strong>in parallelo</strong>, sincronizzando i tempi per garantirti la continuità abitativa." },
+        { icon: "✅", title: "Ti consigliamo la soluzione migliore", desc: "Definiamo insieme la strategia: prezzi, tempistiche e clausole. Fino al <strong>doppio rogito coordinato</strong>, anche nello stesso giorno." },
     ],
     socialProofTitle: "Immobili venduti. Risultati veri.",
     socialProofSubtitle: "Questi sono i risultati reali delle compravendite gestite da Diba a Reggio Emilia.",

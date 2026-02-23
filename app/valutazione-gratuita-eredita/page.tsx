@@ -12,6 +12,13 @@ export default function EreditaLandingPage() {
     const [activeFaq, setActiveFaq] = useState<number | null>(null);
     const [isLoading, setIsLoading] = useState(false);
     const [errorMsg, setErrorMsg] = useState<string | null>(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    useEffect(() => {
+        if (isModalOpen) { document.body.style.overflow = "hidden"; }
+        else { document.body.style.overflow = ""; }
+        return () => { document.body.style.overflow = ""; };
+    }, [isModalOpen]);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -212,11 +219,12 @@ export default function EreditaLandingPage() {
                         <div className="step-item">
                             <div className="step-icon-circle">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
                                 </svg>
                             </div>
-                            <h3>1. Ci contatti</h3>
-                            <p>Compila il modulo o chiamaci. Disponibili anche in videochiamata se sei lontano.</p>
+                            <h3>1. Compila il form</h3>
+                            <p>Raccontaci la situazione dell&apos;immobile ereditato. Ci vuole meno di 2 minuti, disponibili anche in videochiamata.</p>
                         </div>
                         <div className="step-item">
                             <div className="step-icon-circle">
@@ -234,8 +242,8 @@ export default function EreditaLandingPage() {
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
                             </div>
-                            <h3>3. Scegli tu</h3>
-                            <p>Vendere, affittare o aspettare. Nessuna pressione, nessun costo anticipato.</p>
+                            <h3>3. Ti consigliamo la soluzione migliore</h3>
+                            <p>Vendere, affittare o aspettare: ti diciamo esattamente cosa conviene fare. <strong>Nessuna pressione, nessun costo anticipato.</strong></p>
                         </div>
                     </div>
                 </div>
@@ -477,14 +485,91 @@ export default function EreditaLandingPage() {
             <Footer isHome={true} />
 
             {/* STICKY MOBILE */}
-            <div className={`sticky-mobile ${isStickyVisible ? "visible" : ""}`}>
-                <a href="tel:3274911031" className="btn-sticky">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                    </svg>
-                    Chiamaci
-                </a>
-            </div>
+            {isStickyVisible && (
+                <div className="sticky-cta visible">
+                    <button className="btn-sticky" onClick={() => setIsModalOpen(true)}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                        </svg>
+                        Richiedi Valutazione
+                    </button>
+                </div>
+            )}
+
+            {/* MODAL */}
+            {isModalOpen && (
+                <div className="modal-backdrop" onClick={() => setIsModalOpen(false)}>
+                    <div className="modal-card" onClick={(e) => e.stopPropagation()}>
+                        <button className="modal-close" onClick={() => setIsModalOpen(false)} aria-label="Chiudi">×</button>
+                        <p className="mid-form-tag">Consulenza Gratuita</p>
+                        <h2 className="modal-title">Raccontaci la tua situazione</h2>
+                        <p className="modal-sub">Compila il form e ti ricontattiamo entro 24 ore per una valutazione gratuita e senza impegno.</p>
+                        <div className="hero-form-card" style={{ boxShadow: "none", padding: 0 }}>
+                            {!isSuccess ? (
+                                <form onSubmit={handleSubmit}>
+                                    <div className="detailed-form-row">
+                                        <div className="form-group">
+                                            <label htmlFor="modal-name">Nome e Cognome</label>
+                                            <input type="text" id="modal-name" name="name" className="form-control" placeholder="Mario Rossi" required />
+                                        </div>
+                                        <div className="form-group">
+                                            <label htmlFor="modal-phone">Telefono</label>
+                                            <input type="tel" id="modal-phone" name="phone" className="form-control" placeholder="333 1234567" required />
+                                        </div>
+                                    </div>
+                                    <div className="detailed-form-row">
+                                        <div className="form-group">
+                                            <label htmlFor="modal-email">Email (opzionale)</label>
+                                            <input type="email" id="modal-email" name="email" className="form-control" placeholder="mario@esempio.it" />
+                                        </div>
+                                        <div className="form-group">
+                                            <label>Indirizzo immobile</label>
+                                            <AddressAutocomplete idPrefix="modal" />
+                                        </div>
+                                    </div>
+                                    <div className="detailed-form-row">
+                                        <div className="form-group">
+                                            <label htmlFor="modal-intention">Cosa vorresti fare?</label>
+                                            <select id="modal-intention" name="intention" className="form-control">
+                                                <option value="vendere">Vorrei vendere</option>
+                                                <option value="valutare">Vorrei solo una valutazione</option>
+                                                <option value="affittare">Vorrei affittare</option>
+                                                <option value="non_so">Non lo so ancora</option>
+                                            </select>
+                                        </div>
+                                        <div className="form-group">
+                                            <label htmlFor="modal-urgency">Quando vorresti procedere?</label>
+                                            <select id="modal-urgency" name="urgency" className="form-control">
+                                                <option value="subito">Il prima possibile</option>
+                                                <option value="3mesi">Entro 3 mesi</option>
+                                                <option value="6mesi">Entro 6 mesi</option>
+                                                <option value="no_fretta">Non ho fretta</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="modal-note">Descrivi la tua situazione (opzionale)</label>
+                                        <textarea
+                                            id="modal-note"
+                                            name="note"
+                                            className="form-control"
+                                            placeholder="Es: siamo tre fratelli, la casa è di 110mq in centro..."
+                                            rows={3}
+                                            style={{ height: "auto", paddingTop: "12px", paddingBottom: "12px", resize: "vertical" }}
+                                        />
+                                    </div>
+                                    <button type="submit" className="btn-cta" disabled={isLoading}>
+                                        {isLoading ? "Invio in corso..." : "Invia Richiesta"}
+                                    </button>
+                                    {errorMsg && <p style={{ color: "#dc2626", fontSize: "0.875rem", marginTop: "8px", textAlign: "center" }}>{errorMsg}</p>}
+                                    <p className="privacy-text">I tuoi dati sono al sicuro. Non li condividiamo con terzi.</p>
+                                </form>
+                            ) : successCard}
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

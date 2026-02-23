@@ -28,9 +28,9 @@ const config: PageConfig = {
     ],
     stepsTitle: "Come funziona con noi",
     steps: [
-        { icon: "📞", title: "Consulenza riservata", desc: "Ci confrontiamo in <strong>totale riserbo</strong> con uno o entrambi i coniugi per capire la situazione." },
-        { icon: "📊", title: "Valutazione certificata", desc: "Produciamo una <strong>perizia oggettiva</strong> che entrambe le parti possono accettare." },
-        { icon: "🤝", title: "Gestione della vendita", desc: "Ci occupiamo di tutto: acquirenti, trattativa, atti notarili. <strong>Voi pensate al futuro</strong>." },
+        { icon: "📝", title: "Compila il form", desc: "Puoi farlo anche da solo, senza che l'altro coniuge sappia. <strong>Massima riservatezza garantita</strong>." },
+        { icon: "📊", title: "Valutazione certificata", desc: "Produciamo una <strong>perizia oggettiva</strong> che entrambe le parti possono accettare, senza discussioni." },
+        { icon: "🤝", title: "Ti consigliamo la soluzione migliore", desc: "Ci occupiamo di tutto: acquirenti, trattativa, atti notarili. <strong>Voi pensate al futuro</strong>." },
     ],
     socialProofTitle: "Immobili venduti. Risultati veri.",
     socialProofSubtitle: "Questi sono i risultati reali delle compravendite gestite da Diba a Reggio Emilia.",
