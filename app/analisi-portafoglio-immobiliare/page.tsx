@@ -68,6 +68,7 @@ const config: PageConfig = {
     ctaTitle: "Scopri la performance reale del tuo portafoglio",
     ctaSubtitle: "Compila il form e ti contatteremo per fissare un incontro senza impegno.",
     footerDesc: "Consulenza strategica per investitori immobiliari a Reggio Emilia. Analisi di portafoglio e ottimizzazione patrimoniale.",
+    blogCategory: "Investimento",
 };
 
 export default function Page() {

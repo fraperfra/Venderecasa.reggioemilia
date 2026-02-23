@@ -68,6 +68,7 @@ const config: PageConfig = {
     ctaTitle: "Scopri subito quanto vale la tua casa",
     ctaSubtitle: "Ti diciamo in 24 ore se c'è margine per uscire dalla situazione.",
     footerDesc: "Supportiamo proprietari in difficoltà finanziaria a vendere casa in modo rapido e dignitoso a Reggio Emilia.",
+    blogCategory: "Mutuo",
 };
 
 export default function Page() {

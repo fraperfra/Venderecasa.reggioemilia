@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import AddressAutocomplete from "./AddressAutocomplete";
 import Footer from "./Footer";
+import { articles } from "@/app/blog/[slug]/data";
 
 export interface PageConfig {
     heroLabel: string;
@@ -33,6 +34,7 @@ export interface PageConfig {
     ctaSubtitle: string;
     footerDesc: string;
     utmCampaign: string;
+    blogCategory?: string;
 }
 
 export default function LandingPageTemplate({ config }: { config: PageConfig }) {
@@ -472,6 +474,47 @@ export default function LandingPageTemplate({ config }: { config: PageConfig }) 
                     </div>
                 </div>
             </section>
+
+            {/* 7.5 · ARTICOLI CORRELATI */}
+            {config.blogCategory && (
+                <section className="py-section bg-light" id="blog-correlati">
+                    <div className="container">
+                        <div className="section-header">
+                            <h2>Approfondimenti dal nostro Blog</h2>
+                            <p style={{ color: "var(--text-light)", fontSize: "1rem" }}>Guide pratiche e consigli esperti per la tua situazione specifica.</p>
+                        </div>
+                        <div className="blog-grid" style={{ marginTop: "40px" }}>
+                            {Object.entries(articles)
+                                .filter(([, a]) => a.category === config.blogCategory)
+                                .slice(0, 3)
+                                .map(([slug, article]) => (
+                                    <Link key={slug} href={`/blog/${slug}`} className="blog-card" style={{ textDecoration: "none", color: "inherit" }}>
+                                        <img
+                                            src={article.coverImage}
+                                            alt={article.title}
+                                            className="blog-card-img"
+                                            loading="lazy"
+                                        />
+                                        <div className="blog-card-body">
+                                            <div className="blog-card-meta">
+                                                <span className="blog-card-category">{article.category}</span>
+                                                <span>{article.date}</span>
+                                            </div>
+                                            <h3 style={{ fontSize: "1.25rem", marginBottom: "12px", lineHeight: "1.4" }}>{article.title}</h3>
+                                            <p style={{ fontSize: "0.95rem", color: "var(--text-light)", marginBottom: "16px" }}>{article.metaDescription}</p>
+                                            <span className="blog-read-link">Leggi l&apos;articolo →</span>
+                                        </div>
+                                    </Link>
+                                ))}
+                        </div>
+                        <div style={{ textAlign: "center", marginTop: "40px" }}>
+                            <Link href="/blog" className="btn-outline" style={{ display: "inline-block", maxWidth: "240px" }}>
+                                Vai al Blog Completo
+                            </Link>
+                        </div>
+                    </div>
+                </section>
+            )}
 
             {/* 8 · CTA FINALE */}
             <section className="final-cta-section">

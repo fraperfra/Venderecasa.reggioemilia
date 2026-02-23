@@ -68,6 +68,7 @@ const config: PageConfig = {
     ctaTitle: "Vuoi una valutazione riservata della casa coniugale?",
     ctaSubtitle: "Rispondiamo entro poche ore con la massima discrezione.",
     footerDesc: "Specialisti nella vendita di immobili in situazioni complesse a Reggio Emilia. Professionalità e riserbo garantiti.",
+    blogCategory: "Situazioni Difficili",
 };
 
 export default function Page() {

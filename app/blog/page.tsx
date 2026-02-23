@@ -11,35 +11,17 @@ export const metadata: Metadata = {
   },
 };
 
-const posts = [
-  {
-    slug: "come-vendere-casa-ereditata-reggio-emilia",
-    title: "Come vendere una casa ereditata a Reggio Emilia: guida completa",
-    excerpt: "Hai ereditato un immobile? Scopri tutti gli step dalla dichiarazione di successione alla vendita, come gestire eredi multipli e ottenere il prezzo giusto.",
-    date: "15 gennaio 2025",
-    category: "Successioni",
-    readTime: "8 min",
-    coverImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    slug: "vendere-casa-velocemente-reggio-emilia",
-    title: "Come vendere casa velocemente a Reggio Emilia senza svendere",
-    excerpt: "Le strategie professionali per vendere in 30-45 giorni al prezzo di mercato: pricing corretto, home staging, distribuzione dell'annuncio e gestione delle trattative.",
-    date: "8 febbraio 2025",
-    category: "Vendita",
-    readTime: "6 min",
-    coverImage: "https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    slug: "difficolta-mutuo-come-vendere-prima-pignoramento",
-    title: "Difficoltà con il mutuo: come vendere casa prima del pignoramento",
-    excerpt: "Sei in ritardo con le rate? Agisci prima che la banca avvii la procedura esecutiva. Ecco come vendere al prezzo di mercato e uscire dalla situazione senza danni.",
-    date: "20 marzo 2025",
-    category: "Situazioni Difficili",
-    readTime: "7 min",
-    coverImage: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  },
-];
+import { articles } from "./[slug]/data";
+
+const posts = Object.entries(articles).map(([slug, article]) => ({
+  slug,
+  title: article.title,
+  excerpt: article.metaDescription,
+  date: article.date,
+  category: article.category,
+  readTime: article.readTime,
+  coverImage: article.coverImage,
+}));
 
 export default function BlogPage() {
   return (

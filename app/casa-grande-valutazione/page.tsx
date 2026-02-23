@@ -68,6 +68,7 @@ const config: PageConfig = {
     ctaTitle: "Inizia il tuo percorso verso una vita più leggera",
     ctaSubtitle: "Prenota una consulenza gratuita e senza impegno. Veniamo noi da te.",
     footerDesc: "Accompagniamo i pensionati nel percorso di downsizing a Reggio Emilia con rispetto e professionalità.",
+    blogCategory: "Vendita",
 };
 
 export default function Page() {

@@ -68,6 +68,7 @@ const config: PageConfig = {
     ctaTitle: "Parti tranquillo. Pensiamo noi alla casa.",
     ctaSubtitle: "Valutiamo gratuitamente e ti diciamo in 24 ore quanto vale il tuo immobile.",
     footerDesc: "Gestiamo la vendita di immobili a Reggio Emilia anche per proprietari già trasferiti altrove.",
+    blogCategory: "Situazioni Difficili",
 };
 
 export default function Page() {

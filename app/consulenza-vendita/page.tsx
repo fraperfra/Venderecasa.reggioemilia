@@ -103,6 +103,7 @@ const config: PageConfig = {
   ctaSubtitle: "Scopri quanto vale la tua casa e qual è la strategia di vendita più efficace. Senza impegno.",
   footerDesc: "Specialisti nella vendita di immobili residenziali a Reggio Emilia. Valutazione gratuita, marketing professionale, compenso solo a risultato.",
   utmCampaign: "vendita",
+  blogCategory: "Vendita",
 };
 
 export default function ConsulenzaVenditaPage() {

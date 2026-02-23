@@ -68,6 +68,7 @@ const config: PageConfig = {
     ctaTitle: "Inizia a pianificare il tuo cambio casa",
     ctaSubtitle: "Valutiamo gratuitamente la tua casa attuale e definiamo insieme il piano migliore.",
     footerDesc: "Specialisti nel cambio casa coordinato a Reggio Emilia. Vendiamo e compriamo simultaneamente per te.",
+    blogCategory: "Coordinamento",
 };
 
 export default function Page() {

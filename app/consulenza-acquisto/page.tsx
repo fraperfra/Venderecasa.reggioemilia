@@ -101,6 +101,7 @@ const config: PageConfig = {
   ctaSubtitle: "Dicci cosa cerchi e ti mostreremo le migliori opportunità disponibili, anche quelle non ancora sui portali.",
   footerDesc: "Aiutiamo i nostri clienti a trovare la casa giusta a Reggio Emilia. Valutazione indipendente, accesso off-market, assistenza completa fino al rogito.",
   utmCampaign: "acquisto",
+  blogCategory: "Acquisto",
 };
 
 export default function ConsulenzaAcquistoPage() {
