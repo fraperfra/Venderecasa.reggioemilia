@@ -126,7 +126,7 @@ export default async function ArticlePage({ params }: Props) {
           <div className="article-cta-box">
             <h3>{article.ctaTitle}</h3>
             <p>{article.ctaDesc}</p>
-            <Link href="/contatti" className="btn-cta" style={{ display: "inline-block", maxWidth: "280px" }}>
+            <Link href="/contatti" className="btn-cta" style={{ display: "inline-block", width: "100%", maxWidth: "300px" }}>
               Consulenza Gratuita →
             </Link>
           </div>
@@ -155,7 +155,7 @@ export default async function ArticlePage({ params }: Props) {
           <p style={{ color: "rgba(255,255,255,0.85)", maxWidth: "560px", margin: "0 auto 28px" }}>
             {article.ctaDesc}
           </p>
-          <Link href="/contatti" className="btn-cta" style={{ display: "inline-block", background: "white", color: "var(--primary)", maxWidth: "280px" }}>
+          <Link href="/contatti" className="btn-cta" style={{ display: "inline-block", background: "white", color: "var(--primary)", width: "100%", maxWidth: "300px" }}>
             Parla con un consulente →
           </Link>
         </div>

@@ -51,12 +51,8 @@ export default function BlogPage() {
         <div className="container">
           <div style={{ maxWidth: "700px", margin: "0 auto" }}>
             <div className="hero-label">Blog Immobiliare</div>
-            <h1 style={{ fontSize: "2.2rem", fontWeight: 800, marginBottom: "16px", lineHeight: 1.2 }}>
-              Guide e consigli sul mercato di Reggio Emilia
-            </h1>
-            <p style={{ fontSize: "1.1rem", opacity: 0.9, lineHeight: 1.6 }}>
-              Articoli pratici su vendita, acquisto, successioni e situazioni complesse. Scritti da chi conosce davvero il mercato locale.
-            </p>
+            <h1>Guide e consigli sul mercato di Reggio Emilia</h1>
+            <p>Articoli pratici su vendita, acquisto, successioni e situazioni complesse. Scritti da chi conosce davvero il mercato locale.</p>
           </div>
         </div>
       </section>
