@@ -40,11 +40,14 @@ export default function Footer({
                     <div className="footer-col">
                         <h4>Sitelinks</h4>
                         <ul>
-                            <li><Link href={`${anchorPrefix}#come-funziona`}>Come Funziona</Link></li>
-                            <li><Link href={`${anchorPrefix}#recensioni`}>Recensioni Clienti</Link></li>
-                            <li><Link href={`${anchorPrefix}#faq`}>FAQ Successione</Link></li>
-                            <li><Link href="/contatti">Contattaci Ora</Link></li>
+                            <li><Link href="/">Home</Link></li>
+                            <li><Link href="/servizi">Servizi</Link></li>
+                            <li><Link href="/consulenza-vendita">Consulenza Vendita</Link></li>
+                            <li><Link href="/consulenza-acquisto">Consulenza Acquisto</Link></li>
+                            <li><Link href="/blog">Blog</Link></li>
                             <li><Link href="/chi-siamo">Chi Siamo</Link></li>
+                            <li><Link href="/contatti">Contattaci Ora</Link></li>
+                            <li><Link href={`${anchorPrefix}#faq`}>FAQ</Link></li>
                         </ul>
                     </div>
 

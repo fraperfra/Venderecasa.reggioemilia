@@ -2,704 +2,409 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import AddressAutocomplete from "@/components/AddressAutocomplete";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export default function LandingPage() {
-    const [isSuccess, setIsSuccess] = useState(false);
-    const [isStickyVisible, setIsStickyVisible] = useState(false);
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const formCtaRef = useRef<HTMLButtonElement>(null);
-    const [activeFaq, setActiveFaq] = useState<number | null>(null);
+const services = [
+  { icon: "🏠", title: "Vendita Immobile", desc: "Vendiamo casa al prezzo giusto, nei tempi giusti. Strategia di pricing e marketing su misura.", href: "/consulenza-vendita" },
+  { icon: "🔑", title: "Acquisto Immobile", desc: "Ti aiutiamo a trovare la casa ideale e a trattare il prezzo migliore sul mercato.", href: "/consulenza-acquisto" },
+  { icon: "⚖️", title: "Casa Ereditata", desc: "Gestiamo la complessità della successione: eredi multipli, ipoteche, comproprietà.", href: "/valutazione-gratuita-eredita" },
+  { icon: "👥", title: "Separazione / Divorzio", desc: "Vendiamo l'immobile in comune con discrezione, tutelando entrambe le parti.", href: "/valutazione-gratuita-separazione" },
+  { icon: "🏦", title: "Difficoltà Mutuo", desc: "Soluzioni rapide per vendere prima del pignoramento e salvaguardare il tuo credito.", href: "/vendere-casa-mutuo" },
+  { icon: "🔄", title: "Cambio Casa", desc: "Coordiniamo vendita e acquisto in parallelo. Zero stress, massima sicurezza.", href: "/vendere-e-comprare-casa" },
+];
 
-    useEffect(() => {
-        if (isModalOpen) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "";
-        }
-        return () => { document.body.style.overflow = ""; };
-    }, [isModalOpen]);
+const whyDiba = [
+  { icon: "📊", title: "Prezzo di mercato reale", desc: "Utilizziamo dati reali delle compravendite recenti in zona per calcolare il valore preciso del tuo immobile, non stime al ribasso." },
+  { icon: "⚡", title: "45 giorni in media", desc: "Il nostro processo ottimizzato ci permette di chiudere le trattative in media in 45 giorni, il 40% più veloce della media di mercato." },
+  { icon: "🤝", title: "Zero conflitti di interesse", desc: "Non compriamo immobili per rivenderli. Lavoriamo esclusivamente per il tuo interesse, con compenso solo a vendita completata." },
+];
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
-                        setIsStickyVisible(true);
-                    } else {
-                        setIsStickyVisible(false);
-                    }
-                });
-            },
-            { threshold: 0 }
-        );
+const steps = [
+  { icon: "📋", title: "Compila il form", desc: "Lascia i tuoi dati e descrivi brevemente la situazione. Il form richiede meno di 2 minuti." },
+  { icon: "📞", title: "Consulenza gratuita", desc: "Entro 24 ore ti chiamiamo per capire le tue esigenze e fissare un sopralluogo senza impegno." },
+  { icon: "✅", title: "Vendiamo o troviamo", desc: "Costruiamo insieme la strategia migliore e ti affianchiamo fino al rogito notarile." },
+];
 
-        if (formCtaRef.current) {
-            observer.observe(formCtaRef.current);
-        }
+const soldPhotos = [
+  { src: "/assets/properties/property1.jpg", caption: "Appartamento · Centro Storico", tag: "VENDUTO" },
+  { src: "/assets/properties/property2.jpg", caption: "Villa · Coviolo", tag: "VENDUTO" },
+  { src: "/assets/properties/property3.jpg", caption: "Appartamento · Zona Sud", tag: "VENDUTO" },
+  { src: "/assets/properties/property4.jpg", caption: "Casa · Mancasale", tag: "VENDUTO" },
+];
 
-        return () => {
-            if (formCtaRef.current) {
-                observer.unobserve(formCtaRef.current);
-            }
-        };
-    }, []);
+const reviews = [
+  { text: "Diba ha gestito la vendita della casa di mia madre in modo impeccabile. Hanno trovato acquirente in 38 giorni al prezzo che volevamo. Professionisti veri.", author: "Giulia M. — Venditrice", stars: 5 },
+  { text: "Cercavo un bilocale da anni e non trovavo niente. Con Diba ho trovato la casa perfetta in 3 settimane. Conoscono ogni angolo della città.", author: "Luca B. — Acquirente", stars: 5 },
+  { text: "Situazione ereditaria complicata con tre fratelli. Diba ha mediato tutto con professionalità e discrezione. Non speravo si risolvesse così bene.", author: "Roberto F. — Successione", stars: 5 },
+];
 
-    const [isLoading, setIsLoading] = useState(false);
-    const [errorMsg, setErrorMsg] = useState<string | null>(null);
+const faqs = [
+  { q: "Quanto costa la valutazione?", a: "La valutazione iniziale è completamente gratuita e senza impegno. Un nostro consulente esamina i dati dell'immobile e le compravendite recenti in zona per darti un range di prezzo realistico entro 24 ore." },
+  { q: "In quanto tempo vendete solitamente?", a: "La nostra media è 45 giorni dalla messa in vendita al rogito. Naturalmente i tempi variano in base alla tipologia dell'immobile, alla zona e al prezzo, ma ci impegniamo sempre a ottimizzare i tempi senza svendere." },
+  { q: "Lavorate anche per chi vuole comprare?", a: "Assolutamente sì. Aiutiamo acquirenti a identificare le proprietà più adatte alle loro esigenze, a valutarle correttamente e a trattare il prezzo migliore. Contattaci per una consulenza acquisto gratuita." },
+  { q: "Come funziona la vostra commissione?", a: "La nostra provvigione è corrisposta solo a rogito concluso. Se non vendiamo, non pagate nulla. Le condizioni precise vengono definite nel mandato di vendita, che ti illustriamo in piena trasparenza prima di firmare." },
+  { q: "Operate anche fuori Reggio Emilia?", a: "La nostra area di specializzazione principale è Reggio Emilia e provincia. Per zone limitrofe valutiamo caso per caso. Contattaci per sapere se possiamo aiutarti nella tua area specifica." },
+];
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        setIsLoading(true);
-        setErrorMsg(null);
-        const formData = new FormData(e.currentTarget);
+export default function HomePage() {
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isStickyVisible, setIsStickyVisible] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const heroCtaRef = useRef<HTMLAnchorElement>(null);
 
-        // Capture UTM parameters from URL
-        const params = new URLSearchParams(window.location.search);
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [isModalOpen]);
 
-        const payload = {
-            nome: formData.get("name") as string,
-            telefono: formData.get("phone") as string,
-            email: (formData.get("email") as string) || "",
-            address: formData.get("address") as string,
-            page_target: "eredita",                              // fixed page identifier
-            utm_source: params.get("utm_source") || undefined,
-            utm_campaign: params.get("utm_campaign") || undefined,
-        };
-
-        try {
-            const res = await fetch("/api/leads", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(payload),
-            });
-            if (!res.ok) {
-                const json = await res.json();
-                setErrorMsg(json.error || "Errore nell'invio. Riprova.");
-            } else {
-                setIsSuccess(true);
-            }
-        } catch {
-            setErrorMsg("Errore di rete. Controlla la connessione.");
-        } finally {
-            setIsLoading(false);
-        }
-    };
-
-    const toggleFaq = (index: number) => {
-        setActiveFaq(activeFaq === index ? null : index);
-    };
-
-    return (
-        <div className="landing-root">
-            {/* HEADER */}
-            <header>
-                <div className="container header-content">
-                    <div className="logo">
-                        <img src="/assets/logo.png" alt="Diba Servizi Immobiliari" className="logo-img" width="200" height="65" />
-                    </div>
-                </div>
-            </header>
-
-            {/* HERO */}
-            <section className="hero">
-                <div className="container hero-grid">
-                    <div className="hero-text">
-                        <div className="hero-label">Consulenza Immobiliare</div>
-                        <h1>Hai ereditato una casa a Reggio Emilia e non sai cosa fare?</h1>
-                        <p className="subtitle">
-                            Valutiamo gratuitamente il tuo immobile ereditato e ti aiutiamo a
-                            scegliere la soluzione migliore, anche se siete più eredi.
-                        </p>
-                    </div>
-
-                    <div className="form-column">
-                        <div className="hero-form-card" id="contact-form-container">
-                            <div className="form-title">Scopri subito quanto vale</div>
-                            {!isSuccess ? (
-                                <form id="leadForm" onSubmit={handleSubmit}>
-                                    <div className="form-group">
-                                        <label htmlFor="name">Nome e Cognome</label>
-                                        <input
-                                            type="text"
-                                            id="name"
-                                            name="name"
-                                            className="form-control"
-                                            placeholder="Mario Rossi"
-                                            required
-                                        />
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="phone">Telefono</label>
-                                        <input
-                                            type="tel"
-                                            id="phone"
-                                            name="phone"
-                                            className="form-control"
-                                            placeholder="333 1234567"
-                                            required
-                                        />
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="email">Email (opzionale)</label>
-                                        <input
-                                            type="email"
-                                            id="email"
-                                            name="email"
-                                            className="form-control"
-                                            placeholder="mario@esempio.it"
-                                        />
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="address">Indirizzo immobile (opzionale)</label>
-                                        <AddressAutocomplete idPrefix="hero" />
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="intention">Cosa vorresti fare?</label>
-                                        <select id="intention" name="intention" className="form-control">
-                                            <option value="vendere">Vorrei vendere</option>
-                                            <option value="valutare">Vorrei solo una valutazione</option>
-                                            <option value="affittare">Vorrei affittare</option>
-                                            <option value="non_so">Non lo so ancora</option>
-                                        </select>
-                                    </div>
-                                    <button
-                                        type="submit"
-                                        className="btn-cta"
-                                        ref={formCtaRef}
-                                        disabled={isLoading}
-                                    >
-                                        {isLoading ? "Invio in corso..." : "Invia Richiesta"}
-                                    </button>
-                                    {errorMsg && (
-                                        <p style={{ color: "#dc2626", fontSize: "0.875rem", marginTop: "8px", textAlign: "center" }}>
-                                            {errorMsg}
-                                        </p>
-                                    )}
-                                    <p className="privacy-text">
-                                        I tuoi dati sono al sicuro. Non li condividiamo con terzi.
-                                    </p>
-                                </form>
-                            ) : (
-                                <div id="successMessage" className="success-card">
-                                    <div className="success-icon-wrapper">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                    </div>
-                                    <h3>Richiesta Inviata!</h3>
-                                    <p className="success-desc">
-                                        Grazie per la fiducia. I nostri esperti stanno già analizzando i dati della tua zona a Reggio Emilia.
-                                    </p>
-                                    <div className="success-steps">
-                                        <h4>Cosa succederà ora:</h4>
-                                        <ul>
-                                            <li>
-                                                <span className="step-check">✓</span>
-                                                <span><strong>Entro 2 ore:</strong> Assegnazione consulente dedicato.</span>
-                                            </li>
-                                            <li>
-                                                <span className="step-check">✓</span>
-                                                <span><strong>Entro 24 ore:</strong> Chiamata per i dettagli tecnici.</span>
-                                            </li>
-                                            <li>
-                                                <span className="step-check">✓</span>
-                                                <span><strong>Report finale:</strong> Consegna della valutazione documentata.</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <Link href="/chi-siamo" className="btn-outline">Scopri chi siamo</Link>
-                                </div>
-                            )}
-                        </div>
-
-                        <div className="google-trust-badge">
-                            <div className="stars">★★★★★</div>
-                            <span>4.9/5 su Google - 127 recensioni</span>
-                        </div>
-                    </div>
-
-                    <div className="hero-benefits">
-                        <ul className="benefits-list">
-                            <li>
-                                <svg
-                                    className="check-icon"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="3"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                >
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                <span>
-                                    Valutazione gratuita entro 24 ore, anche in comproprietà tra
-                                    eredi
-                                </span>
-                            </li>
-                            <li>
-                                <svg
-                                    className="check-icon"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="3"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                >
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                <span>
-                                    Calcoliamo quanto ti costa tenere la casa ogni anno (IMU +
-                                    spese)
-                                </span>
-                            </li>
-                            <li>
-                                <svg
-                                    className="check-icon"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="3"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                >
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                <span>Gestiamo tutta la burocrazia successoria senza stress</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            {/* PROBLEM SECTION */}
-            <section className="py-section bg-light">
-                <div className="container">
-                    <div className="section-header">
-                        <h2>I pensieri che non ti aspettavi</h2>
-                        <p style={{ color: "var(--text-light)", fontSize: "1.1rem" }}>
-                            Ereditare una casa porta con sé responsabilità che non sempre si vedono subito. Ecco cosa succede davvero.
-                        </p>
-                    </div>
-
-                    <div className="problem-grid">
-                        <div className="problem-card">
-                            <span className="card-icon">💸</span>
-                            <h3>I costi che non vedi ma che pesano</h3>
-                            <p>
-                                IMU, condominio, piccole manutenzioni... una casa ereditata, se resta ferma, può arrivare a costare anche 3.000€ l&apos;anno. E intanto resta lì, senza rendita e con più pensieri che soluzioni.
-                            </p>
-                        </div>
-                        <div className="problem-card">
-                            <span className="card-icon">⚖️</span>
-                            <h3>Quando siete più eredi, tutto si complica</h3>
-                            <p>
-                                Trovare un accordo non è semplice. Ognuno ha la sua idea, il suo ricordo, la sua opinione sul valore della casa. Una valutazione fatta da un professionista aiuta tutti a vedere le cose con più chiarezza.
-                            </p>
-                        </div>
-                        <div className="problem-card">
-                            <span className="card-icon">📋</span>
-                            <h3>La burocrazia non aiuta</h3>
-                            <p>
-                                Successione, volture, aggiornamenti catastali… carte su carte. Noi ci occupiamo di tutto, dalla gestione dei documenti alla vendita, così tu puoi concentrarti sulle scelte importanti.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* SOLD PROPERTIES SECTION */}
-            <section className="py-section">
-                <div className="container">
-                    <div className="section-header">
-                        <h2>Immobili venduti. Risultati veri.</h2>
-                        <p style={{ color: "var(--text-light)", fontSize: "1.1rem" }}>
-                            Questi sono i risultati reali delle compravendite gestite da Diba a Reggio Emilia.
-                        </p>
-                    </div>
-
-                    <div className="social-proof-grid">
-                        {[
-                            { src: "/assets/Diba_servizi_immobiliari_vendita.webp", alt: "Appartamento venduto in 2 giorni a prezzo pieno, Reggio Emilia", caption: "Appartamento · 2 giorni, prezzo pieno", tag: "APPARTAMENTO" },
-                            { src: "/assets/Diba_servizi_immobiliari_vendita_pochi_giorni_22.webp", alt: "Appartamento venduto in 21 giorni, Reggio Emilia", caption: "Appartamento · Venduto in 21 giorni", tag: "APPARTAMENTO" },
-                            { src: "/assets/Diba_servizi_immobiliari_vendita_pochi_giorni.webp", alt: "Appartamento venduto in 33 giorni, Reggio Emilia", caption: "Appartamento · Venduto in 33 giorni", tag: "APPARTAMENTO" },
-                            { src: "/assets/Diba_servizi_immobiliari_vendita_pochi_giorni_2.webp", alt: "Villa con giardino, 12 visite e 8 proposte, Reggio Emilia", caption: "Villa con giardino · 12 visite, 8 proposte", tag: "VILLA" },
-                        ].map((item, idx) => (
-                            <div key={idx} className="social-proof-card">
-                                <span className="social-proof-tag">{item.tag}</span>
-                                <div className="social-proof-img-wrapper">
-                                    <img
-                                        src={item.src}
-                                        alt={item.alt}
-                                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                                        loading="lazy"
-                                    />
-                                </div>
-                                <p className="social-proof-caption">{item.caption}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* HOW IT WORKS */}
-            <section className="py-section" id="come-funziona">
-                <div className="container">
-                    <div className="section-header">
-                        <h2>Come funziona</h2>
-                    </div>
-
-                    <div className="steps-container">
-                        <div className="step-item">
-                            <div className="step-icon-circle">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
-                                </svg>
-                            </div>
-                            <h3>1. Compila il form</h3>
-                            <p>
-                                Bastano nome, telefono e l&apos;indirizzo dell&apos;immobile. Ci vuole meno di 2 minuti.
-                            </p>
-                        </div>
-                        <div className="step-item">
-                            <div className="step-icon-circle">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="32"
-                                    height="32"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                >
-                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                                </svg>
-                            </div>
-                            <h3>2. Valutiamo l&apos;immobile</h3>
-                            <p>
-                                Gratuitamente ti diciamo quanto vale oggi e quanto ti costa
-                                tenerlo fermo.
-                            </p>
-                        </div>
-                        <div className="step-item">
-                            <div className="step-icon-circle">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="32"
-                                    height="32"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                >
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                            </div>
-                            <h3>3. Ti consigliamo la soluzione migliore</h3>
-                            <p>
-                                Vendere, affittare o aspettare: ti diciamo cosa fare e in che tempi. Nessuna pressione, nessun costo anticipato.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* REVIEWS */}
-            <section className="py-section bg-light" id="recensioni">
-                <div className="container">
-                    <div className="section-header">
-                        <h2>Cosa dicono di noi</h2>
-                    </div>
-
-                    <div className="reviews-grid">
-                        <div className="review-card">
-                            <div className="stars">★★★★★</div>
-                            <p>
-                                &quot;Ho ereditato un appartamento a Reggio con mia sorella. Non
-                                riuscivamo ad accordarci. La loro valutazione oggettiva ha
-                                convinto anche lei. Venduto in 3 mesi.&quot;
-                            </p>
-                            <div className="review-author">— Gianni S., Bologna</div>
-                        </div>
-                        <div className="review-card">
-                            <div className="stars">★★★★★</div>
-                            <p>
-                                &quot;Casa di mia madre ereditata da tre fratelli. Pensavamo
-                                fosse complicatissimo. Hanno gestito tutto loro, dalla
-                                successione al rogito. Professionisti.&quot;
-                            </p>
-                            <div className="review-author">— Carla M., Reggio Emilia</div>
-                        </div>
-                        <div className="review-card">
-                            <div className="stars">★★★★★</div>
-                            <p>
-                                &quot;Non sapevo che la casa costasse così tanto da tenere. Me
-                                l&apos;hanno mostrato con i numeri. Ho deciso di vendere e non
-                                me ne sono pentito.&quot;
-                            </p>
-                            <div className="review-author">— Roberto A., Correggio</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* FAQ */}
-            <section className="py-section" id="faq">
-                <div className="container">
-                    <div className="section-header">
-                        <h2>Domande Frequenti</h2>
-                    </div>
-
-                    <div className="faq-container">
-                        {[
-                            {
-                                q: "La valutazione è davvero gratuita?",
-                                a: "Sì, completamente. Veniamo a vedere l'immobile, o facciamo una valutazione online, senza alcun costo. Paghiamo noi solo se vendiamo la casa.",
-                            },
-                            {
-                                q: "Cosa succede se gli altri eredi non vogliono vendere?",
-                                a: "Possiamo fornire la valutazione a ciascun erede separatamente. Spesso, avere un dato oggettivo del mercato aiuta a raggiungere l'accordo. In casi estremi, esistono procedure legali per sciogliere la comproprietà.",
-                            },
-                            {
-                                q: "Quanto costa tenere una casa ereditata ogni anno?",
-                                a: "Dipende dall'immobile, ma in media tra IMU, spese condominiali e manutenzione ordinaria si spendono 1.500-3.000€ l'anno senza ricevere nulla in cambio. Te lo calcoliamo gratuitamente.",
-                            },
-                        ].map((item, idx) => (
-                            <div key={idx} className="faq-item">
-                                <button
-                                    className={`faq-question ${activeFaq === idx ? "active" : ""}`}
-                                    onClick={() => toggleFaq(idx)}
-                                >
-                                    {item.q}
-                                </button>
-                                <div
-                                    className="faq-answer"
-                                    style={{
-                                        maxHeight: activeFaq === idx ? "1000px" : "0",
-                                    }}
-                                >
-                                    <p>{item.a}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* BOTTOM CTA FORM */}
-            <section className="py-section bg-cta-section" id="bottom-form">
-                <div className="container">
-                    <div className="section-header">
-                        <h2>Siamo pronti ad aiutarti</h2>
-                        <p style={{ opacity: 0.9, fontSize: "1.1rem" }}>
-                            Lascia i tuoi dati per una consulenza senza impegno sulla tua casa ereditata.
-                        </p>
-                    </div>
-
-                    <div className="bottom-form-wrapper">
-                        <div className="hero-form-card">
-                            <div className="form-title">Richiedi la tua valutazione</div>
-                            {!isSuccess ? (
-                                <form id="bottomLeadForm" onSubmit={handleSubmit}>
-                                    <div className="form-group">
-                                        <label htmlFor="bottom-name">Nome e Cognome</label>
-                                        <input
-                                            type="text"
-                                            id="bottom-name"
-                                            name="name"
-                                            className="form-control"
-                                            placeholder="Mario Rossi"
-                                            required
-                                        />
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="bottom-phone">Telefono</label>
-                                        <input
-                                            type="tel"
-                                            id="bottom-phone"
-                                            name="phone"
-                                            className="form-control"
-                                            placeholder="333 1234567"
-                                            required
-                                        />
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="bottom-email">Email (opzionale)</label>
-                                        <input
-                                            type="email"
-                                            id="bottom-email"
-                                            name="email"
-                                            className="form-control"
-                                            placeholder="mario@esempio.it"
-                                        />
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="bottom-address">Indirizzo immobile (opzionale)</label>
-                                        <AddressAutocomplete idPrefix="bottom" />
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="bottom-intention">Cosa vorresti fare?</label>
-                                        <select id="bottom-intention" name="intention" className="form-control">
-                                            <option value="vendere">Vorrei vendere</option>
-                                            <option value="valutare">Vorrei solo una valutazione</option>
-                                            <option value="affittare">Vorrei affittare</option>
-                                            <option value="non_so">Non lo so ancora</option>
-                                        </select>
-                                    </div>
-                                    <button
-                                        type="submit"
-                                        className="btn-cta"
-                                        disabled={isLoading}
-                                    >
-                                        {isLoading ? "Invio in corso..." : "Invia Richiesta"}
-                                    </button>
-                                    {errorMsg && (
-                                        <p style={{ color: "#dc2626", fontSize: "0.875rem", marginTop: "8px", textAlign: "center" }}>
-                                            {errorMsg}
-                                        </p>
-                                    )}
-                                    <p className="privacy-text">
-                                        I tuoi dati sono al sicuro. Non li condividiamo con terzi.
-                                    </p>
-                                </form>
-                            ) : (
-                                <div className="success-card">
-                                    <div className="success-icon-wrapper">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                    </div>
-                                    <h3>Quasi Fatto!</h3>
-                                    <p className="success-desc">
-                                        Abbiamo preso in carico la tua richiesta. Sei a un passo dalla tua valutazione professionale.
-                                    </p>
-                                    <div className="success-steps" style={{ background: 'white' }}>
-                                        <h4>I tuoi prossimi passi:</h4>
-                                        <ul>
-                                            <li>
-                                                <span className="step-check">✓</span>
-                                                <span>Riceverai una chiamata dal numero 327 491 1031.</span>
-                                            </li>
-                                            <li>
-                                                <span className="step-check">✓</span>
-                                                <span>Prepareremo un'analisi comparativa di mercato.</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <p className="privacy-text">DIBA Immobiliare · Reggio Emilia</p>
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* FOOTER */}
-            <Footer isHome={true} />
-
-            {/* STICKY MOBILE */}
-            <div className={`sticky-mobile ${isStickyVisible ? "visible" : ""}`}>
-                <button className="btn-sticky" onClick={() => setIsModalOpen(true)}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
-                    </svg>
-                    Richiedi Valutazione
-                </button>
-            </div>
-
-            {/* MODAL FORM */}
-            {isModalOpen && (
-                <div className="modal-backdrop" onClick={() => setIsModalOpen(false)}>
-                    <div className="modal-card" onClick={(e) => e.stopPropagation()}>
-                        <button className="modal-close" onClick={() => setIsModalOpen(false)} aria-label="Chiudi">×</button>
-                        <p className="mid-form-tag" style={{ marginBottom: 4 }}>Consulenza Gratuita</p>
-                        <h2 className="modal-title">Raccontaci la tua situazione</h2>
-                        <p className="modal-sub">Compila il form e ti ricontattiamo entro 24 ore con una valutazione personalizzata.</p>
-                        <div style={{ padding: 0 }}>
-                            {!isSuccess ? (
-                                <form onSubmit={handleSubmit}>
-                                    <div className="detailed-form-row">
-                                        <div className="form-group">
-                                            <label>Nome e Cognome</label>
-                                            <input type="text" name="name" className="form-control" placeholder="Mario Rossi" required />
-                                        </div>
-                                        <div className="form-group">
-                                            <label>Telefono</label>
-                                            <input type="tel" name="phone" className="form-control" placeholder="333 1234567" required />
-                                        </div>
-                                    </div>
-                                    <div className="detailed-form-row">
-                                        <div className="form-group">
-                                            <label>Email (opzionale)</label>
-                                            <input type="email" name="email" className="form-control" placeholder="mario@esempio.it" />
-                                        </div>
-                                        <div className="form-group">
-                                            <label>Indirizzo immobile</label>
-                                            <AddressAutocomplete idPrefix="modal" />
-                                        </div>
-                                    </div>
-                                    <div className="detailed-form-row">
-                                        <div className="form-group">
-                                            <label>Cosa vorresti fare?</label>
-                                            <select name="intention" className="form-control">
-                                                <option value="vendere">Vorrei vendere</option>
-                                                <option value="valutare">Vorrei solo una valutazione</option>
-                                                <option value="affittare">Vorrei affittare</option>
-                                                <option value="non_so">Non lo so ancora</option>
-                                            </select>
-                                        </div>
-                                        <div className="form-group">
-                                            <label>Quando vorresti procedere?</label>
-                                            <select name="urgency" className="form-control">
-                                                <option value="subito">Il prima possibile</option>
-                                                <option value="3mesi">Entro 3 mesi</option>
-                                                <option value="6mesi">Entro 6 mesi</option>
-                                                <option value="no_fretta">Non ho fretta</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div className="form-group">
-                                        <label>Descrivi la tua situazione (opzionale)</label>
-                                        <textarea name="note" className="form-control" placeholder="Es: ho ereditato un appartamento di 90mq, voglio capire quanto vale..." rows={3} style={{ height: "auto", paddingTop: "12px", paddingBottom: "12px", resize: "vertical" }} />
-                                    </div>
-                                    <button type="submit" className="btn-cta" disabled={isLoading}>
-                                        {isLoading ? "Invio in corso..." : "Invia Richiesta"}
-                                    </button>
-                                    {errorMsg && <p style={{ color: "#dc2626", fontSize: "0.875rem", marginTop: "8px", textAlign: "center" }}>{errorMsg}</p>}
-                                    <p className="privacy-text">I tuoi dati sono al sicuro. Non li condividiamo con terzi.</p>
-                                </form>
-                            ) : (
-                                <div className="success-card">
-                                    <div className="success-icon-wrapper">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                    </div>
-                                    <h3>Richiesta inviata!</h3>
-                                    <p className="success-desc">Ti ricontattiamo entro 24 ore con la valutazione personalizzata.</p>
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                </div>
-            )}
-        </div>
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+            setIsStickyVisible(true);
+          } else {
+            setIsStickyVisible(false);
+          }
+        });
+      },
+      { threshold: 0 }
     );
+    if (heroCtaRef.current) observer.observe(heroCtaRef.current);
+    return () => {
+      if (heroCtaRef.current) observer.unobserve(heroCtaRef.current);
+    };
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setErrorMsg(null);
+    const formData = new FormData(e.currentTarget);
+    const params = new URLSearchParams(window.location.search);
+
+    const payload = {
+      nome: formData.get("name") as string,
+      telefono: formData.get("phone") as string,
+      email: (formData.get("email") as string) || "",
+      address: (formData.get("address") as string) || "",
+      note: (formData.get("note") as string) || "",
+      page_target: "homepage",
+      utm_source: params.get("utm_source") || undefined,
+      utm_campaign: params.get("utm_campaign") || undefined,
+    };
+
+    try {
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) {
+        const json = await res.json();
+        setErrorMsg(json.error || "Errore nell'invio. Riprova.");
+      } else {
+        setIsSuccess(true);
+        setIsModalOpen(false);
+      }
+    } catch {
+      setErrorMsg("Errore di rete. Controlla la connessione.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const contactForm = (idPrefix: string) => (
+    isSuccess ? (
+      <div className="success-message">
+        <h3>Richiesta ricevuta!</h3>
+        <p>Ti contatteremo entro 24 ore per la tua consulenza gratuita.</p>
+      </div>
+    ) : (
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor={`${idPrefix}-name`}>Nome e Cognome</label>
+          <input type="text" id={`${idPrefix}-name`} name="name" className="form-control" placeholder="Mario Rossi" required />
+        </div>
+        <div className="form-group">
+          <label htmlFor={`${idPrefix}-phone`}>Telefono</label>
+          <input type="tel" id={`${idPrefix}-phone`} name="phone" className="form-control" placeholder="333 1234567" required />
+        </div>
+        <div className="form-group">
+          <label htmlFor={`${idPrefix}-email`}>Email (opzionale)</label>
+          <input type="email" id={`${idPrefix}-email`} name="email" className="form-control" placeholder="mario@esempio.it" />
+        </div>
+        <div className="form-group">
+          <label htmlFor={`${idPrefix}-service`}>Cosa ti serve?</label>
+          <select id={`${idPrefix}-service`} name="note" className="form-control">
+            <option value="">Seleziona...</option>
+            <option value="Voglio vendere casa">Voglio vendere casa</option>
+            <option value="Voglio comprare casa">Voglio comprare casa</option>
+            <option value="Ho ereditato un immobile">Ho ereditato un immobile</option>
+            <option value="Altro">Altro</option>
+          </select>
+        </div>
+        <button type="submit" className="btn-cta" disabled={isLoading}>
+          {isLoading ? "Invio in corso..." : "Richiedi Consulenza Gratuita"}
+        </button>
+        {errorMsg && <p style={{ color: "#dc2626", fontSize: "0.875rem", marginTop: "8px", textAlign: "center" }}>{errorMsg}</p>}
+        <p className="privacy-text">I tuoi dati sono al sicuro. Non li condividiamo con terzi.</p>
+      </form>
+    )
+  );
+
+  return (
+    <div>
+      <Navbar />
+
+      {/* HERO */}
+      <section className="hero-homepage">
+        <div className="container">
+          <div className="hero-homepage-inner">
+            <div className="hero-label">Agenzia Immobiliare · Reggio Emilia</div>
+            <h1>
+              Vendi o compra casa a Reggio Emilia con chi conosce davvero il mercato
+            </h1>
+            <p className="subtitle">
+              Oltre 200 immobili gestiti, 4.9/5 su Google, 45 giorni medi di vendita.<br />
+              Consulenza gratuita e senza impegno entro 24 ore.
+            </p>
+            <div className="hero-cta-row">
+              <Link href="/consulenza-vendita" className="btn-hero-primary" ref={heroCtaRef}>
+                Voglio Vendere →
+              </Link>
+              <Link href="/consulenza-acquisto" className="btn-hero-secondary">
+                Voglio Comprare →
+              </Link>
+            </div>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <div className="google-trust-badge">
+                <span className="stars">★★★★★</span>
+                <span>4.9/5 su Google</span>
+                <span style={{ color: "#6b7280", fontWeight: 400 }}>· 60+ recensioni</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* STATS BAR */}
+      <section className="stats-bar">
+        <div className="container">
+          <div className="stats-bar-inner">
+            {[
+              { number: "200+", label: "Immobili venduti" },
+              { number: "45gg", label: "Tempo medio vendita" },
+              { number: "4.9/5", label: "Valutazione Google" },
+              { number: "15 anni", label: "Esperienza locale" },
+            ].map((s) => (
+              <div key={s.number} className="stat-item">
+                <div className="stat-number">{s.number}</div>
+                <div className="stat-label">{s.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES OVERVIEW */}
+      <section className="py-section">
+        <div className="container">
+          <div className="section-header">
+            <h2>I nostri servizi immobiliari</h2>
+            <p style={{ color: "var(--text-light)", fontSize: "1.05rem" }}>
+              Gestiamo ogni tipo di situazione immobiliare a Reggio Emilia, dal semplice cambio casa alle situazioni più complesse.
+            </p>
+          </div>
+          <div className="services-overview-grid">
+            {services.map((s) => (
+              <Link key={s.href} href={s.href} className="service-overview-card" style={{ textDecoration: "none" }}>
+                <div className="service-overview-icon">{s.icon}</div>
+                <h3>{s.title}</h3>
+                <p>{s.desc}</p>
+                <span className="service-overview-link">Scopri di più →</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHY DIBA */}
+      <section className="py-section bg-light">
+        <div className="container">
+          <div className="section-header">
+            <h2>Perché scegliere Diba</h2>
+            <p style={{ color: "var(--text-light)", fontSize: "1.05rem" }}>
+              Non siamo un&apos;agenzia generica. Siamo specialisti del mercato di Reggio Emilia con un approccio orientato ai risultati.
+            </p>
+          </div>
+          <div className="why-diba-grid">
+            {whyDiba.map((w) => (
+              <div key={w.title} className="why-diba-card">
+                <div className="icon">{w.icon}</div>
+                <h3>{w.title}</h3>
+                <p>{w.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* HOW IT WORKS */}
+      <section className="py-section" id="come-funziona">
+        <div className="container">
+          <div className="section-header">
+            <h2>Come funziona</h2>
+            <p style={{ color: "var(--text-light)", fontSize: "1.05rem" }}>
+              Tre semplici passi per iniziare il tuo percorso con Diba.
+            </p>
+          </div>
+          <div className="steps-container">
+            {steps.map((step, i) => (
+              <div key={i} className="step-item">
+                <div className="step-icon-circle">{step.icon}</div>
+                <h3>{step.title}</h3>
+                <p>{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SOCIAL PROOF PHOTOS */}
+      <section className="py-section bg-light">
+        <div className="container">
+          <div className="section-header">
+            <h2>Immobili recentemente venduti</h2>
+            <p style={{ color: "var(--text-light)", fontSize: "1.05rem" }}>
+              Alcuni dei risultati ottenuti per i nostri clienti a Reggio Emilia.
+            </p>
+          </div>
+          <div className="social-proof-grid">
+            {soldPhotos.map((photo, i) => (
+              <div key={i} className="social-proof-card">
+                <span className="social-proof-tag">{photo.tag}</span>
+                <div className="social-proof-img-wrapper">
+                  <img src={photo.src} alt={photo.caption} loading="lazy" />
+                </div>
+                <div className="social-proof-caption">{photo.caption}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* REVIEWS */}
+      <section className="py-section" id="recensioni">
+        <div className="container">
+          <div className="section-header">
+            <h2>Cosa dicono i nostri clienti</h2>
+            <div style={{ display: "flex", justifyContent: "center", marginTop: "-12px" }}>
+              <div className="google-trust-badge">
+                <span className="stars">★★★★★</span>
+                <span>4.9/5 · Google Reviews</span>
+              </div>
+            </div>
+          </div>
+          <div className="reviews-grid">
+            {reviews.map((r, i) => (
+              <div key={i} className="review-card">
+                <div className="stars">{"★".repeat(r.stars)}</div>
+                <p>&ldquo;{r.text}&rdquo;</p>
+                <p className="review-author">— {r.author}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-section bg-light" id="faq">
+        <div className="container">
+          <div className="section-header">
+            <h2>Domande frequenti</h2>
+          </div>
+          <div style={{ maxWidth: "760px", margin: "0 auto" }}>
+            {faqs.map((faq, i) => (
+              <div key={i} className="faq-item">
+                <button
+                  className={`faq-question${activeFaq === i ? " active" : ""}`}
+                  onClick={() => setActiveFaq(activeFaq === i ? null : i)}
+                >
+                  {faq.q}
+                </button>
+                <div
+                  className="faq-answer"
+                  style={{ maxHeight: activeFaq === i ? "400px" : "0" }}
+                >
+                  <p>{faq.a}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA FINALE */}
+      <section className="final-cta-section" id="contact-form-container">
+        <div className="container">
+          <div className="final-cta-grid">
+            <div className="final-cta-left">
+              <span className="final-cta-badge">Consulenza Gratuita</span>
+              <h2 className="final-cta-headline">
+                Pronto a fare il primo passo?
+              </h2>
+              <p className="final-cta-sub">
+                Che tu voglia vendere, comprare o semplicemente capire quanto vale il tuo immobile, il nostro team è disponibile entro 24 ore.
+              </p>
+              <ul className="final-cta-pillars">
+                <li><span className="pillar-check">✓</span> Valutazione gratuita entro 24h</li>
+                <li><span className="pillar-check">✓</span> Nessun impegno</li>
+                <li><span className="pillar-check">✓</span> Consulente dedicato</li>
+              </ul>
+              <div className="final-cta-rating">
+                <span className="final-cta-stars">★★★★★</span>
+                <span>4.9/5 su Google · 60+ recensioni verificate</span>
+              </div>
+            </div>
+            <div className="final-cta-right">
+              <div className="hero-form-card">
+                <div className="form-title">Richiedi la tua consulenza gratuita</div>
+                {contactForm("cta")}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer isHome={true} />
+
+      {/* STICKY MOBILE CTA */}
+      <div className={`sticky-cta${isStickyVisible ? " visible" : ""}`}>
+        <button className="btn-sticky" onClick={() => setIsModalOpen(true)}>
+          📞 Consulenza Gratuita
+        </button>
+      </div>
+
+      {/* MODAL */}
+      {isModalOpen && (
+        <div className="modal-backdrop" onClick={() => setIsModalOpen(false)}>
+          <div className="modal-card" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={() => setIsModalOpen(false)} aria-label="Chiudi">×</button>
+            <div className="modal-title">Richiedi Consulenza Gratuita</div>
+            <div className="modal-sub">Ti risponderemo entro 24 ore, senza impegno.</div>
+            {contactForm("modal")}
+          </div>
+        </div>
+      )}
+    </div>
+  );
 }

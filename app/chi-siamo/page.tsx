@@ -3,20 +3,12 @@
 import React from 'react';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
 
 export default function ChiSiamoPage() {
     return (
         <div className="landing-root">
-            {/* HEADER */}
-            <header>
-                <div className="container header-content">
-                    <div className="logo">
-                        <Link href="/">
-                            <img src="/assets/logo.png" alt="Diba Servizi Immobiliari" className="logo-img" width="200" height="65" />
-                        </Link>
-                    </div>
-                </div>
-            </header>
+            <Navbar />
 
             {/* HERO SECTION */}
             <section className="about-hero" style={{ background: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80")', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', textAlign: 'center' }}>
